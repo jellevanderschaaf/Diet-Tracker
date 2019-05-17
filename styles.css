@@ -1,0 +1,56 @@
+
+body {
+    background-color: #F0F4F7;
+}
+
+.navbar-nav {
+    padding-right: 110px;
+    color: white;
+}
+
+.nav-item {
+    padding: 0px 5px 0px 5px;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.input {
+    border-radius: 5px;
+    height: 30px;
+    width: 120px;
+    display: inline-block;
+}
+
+.btn-success {
+    margin-left: 5px;
+    height: 30px;
+    line-height: 10px;
+}
+
+.grid-container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 300px 600px 300px;
+    grid-gap: 15px;
+    height: 1200px;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.grid-item {
+    height: 1200px;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 10px grey;
+    -moz-box-shadow: 0 0 10px grey;
+    -webkit-box-shadow: 0 0 10px grey;
+    -o-box-shadow: 0 0 10px grey;
+}
