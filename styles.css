@@ -3,6 +3,12 @@ body {
     background-color: #F0F4F7;
 }
 
+.navbar {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 50px;
+}
+
 .navbar-nav {
     padding-right: 110px;
     color: white;
@@ -46,6 +52,7 @@ body {
 
 .grid-item {
     height: 1200px;
+    min-width: 300px;
     background-color: #FFFFFF;
     border-radius: 15px;
     text-align: center;
@@ -53,4 +60,29 @@ body {
     -moz-box-shadow: 0 0 10px grey;
     -webkit-box-shadow: 0 0 10px grey;
     -o-box-shadow: 0 0 10px grey;
+}
+
+.add {
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    margin-left: 150px;
+    line-height: 0px;
+}
+
+.foodList {
+    padding: 10px 10px 10px 10px;
+    text-align: left;
+}
+
+.foodItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.FoodItemName {
+    width: 100px;
+    display: inline-block;
+    font-size: 15px;
 }
