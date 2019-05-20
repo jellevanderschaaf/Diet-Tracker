@@ -62,14 +62,6 @@ body {
     -o-box-shadow: 0 0 10px grey;
 }
 
-.add {
-    width: 20px;
-    height: 20px;
-    padding: 0px;
-    margin-left: 150px;
-    line-height: 0px;
-}
-
 .foodList {
     padding: 10px 10px 10px 10px;
     text-align: left;
@@ -85,4 +77,25 @@ body {
     width: 100px;
     display: inline-block;
     font-size: 15px;
+}
+
+.add {
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    margin-left: 150px;
+    line-height: 0px;
+}
+
+.totalContainer {
+
+}
+
+.totalsLabels {
+    display: inline-block;
+}
+
+.totals {
+    width: 50px;
+    display: inline-block;
 }
