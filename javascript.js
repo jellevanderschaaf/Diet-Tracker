@@ -31,7 +31,7 @@ var butter = {
 //
 
 function addFoodItemToList(value) {
-    var variable = eval(value);
-    document.getElementById("listToday").innerHTML += variable.name + "<br />" + "fat: " + variable.fat + " grams carbs: " + variable.carbs + " grams protein: " + variable.protein + " grams kcals: " + variable.kcals + " costs: " + variable.price + "<br />";
+    var food = eval(value);
+    document.getElementById("listToday").innerHTML += food.name + "<br />" + "fat: " + food.fat + " grams carbs: " + food.carbs + " grams protein: " + food.protein + " grams kcals: " + food.kcals + " costs: " + food.price + "<br />";
 }
 
