@@ -1,4 +1,6 @@
 
+var totalKcals = [];
+
 // Food Items objects
 
 var mincedBeef = {    
@@ -33,5 +35,12 @@ var butter = {
 function addFoodItemToList(value) {
     var food = eval(value);
     document.getElementById("listToday").innerHTML += food.name + "<br />" + "fat: " + food.fat + " grams carbs: " + food.carbs + " grams protein: " + food.protein + " grams kcals: " + food.kcals + " costs: " + food.price + "<br />";
-}
+    totalKcals.push(food.kcals);
 
+    function getSum(total, num) {
+        return total + num;
+  }
+   {
+    document.getElementById("totalKcal").innerHTML = totalKcals.reduce(getSum);
+  }
+}
