@@ -1,7 +1,7 @@
 
 // Food Items objects
 
-var mincedBeef = {
+var mincedBeef = {    
     fat: 72,
     carbs: 1.8,
     protein: 120,
@@ -28,7 +28,6 @@ var butter = {
 //
 
 function addFoodItemToList(value) {
-    document.getElementById("listToday").innerHTML += value + "<br />";
-
+    document.getElementById("listToday").innerHTML += value + "<br />" + "fat: " + mincedBeef.fat + " grams carbs: " + mincedBeef.carbs + " grams protein: " + mincedBeef.protein + " grams kcals: " + mincedBeef.kcals + " costs: " + mincedBeef.price + "<br />";
 }
 
