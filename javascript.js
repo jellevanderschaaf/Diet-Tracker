@@ -26,13 +26,35 @@ var egg = {
 };
 
 var butter = {
-    name: "butter (100 grams",
+    name: "butter (100 grams)",
     fat: 82.5,
     carbs: 0.7,
     protein: 0.7,
     kcals: 748,
     price: 1.196,
 };
+
+var chickenLegg = {
+    name: "chicken legg (300 grams)",
+    fat: 39,
+    carbs: 0,
+    protein: 54,
+    kcals: 570,
+    price: 1.22,
+};
+
+
+var mackerel = {
+    name: "mackerel 350 grams)",
+    fat: 63,
+    carbs: 0,
+    protein: 77,
+    kcals: 875,
+    price: 3.32,    
+};
+
+
+
 
 //
 
@@ -51,9 +73,9 @@ function addFoodItemToList(value) {
     }
    {
     document.getElementById("totalKcal").innerHTML = totalKcals.reduce(getSum);
-    document.getElementById("totalFats").innerHTML = totalFats.reduce(getSum);
-    document.getElementById("totalCarbs").innerHTML = totalCarbs.reduce(getSum);
-    document.getElementById("totalProtein").innerHTML = totalProtein.reduce(getSum);
-    document.getElementById("totalCosts").innerHTML = totalCosts.reduce(getSum);
+    document.getElementById("totalFats").innerHTML = totalFats.reduce(getSum).toFixed(1);
+    document.getElementById("totalCarbs").innerHTML = totalCarbs.reduce(getSum).toFixed(1);
+    document.getElementById("totalProtein").innerHTML = totalProtein.reduce(getSum).toFixed(1);
+    document.getElementById("totalCosts").innerHTML = totalCosts.reduce(getSum).toFixed(2);
   }
 }
