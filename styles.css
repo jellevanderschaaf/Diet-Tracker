@@ -87,10 +87,6 @@ body {
     line-height: 0px;
 }
 
-.totalContainer {
-
-}
-
 .totalsLabels {
     display: inline-block;
 }
@@ -98,4 +94,8 @@ body {
 .totals {
     width: 50px;
     display: inline-block;
+}
+
+.chartjs-render-monitor {
+    padding-top: 20px;
 }

@@ -91,11 +91,7 @@ let barChart = new Chart(chart, {
         labels:['Fats', 'Carbs', 'Protein'],
         datasets: [{
             label: 'Grams',
-            data: [
-                120,
-                36,
-                140,
-            ],
+            data: [1, 2, 3],
             backgroundColor: ['blue', 'red', 'green']
         }],
     },
@@ -110,5 +106,10 @@ let barChart = new Chart(chart, {
         }
     }
 });
+
+function updateChart() {
+  barChart.data.datasets[0].data = [totalFats, totalCarbs, totalProtein];
+  barChart.update();
+};
 
 //
