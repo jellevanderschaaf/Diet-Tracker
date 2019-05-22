@@ -5,6 +5,13 @@ var totalCarbs = [];
 var totalProtein = [];
 var totalCosts = [];
 
+var totalKcalsSum;
+var totalFatsSum;
+var totalCarbsSum;
+var totalProteinSum;
+var totalCostsSum;
+
+
 // Food Items objects
 
 var mincedBeef = {    
@@ -71,12 +78,19 @@ function addFoodItemToList(value) {
     function getSum(total, num) {
         return total + num;
     }
-   {
-    document.getElementById("totalKcal").innerHTML = totalKcals.reduce(getSum);
-    document.getElementById("totalFats").innerHTML = totalFats.reduce(getSum).toFixed(1);
-    document.getElementById("totalCarbs").innerHTML = totalCarbs.reduce(getSum).toFixed(1);
-    document.getElementById("totalProtein").innerHTML = totalProtein.reduce(getSum).toFixed(1);
-    document.getElementById("totalCosts").innerHTML = "€ " + totalCosts.reduce(getSum).toFixed(2);
+   
+    totalKcalsSum = totalKcals.reduce(getSum);
+    totalFatsSum = totalFats.reduce(getSum).toFixed(1);
+    totalCarbsSum = totalCarbs.reduce(getSum).toFixed(1);
+    totalProteinSum = totalProtein.reduce(getSum).toFixed(1);
+    totalCostsSum = totalCosts.reduce(getSum).toFixed(2);
+   
+    {
+    document.getElementById("totalKcal").innerHTML = totalKcalsSum;
+    document.getElementById("totalFats").innerHTML = totalFatsSum;
+    document.getElementById("totalCarbs").innerHTML = totalCarbsSum;
+    document.getElementById("totalProtein").innerHTML = totalProteinSum;
+    document.getElementById("totalCosts").innerHTML = "€ " + totalCostsSum;
   }
 }
 
@@ -91,7 +105,7 @@ let barChart = new Chart(chart, {
         labels:['Fats', 'Carbs', 'Protein'],
         datasets: [{
             label: 'Grams',
-            data: [1, 2, 3],
+            data: [],
             backgroundColor: ['blue', 'red', 'green']
         }],
     },
@@ -108,7 +122,7 @@ let barChart = new Chart(chart, {
 });
 
 function updateChart() {
-  barChart.data.datasets[0].data = [totalFats, totalCarbs, totalProtein];
+  barChart.data.datasets[0].data = [totalFatsSum, totalCarbsSum, totalProteinSum];
   barChart.update();
 };
 
