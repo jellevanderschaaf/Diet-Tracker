@@ -92,6 +92,7 @@ function addFoodItemToList(value) {
     document.getElementById("totalProtein").innerHTML = totalProteinSum;
     document.getElementById("totalCosts").innerHTML = "€ " + totalCostsSum;
   }
+    updateChart();
 }
 
 
