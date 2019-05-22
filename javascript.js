@@ -60,7 +60,15 @@ var mackerel = {
     price: 3.32,    
 };
 
+var apple = {
+    name: "apple (100 grams)",
+    fat: 0,
+    carbs: 12,
+    protein: 0.4,
+    kcals: 54,
+    price: 0.12,
 
+}
 
 
 //
