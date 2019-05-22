@@ -1,3 +1,4 @@
+// Global variables
 
 var totalKcals = [];
 var totalFats = [];
@@ -71,7 +72,7 @@ var apple = {
 }
 
 
-//
+// Add Food Items
 
 function addFoodItemToList(value) {
     var food = eval(value);
@@ -111,11 +112,11 @@ let chart = document.getElementById('chart').getContext('2d');
 let barChart = new Chart(chart, {
     type: 'bar',
     data: {
-        labels:['Fats', 'Carbs', 'Protein'],
+        labels:['Fat', 'Carbs', 'Protein'],
         datasets: [{
             label: 'Grams',
             data: [],
-            backgroundColor: ['blue', 'red', 'green']
+            backgroundColor: ['rgba(250, 147, 28, 0.8)', 'rgba(236, 59, 66, 0.8)', 'rgba(161, 223, 245, 0.8)']
         }],
     },
     options: {
