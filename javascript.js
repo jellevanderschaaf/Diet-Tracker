@@ -45,7 +45,7 @@ var chickenLegg = {
 
 
 var mackerel = {
-    name: "mackerel 350 grams)",
+    name: "mackerel (350 grams)",
     fat: 63,
     carbs: 0,
     protein: 77,
@@ -60,7 +60,7 @@ var mackerel = {
 
 function addFoodItemToList(value) {
     var food = eval(value);
-    document.getElementById("listToday").innerHTML += food.name + "<br />" + "fat: " + food.fat + " grams carbs: " + food.carbs + " grams protein: " + food.protein + " grams kcals: " + food.kcals + " costs: " + food.price + "<br />";
+    document.getElementById("listToday").innerHTML += food.name + "<br />" + "fat: " + food.fat + " grams carbs: " + food.carbs + " grams protein: " + food.protein + " grams kcals: " + food.kcals + " costs: € " + food.price + "<br />";
     
     totalKcals.push(food.kcals);
     totalFats.push(food.fat);
@@ -76,6 +76,39 @@ function addFoodItemToList(value) {
     document.getElementById("totalFats").innerHTML = totalFats.reduce(getSum).toFixed(1);
     document.getElementById("totalCarbs").innerHTML = totalCarbs.reduce(getSum).toFixed(1);
     document.getElementById("totalProtein").innerHTML = totalProtein.reduce(getSum).toFixed(1);
-    document.getElementById("totalCosts").innerHTML = totalCosts.reduce(getSum).toFixed(2);
+    document.getElementById("totalCosts").innerHTML = "€ " + totalCosts.reduce(getSum).toFixed(2);
   }
 }
+
+
+// Chart
+
+let chart = document.getElementById('chart').getContext('2d');
+
+let barChart = new Chart(chart, {
+    type: 'bar',
+    data: {
+        labels:['Fats', 'Carbs', 'Protein'],
+        datasets: [{
+            label: 'Grams',
+            data: [
+                120,
+                36,
+                140,
+            ],
+            backgroundColor: ['blue', 'red', 'green']
+        }],
+    },
+    options: {
+        title: {
+            display: false,
+            text: 'Macros',
+            fontSize: 15,
+        },
+        legend: {
+            display: false
+        }
+    }
+});
+
+//
