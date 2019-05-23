@@ -80,6 +80,7 @@ function addFoodItemToList(value) {
     var foodItem = document.createElement('div');
     foodItem.innerHTML = food.name + "<br />" + "fat: " + food.fat + " grams carbs: " + food.carbs + " grams protein: " + food.protein + " grams kcals: " + food.kcals + " costs: € " + food.price + "<br />";
     document.getElementById('listToday').appendChild(foodItem);
+    foodItem.setAttribute("id", value);
 
     var buttonRemoveItem = document.createElement('button');
     buttonRemoveItem.innerHTML = 'x';
