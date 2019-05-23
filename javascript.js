@@ -133,6 +133,14 @@ let barChart = new Chart(chart, {
                 ticks: {
                     beginAtZero: true,
                     display: false,
+                },
+                gridLines: {
+                    display: false
+                }
+            }],
+            xAxes: [{
+                gridLines: {
+                    display: false
                 }
             }]
         }
