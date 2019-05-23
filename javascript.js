@@ -88,11 +88,11 @@ function addFoodItemToList(value) {
     var buttonRemoveItem = document.createElement('button');
     buttonRemoveItem.innerHTML = 'x';
     buttonRemoveItem.value = value;
-    //buttonRemoveItem.onclick = removeFoodItemFromList(this.value);
+    buttonRemoveItem.onclick = function() {
+        document.getElementById(this.value).outerHTML = "";
+    };
 
     document.getElementById(value).appendChild(buttonRemoveItem);
-
-
 
     totalKcals.push(food.kcals);
     totalFats.push(food.fat);
@@ -119,10 +119,6 @@ function addFoodItemToList(value) {
     }
     updateChart();
 }
-
-function removeElement() {
-    document.getElementById(valueRemove).outerHTML = "";
-};
 
 // Chart
 
