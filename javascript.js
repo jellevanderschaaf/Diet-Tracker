@@ -84,7 +84,7 @@ function addFoodItemToList(value) {
 
     var buttonRemoveItem = document.createElement('button');
     buttonRemoveItem.innerHTML = 'x';
-    document.getElementById('listToday').appendChild(buttonRemoveItem);
+    document.getElementById(value).appendChild(buttonRemoveItem);
 
     document.getElementById("listToday").innerHTML += "<br />";
 
