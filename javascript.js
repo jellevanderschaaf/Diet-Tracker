@@ -76,10 +76,16 @@ var apple = {
 
 function addFoodItemToList(value) {
     var food = eval(value);
-    document.getElementById("listToday").innerHTML += food.name + "<br />" + "fat: " + food.fat + " grams carbs: " + food.carbs + " grams protein: " + food.protein + " grams kcals: " + food.kcals + " costs: € " + food.price + "<br />";
+
+    var foodItem = document.createElement('div');
+    foodItem.innerHTML = food.name + "<br />" + "fat: " + food.fat + " grams carbs: " + food.carbs + " grams protein: " + food.protein + " grams kcals: " + food.kcals + " costs: € " + food.price + "<br />";
+    document.getElementById('listToday').appendChild(foodItem);
+
     var buttonRemoveItem = document.createElement('button');
     buttonRemoveItem.innerHTML = 'x';
     document.getElementById('listToday').appendChild(buttonRemoveItem);
+
+    document.getElementById("listToday").innerHTML += "<br />";
 
 
     totalKcals.push(food.kcals);
