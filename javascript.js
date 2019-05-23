@@ -91,7 +91,7 @@ function addFoodItemToList(value) {
     //buttonRemoveItem.onclick = removeFoodItemFromList(this.value);
 
     document.getElementById(value).appendChild(buttonRemoveItem);
-    document.getElementById("listToday").innerHTML += "<br />";
+
 
 
     totalKcals.push(food.kcals);
@@ -120,9 +120,9 @@ function addFoodItemToList(value) {
     updateChart();
 }
 
-function removeFoodItemFromList() {
-    document.getElementById(valueRemove).style.display = "none";
-}
+function removeElement() {
+    document.getElementById(valueRemove).outerHTML = "";
+};
 
 // Chart
 
