@@ -38,6 +38,13 @@ body {
     line-height: 10px;
 }
 
+.btn-danger {
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    line-height: 0px;
+}
+
 .grid-container {
     display: grid;
     justify-content: center;
@@ -53,7 +60,7 @@ body {
     height: 1200px;
     min-width: 300px;
     background-color: #FFFFFF;
-    border-radius: 15px;
+    border-radius: 5px;
     text-align: center;
     box-shadow: 0 0 10px grey;
     -moz-box-shadow: 0 0 10px grey;

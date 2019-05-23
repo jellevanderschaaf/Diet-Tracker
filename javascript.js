@@ -88,6 +88,7 @@ function addFoodItemToList(value) {
     var buttonRemoveItem = document.createElement('button');
     buttonRemoveItem.innerHTML = 'x';
     buttonRemoveItem.value = value;
+    buttonRemoveItem.setAttribute("class", "btn btn-danger");
     buttonRemoveItem.onclick = function() {
         document.getElementById(this.value).outerHTML = "";
     };
