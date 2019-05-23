@@ -1,5 +1,7 @@
 // Global variables
 
+var valueRemove;
+
 var totalKcals = [];
 var totalFats = [];
 var totalCarbs = [];
@@ -72,10 +74,11 @@ var apple = {
 }
 
 
-// Add Food Items
+// Add and remove Food Items
 
 function addFoodItemToList(value) {
     var food = eval(value);
+    valueRemove = value;
 
     var foodItem = document.createElement('div');
     foodItem.innerHTML = food.name + "<br />" + "fat: " + food.fat + " grams carbs: " + food.carbs + " grams protein: " + food.protein + " grams kcals: " + food.kcals + " costs: € " + food.price + "<br />";
@@ -84,8 +87,10 @@ function addFoodItemToList(value) {
 
     var buttonRemoveItem = document.createElement('button');
     buttonRemoveItem.innerHTML = 'x';
-    document.getElementById(value).appendChild(buttonRemoveItem);
+    buttonRemoveItem.value = value;
+    //buttonRemoveItem.onclick = removeFoodItemFromList(this.value);
 
+    document.getElementById(value).appendChild(buttonRemoveItem);
     document.getElementById("listToday").innerHTML += "<br />";
 
 
@@ -115,6 +120,9 @@ function addFoodItemToList(value) {
     updateChart();
 }
 
+function removeFoodItemFromList() {
+    document.getElementById(valueRemove).style.display = "none";
+}
 
 // Chart
 
