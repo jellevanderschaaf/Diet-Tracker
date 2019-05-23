@@ -1,157 +1,165 @@
 <!doctype html>
 
 <html lang="en">
+
 <head>
 
   <meta charset="utf-8">
   <title>Diet Tracker</title>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
 
-    </head>
-    
-    <body>
-    
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark nav-tabs justify-content-center">
-            <a class="navbar-brand" href="#">Diet Tracker</a>
-            <img src="diet.png" width = 35px height = 35px>
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Calorie Counter</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Elimination Diet</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Statistics</a>
-                </li>    
-              </ul>
-                    <button class="btn btn-success">Login</button>
-                  </div>
-            </div>  
-          </nav>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark nav-tabs justify-content-center">
+    <a class="navbar-brand" href="#">Diet Tracker</a>
+    <img src="diet.png" width=35px height=35px>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Calorie Counter</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Elimination Diet</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Statistics</a>
+      </li>
+    </ul>
+    <button class="btn btn-success">Login</button>
+    </div>
+    </div>
+  </nav>
 
 
-          <div class="grid-container">
-            <div class="grid-item">
-                <br>
-                <h5>Food Items</h5>
-                <hr>
+  <div class="grid-container">
+    <div class="grid-item">
+      <br>
+      <h5>Food Items</h5>
+      <hr>
 
-                <div class="foodList">
+      <div class="foodList">
 
-                <div class="FoodItem">
-                    <div class="FoodItemName">&bull; minced beef</div>
-                    <button class="btn btn-info add" value="mincedBeef" onCLick="addFoodItemToList(this.value)">+</button>
-                </div>
+        <div class="FoodItem">
+          <div class="FoodItemName">&bull; minced beef</div>
+          <button class="btn btn-info add" value="mincedBeef" onCLick="addFoodItemToList(this.value)">+</button>
+        </div>
 
-                <div class="FoodItem">
-                    <div class="FoodItemName">&bull; egg</div>
-                    <button class="btn btn-info add" value="egg" onCLick="addFoodItemToList(this.value)">+</button>
-                </div>
+        <div class="FoodItem">
+          <div class="FoodItemName">&bull; egg</div>
+          <button class="btn btn-info add" value="egg" onCLick="addFoodItemToList(this.value)">+</button>
+        </div>
 
-                <div class="FoodItem">
-                    <div class="FoodItemName">&bull; butter</div>
-                    <button class="btn btn-info add" value="butter" onCLick="addFoodItemToList(this.value)">+</button>
-                </div>  
+        <div class="FoodItem">
+          <div class="FoodItemName">&bull; butter</div>
+          <button class="btn btn-info add" value="butter" onCLick="addFoodItemToList(this.value)">+</button>
+        </div>
 
-                <div class="FoodItem">
-                        <div class="FoodItemName">&bull; chicken legg</div>
-                        <button class="btn btn-info add" value="chickenLegg" onCLick="addFoodItemToList(this.value)">+</button>
-                    </div>  
-          
-                <div class="FoodItem">
-                        <div class="FoodItemName">&bull; mackerel</div>
-                        <button class="btn btn-info add" value="mackerel" onCLick="addFoodItemToList(this.value)">+</button>
-                    </div>  
-                     
-                <div class="FoodItem">
-                        <div class="FoodItemName">&bull; sardines</div>
-                        <button class="btn btn-info add" value="sardines" onCLick="addFoodItemToList(this.value)">+</button>
-                    </div>  
+        <div class="FoodItem">
+          <div class="FoodItemName">&bull; chicken legg</div>
+          <button class="btn btn-info add" value="chickenLegg" onCLick="addFoodItemToList(this.value)">+</button>
+        </div>
 
-                <div class="FoodItem">
-                    <div class="FoodItemName">&bull; shrimps</div>
-                    <button class="btn btn-info add" value="shrimps" onCLick="addFoodItemToList(this.value)"> +</button>
-                    </div>  
-                     
-                <div class="FoodItem">
-                    <div class="FoodItemName">&bull; kefir</div>
-                    <button class="btn btn-info add" value="kefir" onCLick="addFoodItemToList(this.value)">+</button>
-                    </div>  
-          
-                <div class="FoodItem">
-                    <div class="FoodItemName">&bull; almond cake</div>
-                    <button class="btn btn-info add" value="almond cake" onCLick="addFoodItemToList(this.value)">+</button>
-                </div>  
+        <div class="FoodItem">
+          <div class="FoodItemName">&bull; mackerel</div>
+          <button class="btn btn-info add" value="mackerel" onCLick="addFoodItemToList(this.value)">+</button>
+        </div>
 
-                <div class="FoodItem">
-                    <div class="FoodItemName">&bull; apple</div>
-                    <button class="btn btn-info add" value="apple" onCLick="addFoodItemToList(this.value)">+</button>
-                    </div>  
-          
-                <div class="FoodItem">
-                    <div class="FoodItemName" >&bull; blueberries</div>
-                    <button class="btn btn-info add" value="blueberries" onCLick="addFoodItemToList(this.value)">+</button>
-                    </div>  
-          
-                </div>
-                
-                                                                                                 
-            </div>
-            <div class="grid-item">
-                <br>
-                <h5>Date</h5>
-                <hr>
+        <div class="FoodItem">
+          <div class="FoodItemName">&bull; sardines</div>
+          <button class="btn btn-info add" value="sardines" onCLick="addFoodItemToList(this.value)">+</button>
+        </div>
 
-            <div id="listToday"></div>
+        <div class="FoodItem">
+          <div class="FoodItemName">&bull; shrimps</div>
+          <button class="btn btn-info add" value="shrimps" onCLick="addFoodItemToList(this.value)"> +</button>
+        </div>
 
-            </div>
-            <div class="grid-item">
-                <br>
-                <h5>Totals</h5>
-                <hr>
+        <div class="FoodItem">
+          <div class="FoodItemName">&bull; kefir</div>
+          <button class="btn btn-info add" value="kefir" onCLick="addFoodItemToList(this.value)">+</button>
+        </div>
 
-            <div class="totalsContainer"> 
-            <div class="totalsLabels">Kcals:</div>
-            <div id="totalKcal" class="totals"></div>
-            </div>  
-            <div class="totalsContainer">
-            <div class="totalsLabels">Fat:</div>
-            <div id="totalFats" class="totals"></div>
-            </div>  
-            <div class="totalsContainer">
-            <div class="totalsLabels">Carbs:</div>
-            <div id="totalCarbs" class="totals"></div>
-            </div>  
-            <div class="totalsContainer">
-            <div class="totalsLabels">Protein:</div>
-            <div id="totalProtein" class="totals"></div>
-            </div>  
-            <div class="totalsContainer">
-            <div class="totalsLabels">Costs:</div>
-            <div id="totalCosts" class="totals"></div>
-            </div>  
+        <div class="FoodItem">
+          <div class="FoodItemName">&bull; almond cake</div>
+          <button class="btn btn-info add" value="almond cake" onCLick="addFoodItemToList(this.value)">+</button>
+        </div>
 
-            <div>
-              <canvas id="chart"></canvas>
-          </div>
+        <div class="FoodItem">
+          <div class="FoodItemName">&bull; apple</div>
+          <button class="btn btn-info add" value="apple" onCLick="addFoodItemToList(this.value)">+</button>
+        </div>
 
-            </div>
-
-        
-          </div>
+        <div class="FoodItem">
+          <div class="FoodItemName">&bull; blueberries</div>
+          <button class="btn btn-info add" value="blueberries" onCLick="addFoodItemToList(this.value)">+</button>
+        </div>
 
       </div>
-       
-    
-      <script type="text/javascript" src="javascript.js"></script>
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    </body>
+
+    </div>
+    <div class="grid-item">
+      <br>
+      <h5>Date</h5>
+      <hr>
+
+      <div id="listToday"></div>
+
+    </div>
+    <div class="grid-item">
+      <br>
+      <h5>Totals</h5>
+      <hr>
+
+      <div class="totalsContainer">
+        <div class="totalsLabels">Kcals:</div>
+        <div id="totalKcal" class="totals"></div>
+      </div>
+      <div class="totalsContainer">
+        <div class="totalsLabels">Fat:</div>
+        <div id="totalFats" class="totals"></div>
+      </div>
+      <div class="totalsContainer">
+        <div class="totalsLabels">Carbs:</div>
+        <div id="totalCarbs" class="totals"></div>
+      </div>
+      <div class="totalsContainer">
+        <div class="totalsLabels">Protein:</div>
+        <div id="totalProtein" class="totals"></div>
+      </div>
+      <div class="totalsContainer">
+        <div class="totalsLabels">Costs:</div>
+        <div id="totalCosts" class="totals"></div>
+      </div>
+
+      <div>
+        <canvas id="chart"></canvas>
+      </div>
+
+    </div>
+
+
+  </div>
+
+  </div>
+
+
+  <script type="text/javascript" src="javascript.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+</body>
 
 </html>
