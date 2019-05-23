@@ -77,6 +77,10 @@ var apple = {
 function addFoodItemToList(value) {
     var food = eval(value);
     document.getElementById("listToday").innerHTML += food.name + "<br />" + "fat: " + food.fat + " grams carbs: " + food.carbs + " grams protein: " + food.protein + " grams kcals: " + food.kcals + " costs: € " + food.price + "<br />";
+    var buttonRemoveItem = document.createElement('button');
+    buttonRemoveItem.innerHTML = 'x';
+    document.getElementById('listToday').appendChild(buttonRemoveItem);
+
 
     totalKcals.push(food.kcals);
     totalFats.push(food.fat);
