@@ -130,6 +130,7 @@ let barChart = new Chart(chart, {
         },
         scales: {
             yAxes: [{
+                display: false,
                 ticks: {
                     beginAtZero: true,
                     display: false,
