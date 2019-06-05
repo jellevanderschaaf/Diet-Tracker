@@ -1,7 +1,5 @@
 // Global variables
 
-test
-
 var valueRemove;
 
 var totalKcals = [];
@@ -16,8 +14,20 @@ var totalCarbsSum;
 var totalProteinSum;
 var totalCostsSum;
 
+class FoodItem {
+    constructor(name, fat, carbs, protein, kcals, price) {
+        this.name = name;
+        this.fat = fat;
+        this.carbs = carbs;
+        this.protein = protein;
+        this.kcals = kcals;
+        this.price = price;
+    }
+}
 
-// Food Items objects
+
+/* Food Items objects
+
 
 var mincedBeef = {
     name: "minced beef (600 grams)",
@@ -74,7 +84,7 @@ var apple = {
     price: 0.12,
 
 }
-
+*/
 
 // Add and remove Food Items
 
