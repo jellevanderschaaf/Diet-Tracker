@@ -1,5 +1,7 @@
 // Global variables
 
+test
+
 var valueRemove;
 
 var totalKcals = [];
