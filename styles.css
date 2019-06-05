@@ -40,6 +40,8 @@ body {
 
 .btn-secondary {
     margin-bottom: 10px;
+    height: 30px;
+    line-height: 10px;
     background-color: white;
     color: black;
 }
@@ -114,4 +116,10 @@ body {
 
 .hidden {
     display: none;
+}
+
+.formFoodItem {
+    width: 150px;
+    margin: auto;
+    margin-bottom: 5px;
 }

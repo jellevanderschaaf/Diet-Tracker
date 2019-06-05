@@ -43,15 +43,21 @@
             <h5>Food Items</h5>
             <hr>
 
-            <button class="btn btn-secondary" onClick="createFoodItem()">Create new Food Item</button>
+            <button class="btn btn-secondary" onClick="createFoodItem()">New Food Item</button>
 
             <div id="createFoodItem" class="hidden">
-                <input type="text"><br>
-                <input type="text"><br>
-                <input type="text"><br>
-                <input type="text"><br>
-                <input type="text"><br>
-                <input type="text"><br>
+                <form>
+                    <div class="form-group">
+                        <input id="name" type="text" class="form-control form-control-sm formFoodItem" placeholder="Name">
+                        <input id="fat" type="text" class="form-control form-control-sm formFoodItem" placeholder="Fat">
+                        <input id="carbs" type="text" class="form-control form-control-sm formFoodItem" placeholder="Carbs">
+                        <input id="protein" type="text" class="form-control form-control-sm formFoodItem" placeholder="Protein">
+                        <input id="kcals" type="text" class="form-control form-control-sm formFoodItem" placeholder="Kcals">
+                        <input id="price" type="text" class="form-control form-control-sm formFoodItem" placeholder="Price">
+                        <button class="btn btn-secondary" onClick="createFoodItem()">Cancel</button>
+                        <button class="btn btn-secondary" onClick="createFoodItem()">Create</button>
+                    </div>
+                </form>
             </div>
 
 
