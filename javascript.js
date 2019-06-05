@@ -14,6 +14,8 @@ var totalCarbsSum;
 var totalProteinSum;
 var totalCostsSum;
 
+// Food Items objects
+
 class FoodItem {
     constructor(name, fat, carbs, protein, kcals, price) {
         this.name = name;
@@ -25,66 +27,14 @@ class FoodItem {
     }
 }
 
-
-/* Food Items objects
-
-
-var mincedBeef = {
-    name: "minced beef (600 grams)",
-    fat: 72,
-    carbs: 1.8,
-    protein: 120,
-    kcals: 1140,
-    price: 6.4,
-};
-
-var egg = {
-    name: "egg (1x)",
-    fat: 6.7,
-    carbs: 0.9,
-    protein: 7.7,
-    kcals: 95,
-    price: 0.164,
-};
-
-var butter = {
-    name: "butter (100 grams)",
-    fat: 82.5,
-    carbs: 0.7,
-    protein: 0.7,
-    kcals: 748,
-    price: 1.196,
-};
-
-var chickenLegg = {
-    name: "chicken legg (300 grams)",
-    fat: 39,
-    carbs: 0,
-    protein: 54,
-    kcals: 570,
-    price: 1.22,
-};
+var mincedBeef = new FoodItem('minced beef (600 grams)', 72, 1.8, 120, 1140, 6.4);
+var egg = new FoodItem('egg (1x)', 6.7, 0.9, 7.7, 95, 0.164);
+var butter = new FoodItem('butter (100 grams)', 82.5, 0.7, 0.7, 748, 1.196);
+var chickenLegg = new FoodItem('chicken legg (300 grams)', 39, 0, 54, 570, 1.22);
+var mackerel = new FoodItem('mackerel (350 grams)', 63, 0, 77, 875, 3.32);
+var apple = new FoodItem('apple (100 grams)', 0, 12, 0.4, 54, 0.12);
 
 
-var mackerel = {
-    name: "mackerel (350 grams)",
-    fat: 63,
-    carbs: 0,
-    protein: 77,
-    kcals: 875,
-    price: 3.32,
-};
-
-var apple = {
-    name: "apple (100 grams)",
-    fat: 0,
-    carbs: 12,
-    protein: 0.4,
-    kcals: 54,
-    price: 0.12,
-
-}
-*/
 
 // Add and remove Food Items
 
