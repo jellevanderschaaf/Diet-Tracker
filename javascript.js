@@ -34,6 +34,11 @@ var chickenLegg = new FoodItem('chicken legg (300 grams)', 39, 0, 54, 570, 1.22)
 var mackerel = new FoodItem('mackerel (350 grams)', 63, 0, 77, 875, 3.32);
 var apple = new FoodItem('apple (100 grams)', 0, 12, 0.4, 54, 0.12);
 
+// Create new Food Item
+
+function createFoodItem() {
+    document.getElementById("createFoodItem").classList.remove('hidden');
+}
 
 
 // Add and remove Food Items

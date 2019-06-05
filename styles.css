@@ -38,6 +38,12 @@ body {
     line-height: 10px;
 }
 
+.btn-secondary {
+    margin-bottom: 10px;
+    background-color: white;
+    color: black;
+}
+
 .btn-danger {
     width: 20px;
     height: 20px;
@@ -104,4 +110,8 @@ body {
 
 .chartjs-render-monitor {
     padding-top: 20px;
+}
+
+.hidden {
+    display: none;
 }
