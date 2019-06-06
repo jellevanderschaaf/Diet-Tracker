@@ -57,8 +57,17 @@ function createItem() {
     entryPrice = document.getElementById('price').value
 
     var newFoodItem = document.createElement('div');
-    newFoodItem.innerHTML = entryName;
+    newFoodItem.innerHTML = "&bull; " + entryName;
+    newFoodItem.setAttribute("class", "FoodItem");
     document.getElementById("test").appendChild(newFoodItem);
+    newFoodItem.setAttribute("id", entryName);
+
+    var newFoodItemAddButton = document.createElement('button');
+    newFoodItemAddButton.innerHTML = '+';
+    newFoodItemAddButton.value = entryName;
+    newFoodItemAddButton.setAttribute("class", "btn btn-info add");
+    newFoodItemAddButton.onclick = "addFoodItemToList(this.value)";
+    document.getElementById(entryName).appendChild(newFoodItemAddButton);
 
 }
 
