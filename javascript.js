@@ -61,6 +61,11 @@ function create() {
     console.log(entryName, entryFat, entryCarbs, entryProtein, entryKcals, entryPrice);
 }
 
+function cancel() {
+    document.getElementById('foodForm').reset();
+    document.getElementById("createFoodItem").classList.add('hidden');
+}
+
 // Add and remove Food Items
 
 function addFoodItemToList(value) {
