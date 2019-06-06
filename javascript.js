@@ -43,14 +43,12 @@ var entryProtein;
 var entryKcals;
 var entryPrice;
 
-console.log(entryName, entryFat, entryCarbs, entryProtein, entryKcals, entryPrice);
-
-
 function createFoodItem() {
     document.getElementById("createFoodItem").classList.remove('hidden');
 }
 
-function create() {
+function createItem() {
+
     entryName = document.getElementById('name').value
     entryFat = document.getElementById('fat').value
     entryCarbs = document.getElementById('carbs').value
@@ -58,7 +56,10 @@ function create() {
     entryKcals = document.getElementById('kcals').value
     entryPrice = document.getElementById('price').value
 
-    console.log(entryName, entryFat, entryCarbs, entryProtein, entryKcals, entryPrice);
+    var newFoodItem = document.createElement('div');
+    newFoodItem.innerHTML = entryName;
+    document.getElementById("test").appendChild(newFoodItem);
+
 }
 
 function cancel() {
