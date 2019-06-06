@@ -36,10 +36,30 @@ var apple = new FoodItem('apple (100 grams)', 0, 12, 0.4, 54, 0.12);
 
 // Create new Food Item
 
+var entryName;
+var entryFat;
+var entryCarbs;
+var entryProtein;
+var entryKcals;
+var entryPrice;
+
+console.log(entryName, entryFat, entryCarbs, entryProtein, entryKcals, entryPrice);
+
+
 function createFoodItem() {
     document.getElementById("createFoodItem").classList.remove('hidden');
 }
 
+function create() {
+    entryName = document.getElementById('name').value
+    entryFat = document.getElementById('fat').value
+    entryCarbs = document.getElementById('carbs').value
+    entryProtein = document.getElementById('protein').value
+    entryKcals = document.getElementById('kcals').value
+    entryPrice = document.getElementById('price').value
+
+    console.log(entryName, entryFat, entryCarbs, entryProtein, entryKcals, entryPrice);
+}
 
 // Add and remove Food Items
 
