@@ -60,7 +60,12 @@ function createItem() {
     var entryProtein = Number(document.getElementById('protein').value);
     var entryKcals = Number(document.getElementById('kcals').value);
     var entryPrice = Number(document.getElementById('price').value);
+    var id = idCounter + 1;
+    updateIdCounter();
 
+    function updateIdCounter() {
+        idCounter = idCounter + 1;
+    }
 
     newFoodItem(id, entryName, entryFat, entryCarbs, entryProtein, entryKcals, entryPrice);
     console.log(foodItems);
@@ -70,11 +75,16 @@ function createItem() {
     newFoodItem2.innerHTML = "&bull; " + entryName;
     newFoodItem2.setAttribute("class", "FoodItem");
     document.getElementById("test").appendChild(newFoodItem2);
+
+    // check if this works with space
+
     newFoodItem2.setAttribute("id", entryName);
+
+    //    
 
     var newFoodItemAddButton = document.createElement('button');
     newFoodItemAddButton.innerHTML = '+';
-    newFoodItemAddButton.value = entryName;
+    newFoodItemAddButton.value = id;
     newFoodItemAddButton.setAttribute("class", "btn btn-info add");
 
     newFoodItemAddButton.onclick = function() {
