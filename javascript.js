@@ -42,7 +42,7 @@ newFoodItem(1, 'egg', 6.7, 0.9, 7.7, 95, 0.164);
 newFoodItem(2, 'butter', 82.5, 0.7, 0.7, 748, 1.196);
 newFoodItem(3, 'chicken legg', 39, 0, 54, 570, 1.22);
 newFoodItem(4, 'mackerel', 63, 0, 77, 875, 3.32);
-newFoodItem(5, 'apple', 0, 12, 0.4, 54, 0.12);
+newFoodItem(9, 'apple', 0, 12, 0.4, 54, 0.12);
 
 console.log(foodItems[0].name);
 
