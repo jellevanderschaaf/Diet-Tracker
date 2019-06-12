@@ -34,12 +34,12 @@ I want to:
 	- [ ] Add an on hover effect when hovering over an item, showing the delete and edit buttons.
 	- [ ] While editing, display an input field to update the the amount of the listed food item.
 	- [ ] Create a second database that logs the daily food intake.
-	- [ ] Add a save button on the bottom part of the added food items to store the data in the database.
+	- [ ] Add a save button at the bottom part of the added food items to store the data in the database.
 	- [ ] Add a vertical scroll bar in case the listed items exceed the screen estate.
 	- [ ] Add a weight section, logging weight at two different times of the day, for example morning and evening.
 	- [ ] Add a drag and drop function to this section in order to let the user sort the added food items.
 	- [ ] Implement overall styling improvements, creating a clean and practical look.
-- [ ] Totals section
+- [ ] Totals section:
 	- [ ] Implement overall styling improvements, creating a clean and practical look.
 - [ ] Overall styling:
 	- [ ] Implement overall styling improvements, creating a clean and practical look.
@@ -47,7 +47,7 @@ I want to:
 	- [ ] Make the body of the website responsive. 
 
 
-Furthur plans:
+Further plans:
 
 - [ ] Create a login option, personalised space.
 - [ ] Adapt the website to a smartphone environment.
