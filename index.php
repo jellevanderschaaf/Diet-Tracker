@@ -1,7 +1,13 @@
+<?php
+
+include('application.php');
+
+?>
 <!DOCTYPE html>
     <head>
         <meta charset="UTF-8" />
         <title>Diet Tracker</title>
+        <link rel="icon" type="image/png" href="diet.png">
         <link rel="stylesheet" type="text/css" href="styles.css" />
     </head>
     <body>
@@ -13,7 +19,10 @@
                 <li><a href="/">Statistics</a></li>
             </ul>
             <div class="user">
-                <a href="/">Login</a>
+                <form action="" method="post">
+                    <input type="hidden" name="action" value="clear" />
+                    <input type="submit" class="submit" value="Clear session" />
+                </form>
             </div>
         </div>
         <div class="section section-body">
@@ -26,6 +35,7 @@
                     <form action="" method="post" class="create-form">
                         <div class="form">
                             <div class="fields">
+                                <input type="hidden" name="action" value="create" />
                                 <input type="text" class="text" name="name" value="" placeholder="Name" />
                                 <input type="text" class="text" name="fat" value="" placeholder="Fat" />
                                 <input type="text" class="text" name="carbs" value="" placeholder="Carbs" />
@@ -41,17 +51,11 @@
                     </form>
                     <form action="" method="post">
                         <div class="form">
+                            <input type="hidden" name="action" value="select" />
                             <ul class="selection-list">
-                                <li><span>Minced beef</span> <button value="1">+</button></li>
-                                <li><span>Egg</span> <button value="2">+</button></li>
-                                <li><span>Butter</span> <button value="3">+</button></li>
-                                <li><span>Chicken legg</span> <button value="3">+</button></li>
-                                <li><span>Mackerel</span> <button value="3">+</button></li>
-                                <li><span>Sardines</span> <button value="3">+</button></li>
-                                <li><span>Kefir</span> <button value="3">+</button></li>
-                                <li><span>Almond cake</span> <button value="3">+</button></li>
-                                <li><span>Apple</span> <button value="3">+</button></li>
-                                <li><span>Blueberries</span> <button value="3">+</button></li>
+                                <?php foreach($data['items'] as $index => $item):?>
+                                <li><span><?=$item[0];?></span> <button name="item" value="<?=$index;?>">+</button></li>
+                                <?php endforeach;?>
                             </ul>
                         </div>
                     </form>
@@ -60,21 +64,22 @@
                     <h1>Date</h1>
                     <form action="" method="post">
                         <div class="form form-selection">
+                            <input type="hidden" name="action" value="remove" />
+                            <?php foreach($data['selection'] as $item => $count):?>
                             <div class="item">
-                                <div class="name">Lorem</div>
-                                <div class="statistics">fat: 72 grams carbs: 1.8 grams protein: 120 grams kcals: 1140 costs: € 6.4</div>
-                                <button value="1">x</button>
+                                <div class="name"><?=$data['items'][$item][0];?></div>
+                                <div class="statistics">
+                                fat: <?=$data['items'][$item][1];?> grams 
+                                carbs: <?=$data['items'][$item][2];?> grams 
+                                protein: <?=$data['items'][$item][3];?> grams 
+                                kcals: <?=$data['items'][$item][4];?>  
+                                costs: € <?=$data['items'][$item][5];?>
+                                </div>
+                                <?php for($i=0;$i<$count;$i++):?>
+                                    <button name="item" value="<?=$item;?>">x</button>
+                                <?php endfor;?>
                             </div>     
-                            <div class="item">
-                                <div class="name">Ipsum</div>
-                                <div class="statistics">fat: 6.7 grams carbs: 0.9 grams protein: 7.7 grams kcals: 95 costs: € 0.164</div>
-                                <button value="2">x</button>
-                            </div> 
-                            <div class="item">
-                                <div class="name">Dolor</div>
-                                <div class="statistics">fat: 82.5 grams carbs: 0.7 grams protein: 0.7 grams kcals: 748 costs: € 1.196</div>
-                                <button value="3">x</button>
-                            </div>                                                                                    
+                            <?php endforeach;?>                                                                                
                         </div>
                     </form>
                 </div>
@@ -83,30 +88,30 @@
                     <table class="statistics">
                         <tr>
                             <th>Kcals</th>
-                            <td>1983</td>
+                            <td><?=($x = $totals['kcals']) ? $x : '';?></td>
                         </tr>
                         <tr>
                             <th>Fat</th>
-                            <td>161.2</td>
+                            <td><?=($x = $totals['fat']) ? $x : '';?></td>
                         </tr>
                         <tr>
                             <th>Carbs</th>
-                            <td>3.4</td>
+                            <td><?=($x = $totals['carbs']) ? $x : '';?></td>
                         </tr>
                         <tr>
                             <th>Protein</th>
-                            <td>128.4</td>
+                            <td><?=($x = $totals['protein']) ? $x : '';?></td>
                         </tr>
                         <tr>
                             <th>Costs</th>
-                            <td>€ 7.76</td>
+                            <td><?=($x = $totals['costs']) ? '€ '.$x : '';?></td>
                         </tr>
                     </table>
                     <table class="graph">
                         <tr>
-                            <td><div class="bar bar-a" style="height: 55px;">&nbsp;</div></td>
-                            <td><div class="bar bar-b" style="height: 1px;">&nbsp;</div></td>
-                            <td><div class="bar bar-c" style="height: 65px;">&nbsp;</div></td>
+                            <td><div class="bar bar-a" style="height: <?=$graph['fat'];?>px;">&nbsp;</div></td>
+                            <td><div class="bar bar-b" style="height: <?=$graph['carbs'];?>px;">&nbsp;</div></td>
+                            <td><div class="bar bar-c" style="height: <?=$graph['protein'];?>px;">&nbsp;</div></td>
                         </tr>
                         <tr>
                             <th>Fat</th>

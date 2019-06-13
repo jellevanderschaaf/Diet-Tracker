@@ -160,8 +160,10 @@ form button
     padding: 0 1.5em;
 }
 
-.section-header .user a
+.section-header .user input
 {
+    border: none;
+    color: #fff;
     display: inline-block;
     background: #28a745;
     padding: .5em 1em;
