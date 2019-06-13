@@ -1,0 +1,129 @@
+body {
+    background-color: #F0F4F7;
+}
+
+.navbar {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 50px;
+}
+
+.navbar-brand {
+    padding-left: 10px;
+}
+
+.navbar-nav {
+    padding-right: 345px;
+    color: white;
+}
+
+.nav-item {
+    padding: 0px 5px 0px 5px;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.input {
+    border-radius: 5px;
+    height: 30px;
+    width: 120px;
+    display: inline-block;
+}
+
+.btn-success {
+    margin-left: 5px;
+    height: 30px;
+    line-height: 10px;
+}
+
+.btn-secondary {
+    margin-bottom: 10px;
+    height: 30px;
+    line-height: 10px;
+    background-color: white;
+    color: black;
+}
+
+.btn-danger {
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    line-height: 0px;
+}
+
+.grid-container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 300px 600px 300px;
+    grid-gap: 15px;
+    height: 1200px;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.grid-item {
+    height: 1200px;
+    min-width: 300px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 0 10px grey;
+    -moz-box-shadow: 0 0 10px grey;
+    -webkit-box-shadow: 0 0 10px grey;
+    -o-box-shadow: 0 0 10px grey;
+}
+
+.foodList {
+    padding: 10px 10px 10px 10px;
+    text-align: left;
+}
+
+.foodItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.FoodItemName {
+    width: 100px;
+    display: inline-block;
+    font-size: 15px;
+}
+
+.add {
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    line-height: 0px;
+    float: right;
+}
+
+.totalsLabels {
+    display: inline-block;
+}
+
+.totals {
+    width: 50px;
+    display: inline-block;
+}
+
+.chartjs-render-monitor {
+    padding-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.formFoodItem {
+    width: 150px;
+    margin: auto;
+    margin-bottom: 5px;
+}
