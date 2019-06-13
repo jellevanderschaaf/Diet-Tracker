@@ -6,7 +6,7 @@
     </head>
     <body>
         <div class="section section-header">
-            <div class="logo"><img src="diet.png" alt="" />Diet Tracker</div>
+            <div class="logo"><img src="diet.png" alt="" /><h1>Diet Tracker</h1></div>
             <ul class="navigation">
                 <li><a href="/">Calorie counter</a></li>
                 <li><a href="/">Elimination diet</a></li>
@@ -18,11 +18,12 @@
         </div>
         <div class="section section-body">
             <div class="container">
+            <div class="flex">
                 <div class="column column-1-4">
                     <h1>Food items</h1>
-                    <label for="create">New food item</label>
+                    <label for="create" class="control">New food item</label>
                     <input type="checkbox" class="hidden" name="create" id="create" />
-                    <form action="" method="post">
+                    <form action="" method="post" class="create-form">
                         <div class="form">
                             <div class="fields">
                                 <input type="text" class="text" name="name" value="" placeholder="Name" />
@@ -40,7 +41,7 @@
                     </form>
                     <form action="" method="post">
                         <div class="form">
-                            <ul>
+                            <ul class="selection-list">
                                 <li><span>Minced beef</span> <button value="1">+</button></li>
                                 <li><span>Egg</span> <button value="2">+</button></li>
                                 <li><span>Butter</span> <button value="3">+</button></li>
@@ -58,7 +59,7 @@
                 <div class="column column-1-2">
                     <h1>Date</h1>
                     <form action="" method="post">
-                        <div class="form">
+                        <div class="form form-selection">
                             <div class="item">
                                 <div class="name">Lorem</div>
                                 <div class="statistics">fat: 72 grams carbs: 1.8 grams protein: 120 grams kcals: 1140 costs: € 6.4</div>
@@ -103,9 +104,9 @@
                     </table>
                     <table class="graph">
                         <tr>
-                            <td><div class="bar pct-57">&nbsp;</div></td>
-                            <td><div class="bar pct-0">&nbsp;</div></td>
-                            <td><div class="bar pct-43">&nbsp;</div></td>
+                            <td><div class="bar bar-a" style="height: 55px;">&nbsp;</div></td>
+                            <td><div class="bar bar-b" style="height: 1px;">&nbsp;</div></td>
+                            <td><div class="bar bar-c" style="height: 65px;">&nbsp;</div></td>
                         </tr>
                         <tr>
                             <th>Fat</th>
@@ -115,6 +116,10 @@
                     </table>
                 </div>                                    
             </div>
+            </div>
+        </div>
+        <div class="section section-footer container">
+            &copy; 2019
         </div>
     </body>
 </html>
