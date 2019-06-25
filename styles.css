@@ -150,9 +150,8 @@ table {
 
 .modal_box {
     background-color: white;
-    margin: 10% auto;
-    width: 400px;
-    height: 300px;
+    margin: 7% auto;
+    width: 300px;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px grey;
