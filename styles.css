@@ -127,3 +127,12 @@ body {
     margin: auto;
     margin-bottom: 5px;
 }
+
+td {
+    width: 33.33%;
+}
+
+table {
+    margin-top: 12px;
+    margin-bottom: 6px;
+}
