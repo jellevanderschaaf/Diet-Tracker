@@ -89,7 +89,7 @@ if (isset($_POST['create_button'])) {
     <!-- modals -->
 
     <div class="_modal">
-        <div>
+        <div class="modal_box">
         <p>test</p>
         </div>
     </div>

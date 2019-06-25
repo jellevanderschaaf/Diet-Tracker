@@ -145,5 +145,14 @@ table {
     height: 100%;
     width: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal_box {
+    background-color: white;
+    margin: 10% auto;
+    width: 400px;
+    height: 300px;
+    padding: 20px;
+    border-radius: 5px;
 }
