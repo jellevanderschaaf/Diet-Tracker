@@ -50,6 +50,7 @@ console.log(foodItems[0].name);
 
 function createFoodItem() {
     document.getElementById("createFoodItem").classList.remove('hidden');
+    document.getElementById("modalOne").classList.remove('hidden');
 }
 
 function createItem() {
