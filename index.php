@@ -85,6 +85,19 @@ if (isset($_POST['create_button'])) {
     </nav>
 
 
+ 
+    <!-- modals -->
+
+    <div>
+        <div>
+        <p>test</p>
+        </div>
+    </div>
+
+    <!-- -->
+
+    
+
     <div class="grid-container">
         <div class="grid-item">
             <br>
