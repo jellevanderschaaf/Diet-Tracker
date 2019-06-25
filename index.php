@@ -88,7 +88,7 @@ if (isset($_POST['create_button'])) {
  
     <!-- modals -->
 
-    <div>
+    <div class="_modal">
         <div>
         <p>test</p>
         </div>
@@ -96,7 +96,7 @@ if (isset($_POST['create_button'])) {
 
     <!-- -->
 
-    
+
 
     <div class="grid-container">
         <div class="grid-item">
