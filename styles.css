@@ -138,6 +138,7 @@ table {
 }
 
 ._modal {
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -155,4 +156,8 @@ table {
     height: 300px;
     padding: 20px;
     border-radius: 5px;
+    box-shadow: 0 0 10px grey;
+    -moz-box-shadow: 0 0 10px grey;
+    -webkit-box-shadow: 0 0 10px grey;
+    -o-box-shadow: 0 0 10px grey;
 }
