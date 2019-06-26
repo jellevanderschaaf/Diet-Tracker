@@ -242,7 +242,10 @@ var id;
 var deletethis = 'delete';
 
 
-$(".delete-this").on('click', function(){
+
+
+
+$(".delete-thistest").on('click', function(){
 
 var id = $(this).attr('rel');
 
