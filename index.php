@@ -91,7 +91,7 @@ if (isset($_POST['create_button'])) {
     <!-- modals -->
 
     <div id="modalOne" class="_modal hidden">
-        <div class="modal_box">
+        <div class="modal_box_one">
         <div id="createFoodItem">
                 <form id="foodForm" action="index.php" method="POST">
                     <div class="form-group">
@@ -141,6 +141,15 @@ if (isset($_POST['create_button'])) {
             </div>
         </div>
     </div>
+
+
+    <div id="modalTwo" class="_modal hidden">
+        <div class="modal_box_two">
+            <p>test</p>
+</div>
+</div>
+
+
 
     <!-- -->
 
@@ -242,8 +251,11 @@ var id;
 var deletethis = 'delete';
 
 
+$(".delete-this").on('click', function(){
 
+document.getElementById("modalTwo").classList.remove('hidden');
 
+});
 
 $(".delete-thistest").on('click', function(){
 
@@ -255,7 +267,12 @@ $.post("delete.php", {id: id, deletethis: deletethis}, function(data){
 
 $(this).parents('tr').remove();
 
-});    
+});  
+
+
+
+
+   
 
 });
 

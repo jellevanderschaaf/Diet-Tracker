@@ -68,9 +68,10 @@ body {
 
 .grid-container {
     display: grid;
+    box-sizing: border-box;
     height: 100%;
     justify-content: center;
-    grid-template-columns: 300px 600px 300px;
+    grid-template-columns: 310px 600px 310px;
     grid-gap: 15px;
     width: 100%;
     padding-top: 65px;
@@ -157,10 +158,23 @@ table {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-.modal_box {
+.modal_box_one {
     background-color: white;
     text-align: center;
     margin: 7% auto;
+    width: 300px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px grey;
+    -moz-box-shadow: 0 0 10px grey;
+    -webkit-box-shadow: 0 0 10px grey;
+    -o-box-shadow: 0 0 10px grey;
+}
+
+.modal_box_two {
+    background-color: white;
+    text-align: center;
+    margin: 17% auto;
     width: 300px;
     padding: 20px;
     border-radius: 5px;
