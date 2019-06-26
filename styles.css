@@ -160,3 +160,11 @@ table {
     -webkit-box-shadow: 0 0 10px grey;
     -o-box-shadow: 0 0 10px grey;
 }
+
+a {
+    color: lightgrey;
+}
+
+a:hover {
+    color: grey;
+}
