@@ -90,7 +90,7 @@ if (isset($_POST['create_button'])) {
 
     <div id="modalOne" class="_modal hidden">
         <div class="modal_box">
-        <div id="createFoodItem" class="hidden">
+        <div id="createFoodItem">
                 <form id="foodForm" action="index.php" method="POST">
                     <div class="form-group">
 

@@ -49,7 +49,7 @@ console.log(foodItems[0].name);
 // Create food items
 
 function createFoodItem() {
-    document.getElementById("createFoodItem").classList.remove('hidden');
+
     document.getElementById("modalOne").classList.remove('hidden');
 }
 
@@ -98,7 +98,7 @@ function createItem() {
 
 function cancel() {
     document.getElementById('foodForm').reset();
-    document.getElementById("createFoodItem").classList.add('hidden');
+    document.getElementById("modalOne").classList.add('hidden');
 }
 
 
