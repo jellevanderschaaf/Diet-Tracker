@@ -150,8 +150,6 @@ if (isset($_POST['create_button'])) {
             <h5>Food Items</h5>
             <hr>
 
-            <button class="btn btn-secondary" onClick="createFoodItem()">New Food Item</button>
-
             <div id="createFoodItem" class="hidden">
                 <form id="foodForm" action="index.php" method="POST">
                     <div class="form-group">
@@ -198,6 +196,8 @@ if (isset($_POST['create_button'])) {
                     <button type="submit" name="create_button" value="Create" class="btn btn-secondary" onClick="createItem()">Create</button>
                 </form>
 
+
+                
             </div>
 
 
@@ -229,9 +229,11 @@ if (isset($_POST['create_button'])) {
                   
                     ?>
 </table>
-               
+          
+
             </div>
 
+            <button class="btn btn-secondary" onClick="createFoodItem()">New Food Item</button>
 
         </div>
         <div class="grid-item">
