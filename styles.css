@@ -150,6 +150,7 @@ table {
 
 .modal_box {
     background-color: white;
+    text-align: center;
     margin: 7% auto;
     width: 300px;
     padding: 20px;
