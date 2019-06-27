@@ -181,7 +181,7 @@ if (isset($_POST['create_button'])) {
                             echo "<td style='width:60%'>{$row['fname']}</td>";
                             echo "<td style='width:15%'><a rel='".$row['id']."' class='delete-this' href='javascript:void(0)'><i class='material-icons'>delete_outline</i></a></td>";
                             echo "<td style='width:15%'><a rel='".$row['id']."' class='edit-this' href='javascript:void(0)'><i class='material-icons'>edit</i></a></td>";
-                            echo "<td style='width:10%'><a rel='".$row['id']."' class='add-this' href='javascript:void(0)'><i class='material-icons'>add_circle_outline</i></a></td>";
+                            echo "<td style='width:10%'><a rel='".$row['id']."' class='add-this' data-toggle='tooltip' data-placement='top' title='Add' href='javascript:void(0)'><i class='material-icons'>add_circle_outline</i></a></td>";
 
                             echo "</tr>";
                             
@@ -248,6 +248,10 @@ if (isset($_POST['create_button'])) {
     <script>
 
 $(document).ready(function(){
+
+    $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
 
 var id;
 var deletethis = 'delete';
