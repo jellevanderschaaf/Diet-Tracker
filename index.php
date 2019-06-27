@@ -145,7 +145,9 @@ if (isset($_POST['create_button'])) {
 
     <div id="modalTwo" class="_modal hidden">
         <div class="modal_box_two">
-            <p>test</p>
+            <p>Are you sure you want to delete this food item?</p>
+            <button class="btn btn-secondary" onClick="cancel()">Yes</button>
+            <button class="btn btn-secondary" onClick="cancel2()">No</button>
 </div>
 </div>
 

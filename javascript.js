@@ -101,6 +101,10 @@ function cancel() {
     document.getElementById("modalOne").classList.add('hidden');
 }
 
+function cancel2() {
+    document.getElementById("modalTwo").classList.add('hidden');
+}
+
 
 // Add and remove Food Items
 
