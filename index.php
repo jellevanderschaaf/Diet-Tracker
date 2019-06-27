@@ -268,7 +268,7 @@ $(".delete-this2").on('click', function(){
     
 });
 
-//$(this).parents('tr').remove();
+$("a[rel=" + id + "]").parents('tr').remove();
 
 });  
 
