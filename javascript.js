@@ -106,7 +106,7 @@ function cancel2() {
 }
 
 
-// Add and remove Food Items
+/* Add and remove Food Items
 
 function addFoodItemToList(value) {
     console.log(value);
@@ -202,4 +202,4 @@ function updateChart() {
     barChart.update();
 };
 
-//
+*/

@@ -147,7 +147,7 @@ if (isset($_POST['create_button'])) {
         <div class="modal_box_two">
             <p>Are you sure you want to delete this food item?</p>
             <button class="btn btn-secondary" onClick="cancel2()">Cancel</button>
-            <button class="btn btn-secondary" onClick="cancel2()">Delete</button>
+            <button class="btn btn-secondary delete-this2">Delete</button>
 </div>
 </div>
 
@@ -256,18 +256,19 @@ var deletethis = 'delete';
 $(".delete-this").on('click', function(){
 
 document.getElementById("modalTwo").classList.remove('hidden');
+id = $(this).attr('rel');
+console.log(id);
 
 });
 
-$(".delete-thistest").on('click', function(){
+$(".delete-this2").on('click', function(){
 
-var id = $(this).attr('rel');
-
-$.post("delete.php", {id: id, deletethis: deletethis}, function(data){
+    document.getElementById("modalTwo").classList.add('hidden');
+    $.post("delete.php", {id: id, deletethis: deletethis}, function(data){
     
 });
 
-$(this).parents('tr').remove();
+//$(this).parents('tr').remove();
 
 });  
 
