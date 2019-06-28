@@ -204,6 +204,9 @@ a:hover {
     position: absolute;
     bottom: 5px;
     left: 15px;
+    color: white;
+    background-color: #5C6165;
+    border-color: #5C6165;
 }
 
 .grid-item-left {
