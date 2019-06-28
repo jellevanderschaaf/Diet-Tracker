@@ -176,12 +176,12 @@ if (isset($_POST['create_button'])) {
                         while ($row = $result->fetch_assoc()) {
 
 
-                            echo "<tr>";
+                            echo "<tr class='food-list-tr'>";
 
-                            echo "<td style='width:60%'>{$row['fname']}</td>";
-                            echo "<td style='width:15%'><a rel='".$row['id']."' class='delete-this' href='javascript:void(0)'><i class='material-icons'>delete_outline</i></a></td>";
-                            echo "<td style='width:15%'><a rel='".$row['id']."' class='edit-this' href='javascript:void(0)'><i class='material-icons'>edit</i></a></td>";
-                            echo "<td style='width:10%'><a rel='".$row['id']."' class='add-this' data-toggle='tooltip' data-placement='top' title='Add' href='javascript:void(0)'><i class='material-icons'>add_circle_outline</i></a></td>";
+                            echo "<td width:60%'>{$row['fname']}</td>";
+                            echo "<td style='width:15%' data-toggle='tooltip' data-placement='top' title='Delete'><a rel='".$row['id']."' class='delete-this'  href='javascript:void(0)'><i class='material-icons'>delete_outline</i></a></td>";
+                            echo "<td style='width:15%' data-toggle='tooltip' data-placement='top' title='Edit'><a rel='".$row['id']."' class='edit-this' href='javascript:void(0)'><i class='material-icons'>edit</i></a></td>";
+                            echo "<td style='width:10%' data-toggle='tooltip' data-placement='top' title='Add'><a rel='".$row['id']."' class='add-this align-middle'  href='javascript:void(0)'><i class='material-icons'>add_circle_outline</i></a></td>";
 
                             echo "</tr>";
                             
@@ -194,7 +194,6 @@ if (isset($_POST['create_button'])) {
                     ?>
             </table>
           
-
             </div>
 
             <button class="btn btn-secondary" onClick="createFoodItem()">New Food Item</button>

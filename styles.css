@@ -191,3 +191,8 @@ a {
 a:hover {
     color: grey;
 }
+
+.material-icons {
+    position: relative;
+    top: 2px;
+}
