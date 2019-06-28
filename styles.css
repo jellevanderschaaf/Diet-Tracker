@@ -93,6 +93,7 @@ body {
 .foodList {
     padding: 0px 15px 20px 15px;
     text-align: left;
+    height: 80%;
 }
 
 .foodItem {
@@ -195,4 +196,16 @@ a:hover {
 .material-icons {
     position: relative;
     top: 2px;
+    left: 8px;
+}
+
+.new-food-item {
+    width: 90%;
+    position: absolute;
+    bottom: 5px;
+    left: 15px;
+}
+
+.grid-item-left {
+    position: relative;
 }
