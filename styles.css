@@ -76,6 +76,7 @@ body {
     width: 100%;
     padding-top: 65px;
     padding-bottom: 15px;
+    position: relative;
 }
 
 .grid-item {
@@ -93,10 +94,8 @@ body {
 .foodList {
     padding: 0px 15px 20px 15px;
     text-align: left;
-    height: 75%;
+    height: calc(100% - 140px);
     overflow-y: scroll;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
 }
 
 .foodItem {
