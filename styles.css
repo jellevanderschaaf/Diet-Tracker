@@ -99,11 +99,6 @@ body {
     -ms-overflow-style: none;
 }
 
-.foodlist::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-}
-
 .foodItem {
     display: flex;
     flex-direction: row;
@@ -220,3 +215,25 @@ a:hover {
 .grid-item-left {
     position: relative;
 }
+
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+ ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/* scrollbar */
