@@ -92,7 +92,7 @@ body {
 }
 
 .foodList {
-    padding: 0px 15px 20px 15px;
+    padding: 0px 7px 20px 15px;
     text-align: left;
     height: calc(100% - 140px);
     overflow-y: scroll;
@@ -104,18 +104,20 @@ body {
     justify-content: left;
 }
 
-.FoodItemName {
-    width: 100px;
-    display: inline-block;
-    font-size: 15px;
+.td-left {
+    background-color: #f7f7f7;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
-.add {
-    width: 20px;
-    height: 20px;
-    padding: 0px;
-    line-height: 0px;
-    float: right;
+.td-center {
+    background-color: #f7f7f7;
+}
+
+.td-right {
+    background-color: #f7f7f7;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .totalsLabels {
@@ -145,10 +147,7 @@ td {
     width: 33.33%;
 }
 
-table {
-    margin-top: 12px;
-    margin-bottom: 6px;
-}
+.foodlist-table {}
 
 ._modal {
     position: fixed;
@@ -198,7 +197,6 @@ a:hover {
 .material-icons {
     position: relative;
     top: 2px;
-    left: 8px;
 }
 
 .food-list-tr:hover .icon-on-hover {
