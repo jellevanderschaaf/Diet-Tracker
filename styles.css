@@ -104,17 +104,17 @@ body {
     justify-content: left;
 }
 
-.td-left {
+.food-list-tr:hover .td-left {
     background-color: #f7f7f7;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
 
-.td-center {
+.food-list-tr:hover .td-center {
     background-color: #f7f7f7;
 }
 
-.td-right {
+.food-list-tr:hover .td-right {
     background-color: #f7f7f7;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -146,8 +146,6 @@ body {
 td {
     width: 33.33%;
 }
-
-.foodlist-table {}
 
 ._modal {
     position: fixed;
