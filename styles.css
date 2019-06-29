@@ -201,6 +201,14 @@ a:hover {
     left: 8px;
 }
 
+.food-list-tr:hover .icon-on-hover {
+    display: block;
+}
+
+.icon-on-hover {
+    display: none;
+}
+
 .new-food-item {
     width: 90%;
     position: absolute;
@@ -227,7 +235,7 @@ a:hover {
 }
 
  ::-webkit-scrollbar-thumb {
-    background: white;
+    background: lightgrey;
     border-radius: 5px;
 }
 

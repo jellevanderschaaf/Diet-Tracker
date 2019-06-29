@@ -167,8 +167,7 @@ if (isset($_POST['create_button'])) {
             <div id="test" class="foodList">
 
             <table style='width:100%'>
-                    <tr>
-                    </tr>
+                    
                     <?php
                     $sql = "SELECT id, fname from food_items";
                     $result = $con->query($sql);
@@ -179,9 +178,9 @@ if (isset($_POST['create_button'])) {
                             echo "<tr class='food-list-tr'>";
 
                             echo "<td width:60%'>{$row['fname']}</td>";
-                            echo "<td style='width:15%' data-toggle='tooltip' data-placement='top' title='Delete'><a rel='".$row['id']."' class='delete-this'  href='javascript:void(0)'><i class='material-icons'>delete_outline</i></a></td>";
-                            echo "<td style='width:15%' data-toggle='tooltip' data-placement='top' title='Edit'><a rel='".$row['id']."' class='edit-this' href='javascript:void(0)'><i class='material-icons'>edit</i></a></td>";
-                            echo "<td style='width:10%' data-toggle='tooltip' data-placement='top' title='Add'><a rel='".$row['id']."' class='add-this align-middle'  href='javascript:void(0)'><i class='material-icons'>add_circle_outline</i></a></td>";
+                            echo "<td style='width:15%' data-toggle='tooltip' data-placement='top' title='Delete'><a rel='".$row['id']."' class='delete-this icon-on-hover'  href='javascript:void(0)'><i class='material-icons'>delete_outline</i></a></td>";
+                            echo "<td style='width:15%' data-toggle='tooltip' data-placement='top' title='Edit'><a rel='".$row['id']."' class='edit-this icon-on-hover' href='javascript:void(0)'><i class='material-icons'>edit</i></a></td>";
+                            echo "<td style='width:10%' data-toggle='tooltip' data-placement='top' title='Add'><a rel='".$row['id']."' class='add-this'  href='javascript:void(0)'><i class='material-icons'>add_circle_outline</i></a></td>";
 
                             echo "</tr>";
                             
