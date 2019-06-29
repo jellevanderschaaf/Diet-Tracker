@@ -7,7 +7,7 @@ body {
     height: 100%;
 }
 
-.navbar {
+.myNavbar {
     position: absolute;
     left: 0px;
     top: 0px;
@@ -18,9 +18,16 @@ body {
     background-color: #343a40;
 }
 
+.navbarImage {
+    margin-left: 15px;
+    margin-bottom: 20px;
+}
+
 .navbar-brand {
-    padding-left: 10px;
     color: white;
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: 25px;
 }
 
 h5 {
@@ -46,6 +53,8 @@ hr {
     height: 30px;
     line-height: 10px;
     float: right;
+    margin-top: 10px;
+    margin-right: 15px;
 }
 
 .btn-secondary {
