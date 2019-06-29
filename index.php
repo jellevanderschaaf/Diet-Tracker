@@ -147,7 +147,7 @@ if (isset($_POST['create_button'])) {
 
     <div class="grid-container">
         <div class="grid-item grid-item-left">
-            <br>
+            
             <h5>Food Items</h5>
             <hr>
 
@@ -187,7 +187,6 @@ if (isset($_POST['create_button'])) {
 
         </div>
         <div class="grid-item">
-            <br>
             <h5>Date</h5>
             <hr>
 
@@ -195,7 +194,6 @@ if (isset($_POST['create_button'])) {
 
         </div>
         <div class="grid-item">
-            <br>
             <h5>Totals</h5>
             <hr>
 
