@@ -66,21 +66,9 @@ if (isset($_POST['create_button'])) {
 
 <body>
 
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark nav-tabs justify-content-center">
+    <nav class="navbar">
         <img src="diet.png" width=35px height=35px>
         <a class="navbar-brand" href="#">Diet Tracker</a>
-
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Calorie Counter</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Elimination Diet</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Statistics</a>
-            </li>
-        </ul>
         <button class="btn btn-success">Login</button>
         </div>
         </div>
