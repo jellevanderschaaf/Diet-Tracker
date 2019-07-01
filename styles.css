@@ -168,7 +168,7 @@ hr {
 }
 
 .hidden {
-    display: none;
+    visibility: hidden;
 }
 
 .formFoodItem {
@@ -183,6 +183,7 @@ td {
 
 ._modal {
     position: fixed;
+    display: flex;
     z-index: 1;
     left: 0;
     top: 0;
@@ -195,7 +196,7 @@ td {
 .modal_box_one {
     background-color: white;
     text-align: center;
-    margin: 7% auto;
+    margin: auto auto;
     width: 300px;
     padding: 20px;
     border-radius: 5px;
@@ -208,7 +209,7 @@ td {
 .modal_box_two {
     background-color: white;
     text-align: center;
-    margin: 17% auto;
+    margin: auto auto;
     width: 300px;
     padding: 20px;
     border-radius: 5px;
