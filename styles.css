@@ -281,9 +281,11 @@ a:hover {
     display: inline-block;
     padding-left: 100px;
     padding-right: 100px;
+    font-family: 'Stylish', sans-serif;
 }
 
 .fa-angle-left {
+    color: #5C6165;
     font-size: 28px;
     position: relative;
     top: 3px;
@@ -291,6 +293,7 @@ a:hover {
 
 .fa-angle-right {
     display: inline-block;
+    color: #5C6165;
     font-size: 28px;
     position: relative;
     top: 3px;

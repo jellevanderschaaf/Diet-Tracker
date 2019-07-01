@@ -189,8 +189,10 @@ if (isset($_POST['create_button'])) {
 
         </div>
         <div class="grid-item">
-        <i class="fa fa-angle-left"></i></i><h5 class="date">Date</h5><i class="fa fa-angle-right"></i>
+        <i class="fa fa-angle-left"></i></i><h5 class="date"><?php echo date('d-m-Y');?></h5><i class="fa fa-angle-right"></i>
             <hr>
+
+            
 
             <div id="listToday"></div>
 
