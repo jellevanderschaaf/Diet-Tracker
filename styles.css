@@ -279,10 +279,19 @@ a:hover {
 
 .date {
     display: inline-block;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.fa-angle-left {
+    font-size: 28px;
+    position: relative;
+    top: 3px;
 }
 
 .fa-angle-right {
     display: inline-block;
+    font-size: 28px;
+    position: relative;
+    top: 3px;
 }
