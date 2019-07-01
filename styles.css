@@ -189,7 +189,7 @@ td {
     height: 100%;
     width: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.15);
 }
 
 .modal_box_one {
@@ -276,3 +276,13 @@ a:hover {
 
 
 /* scrollbar */
+
+.date {
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.fa-angle-right {
+    display: inline-block;
+}
