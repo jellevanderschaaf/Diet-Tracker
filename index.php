@@ -294,6 +294,7 @@ $(document).ready(function(){
 
 var id;
 var deletethis = 'delete';
+var editthis = 'edit';
 
 
 $(".delete-this").on('click', function(){
@@ -319,6 +320,9 @@ $(".edit-this").on('click', function(){
 
     document.getElementById("modalThree").classList.remove('hidden');
     id = $(this).attr('rel');
+    $.post("edit.php", {id: id, editthis: editthis}, function(data){
+    
+});
 
 })
 
