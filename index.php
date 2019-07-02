@@ -324,6 +324,8 @@ $(".edit-this").on('click', function(){
     
 });
 
+console.log(id);
+
 })
 
    
