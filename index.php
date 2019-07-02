@@ -318,7 +318,7 @@ $("a[rel=" + id + "]").parents('tr').remove();
 $(".edit-this").on('click', function(){
 
     document.getElementById("modalThree").classList.remove('hidden');
-    
+    id = $(this).attr('rel');
 
 })
 
