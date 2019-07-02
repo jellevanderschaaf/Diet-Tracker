@@ -300,7 +300,6 @@ $(".delete-this").on('click', function(){
 
 document.getElementById("modalTwo").classList.remove('hidden');
 id = $(this).attr('rel');
-console.log(id);
 
 });
 
