@@ -21,7 +21,13 @@ die("QUERY FAILED" . mysqli_error($con));
 ?>
 
 <script>
-var test = <?php echo $row['fname'] ; ?>;
+var script_id = <?php echo $row['id']; ?>;
+var script_fname = <?php echo $row['fname']; ?>;
+var script_fat = <?php echo $row['fat']; ?>;
+var script_carbs = <?php echo $row['carbs']; ?>;
+var script_protein = <?php echo $row['protein']; ?>; 
+var script_kcals = <?php echo $row['kcals']; ?>;
+var script_price = <?php echo $row['price']; ?>;
 
 console.log(test);
     </script>
