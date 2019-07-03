@@ -29,5 +29,4 @@ var script_protein = <?php echo $row['protein']; ?>;
 var script_kcals = <?php echo $row['kcals']; ?>;
 var script_price = <?php echo $row['price']; ?>;
 
-console.log(test);
     </script>
