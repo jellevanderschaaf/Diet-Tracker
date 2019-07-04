@@ -1,4 +1,4 @@
-<?php include("db.php");
+<?php include("db.php"); 
 
 $fname = "";
 $fat =  "";
@@ -7,9 +7,7 @@ $protein = "";
 $kcals = "";
 $price = "";
 $error_array = "";
-
 if (isset($_POST['create_button'])) {
-
     $fname = strip_tags($_POST['reg_fname']);
     $_SESSION['reg_fname'] = $fname;
     $fat = strip_tags($_POST['reg_fat']);
@@ -22,23 +20,16 @@ if (isset($_POST['create_button'])) {
     $_SESSION['reg_kcals'] = $kcals;
     $price = strip_tags($_POST['reg_price']);
     $_SESSION['reg_price'] = $price;
-
     // Check if fname already exists
-
     $query = "SELECT count(*) as allcount FROM food_items WHERE fname='" . $fname . "'";
     $result = mysqli_query($con, $query);
     $row = mysqli_fetch_array($result);
     $allcount = $row['allcount'];
-
     // insert
-
     if (empty($error_array) && $allcount == 0) {
-
         $query = mysqli_query($con, "INSERT INTO food_items VALUES ('', '$fname', '$fat', '$carbs', '$protein', '$kcals', '$price')");
     }
 }
-
-
 ?>
 
 
@@ -214,18 +205,13 @@ if (isset($_POST['create_button'])) {
                     $result = $con->query($sql);
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
-
-
                             echo "<tr class='food-list-tr'>";
-
                             echo "<td width:75%' class='td-left'>{$row['fname']}</td> ";
                             echo "<td style='width:10%' class='td-center' data-toggle='tooltip' data-placement='top' title='Delete'><a rel='".$row['id']."' class='delete-this icon-on-hover'  href='javascript:void(0)'><i class='material-icons'>delete_outline</i></a></td>";
                             echo "<td style='width:10%' class='td-center' data-toggle='tooltip' data-placement='top' title='Edit'><a rel='".$row['id']."' class='edit-this icon-on-hover' href='javascript:void(0)'><i class='material-icons'>edit</i></a></td>";
                             echo "<td style='width:5%' class='td-right' data-toggle='tooltip' data-placement='top' title='Add'><a rel='".$row['id']."' class='add-this'  href='javascript:void(0)'><i class='material-icons'>add_circle_outline</i></a></td>";
-
                             echo "</tr>";
                             
-
                             
                         }
                     }
@@ -284,10 +270,11 @@ if (isset($_POST['create_button'])) {
 
     </div>
 
+   <?php include("edit.php"); 
+?>
+
     <script>
-
 $(document).ready(function(){
-
     $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
@@ -310,32 +297,28 @@ $(".delete-this2").on('click', function(){
     $.post("delete.php", {id: id, deletethis: deletethis}, function(data){
     
 });
-
 $("a[rel=" + id + "]").parents('tr').remove();
 
 });  
-
-
 $(".edit-this").on('click', function(){
-
     document.getElementById("modalThree").classList.remove('hidden');
     id = $(this).attr('rel');
-    document.getElementById("editFname").value = script_fname;
-
+   
     $.post("edit.php", {id: id, editthis: editthis}, function(data){
-    
+        
+        var xx = data;
+        console.log(xx);
 });
 
 
+
 })
-
    
-
 });
 
 </script>
 
-    
+
 </body>
 
 </html>
