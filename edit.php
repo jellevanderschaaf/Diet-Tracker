@@ -19,11 +19,7 @@ die("QUERY FAILED" . mysqli_error($con));
 
 }
 
-$testtest = $row['fname'];
-
+echo json_encode($row)
 
 ?>
 
-
-
-<?php echo json_encode($row) ?>
