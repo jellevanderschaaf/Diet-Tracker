@@ -308,8 +308,14 @@ $(".edit-this").on('click', function(){
     $.post("edit.php", {id: id, editthis: editthis}, function(data){
         
         var formData = JSON.parse(data);
-        console.log(formData);
-    
+        
+        document.getElementById('editFname').value = formData.fname;
+        document.getElementById('editFat').value = formData.fat;
+        document.getElementById('editCarbs').value = formData.carbs;
+        document.getElementById('editProtein').value = formData.protein;
+        document.getElementById('editKcals').value = formData.kcals;
+        document.getElementById('editPrice').value = formData.price;
+      
 });
 
 
