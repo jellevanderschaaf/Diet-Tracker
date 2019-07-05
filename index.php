@@ -206,7 +206,7 @@ if (isset($_POST['create_button'])) {
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr class='food-list-tr'>";
-                            echo "<td width:75%' class='td-left'>{$row['fname']}</td> ";
+                            echo "<td width:75%' class='td-left' rel='".$row['id']."'>{$row['fname']}</td> ";
                             echo "<td style='width:10%' class='td-center' data-toggle='tooltip' data-placement='top' title='Delete'><a rel='".$row['id']."' class='delete-this icon-on-hover'  href='javascript:void(0)'><i class='material-icons'>delete_outline</i></a></td>";
                             echo "<td style='width:10%' class='td-center' data-toggle='tooltip' data-placement='top' title='Edit'><a rel='".$row['id']."' class='edit-this icon-on-hover' href='javascript:void(0)'><i class='material-icons'>edit</i></a></td>";
                             echo "<td style='width:5%' class='td-right' data-toggle='tooltip' data-placement='top' title='Add'><a rel='".$row['id']."' class='add-this'  href='javascript:void(0)'><i class='material-icons'>add_circle_outline</i></a></td>";
@@ -332,8 +332,10 @@ var edit_price = document.getElementById('editPrice').value;
 
     $.post("update.php", {id: id, edit_fname: edit_fname, edit_fat: edit_fat,  edit_carbs: edit_carbs, edit_protein: edit_protein, edit_kcals: edit_kcals, edit_price: edit_price, updatethis: updatethis}, function(data){
 
-
     });
+
+    $(".td-left[rel=" + id + "]").html(edit_fname);
+
 });
 
 
