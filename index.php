@@ -233,14 +233,14 @@ if (isset($_POST['create_button'])) {
             <div id="listToday"></div>
 
 
-            <table style="width:100%">
+            <table class="mainTable" style="width:100%">
   <tr>
-    <th style='width:24%'>Food Item</th>
-    <th style='width:14%'>Fat</th>
-    <th style='width:14%'>Carbs</th>
-    <th style='width:14%'>Protein</th>
-    <th style='width:14%'>Costs</th>
-    <th style='width:14%'>Kcals</th>
+    <th style='width:34%'>Food Item</th>
+    <th style='width:12%'>Fat</th>
+    <th style='width:12%'>Carbs</th>
+    <th style='width:12%'>Protein</th>
+    <th style='width:12%'>Costs</th>
+    <th style='width:12%'>Kcals</th>
   </tr>
 </table>
 
