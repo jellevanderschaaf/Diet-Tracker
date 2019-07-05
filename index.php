@@ -270,8 +270,7 @@ if (isset($_POST['create_button'])) {
 
     </div>
 
-   <?php include("edit.php"); 
-?>
+ 
 
     <script>
 $(document).ready(function(){
@@ -297,17 +296,20 @@ $(".delete-this2").on('click', function(){
     $.post("delete.php", {id: id, deletethis: deletethis}, function(data){
     
 });
+
 $("a[rel=" + id + "]").parents('tr').remove();
 
 });  
+
 $(".edit-this").on('click', function(){
     document.getElementById("modalThree").classList.remove('hidden');
     id = $(this).attr('rel');
    
     $.post("edit.php", {id: id, editthis: editthis}, function(data){
         
-        var xx = data;
-        console.log(xx);
+        var formData = JSON.parse(data);
+        console.log(formData);
+    
 });
 
 
