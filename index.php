@@ -323,7 +323,6 @@ $(".edit-this").on('click', function(){
 $(".update-this").on('click', function(){
     document.getElementById("modalThree").classList.add('hidden');
     
-
 var edit_fname = document.getElementById('editFname').value; 
 var edit_fat = document.getElementById('editFat').value;
 var edit_carbs = document.getElementById('editCarbs').value;
@@ -331,11 +330,9 @@ var edit_protein = document.getElementById('editProtein').value;
 var edit_kcals = document.getElementById('editKcals').value;
 var edit_price = document.getElementById('editPrice').value;
 
-console.log(edit_fname, edit_fat, edit_carbs, edit_protein, edit_kcals, edit_price);
+    $.post("update.php", {id: id, edit_fname: edit_fname, edit_fat: edit_fat,  edit_carbs: edit_carbs, edit_protein: edit_protein, edit_kcals: edit_kcals, edit_price: edit_price, updatethis: updatethis}, function(data){
 
-    $.post("update.php", {id: id, edit_fname: edit_fname, updatethis: updatethis}, function(data){
-console.log(id);
-console.log(edit_fname);
+
     });
 });
 
