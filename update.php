@@ -1,6 +1,6 @@
 <?php include("db.php");
 
-if (isset($_POST['update_button'])) {
+if (isset($_POST['updatethis'])) {
 
     $edit_fname = strip_tags($_POST['reg_edit_fname']);
     $_SESSION['reg_edit_fname'] = $fname;

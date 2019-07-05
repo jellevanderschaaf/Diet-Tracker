@@ -136,7 +136,7 @@ if (isset($_POST['create_button'])) {
 <div id="modalThree" class="_modal hidden">
         <div class="modal_box_one">
         <div id="createFoodItem">
-                <form id="foodForm" action="index.php" method="POST">
+                <form id="foodForm" action="update.php" method="POST">
                     <div class="form-group">
 
                         <table style="width:100%">
@@ -318,10 +318,18 @@ $(".edit-this").on('click', function(){
       
 });
 
-
-
-})
+});
    
+$(".update-this").on('click', function(){
+    document.getElementById("modalThree").classList.add('hidden');
+    id = $(this).attr('rel');
+
+    $.post("update.php", {id: id, updatethis: updatethis}, function(data){
+
+    });
+});
+
+
 });
 
 </script>
