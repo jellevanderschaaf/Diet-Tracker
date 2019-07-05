@@ -3,11 +3,9 @@
 if(isset($_POST['editthis'])) {
 
     $id = mysqli_real_escape_string($con, $_POST['id']);
-
     $id = $_POST['id'];
 
 $query = "SELECT * FROM food_items WHERE id = $id";
-
 $result_set = mysqli_query($con, $query);
 $row = mysqli_fetch_array($result_set);
     

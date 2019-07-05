@@ -136,7 +136,7 @@ if (isset($_POST['create_button'])) {
 <div id="modalThree" class="_modal hidden">
         <div class="modal_box_one">
         <div id="createFoodItem">
-                <form id="foodForm" action="update.php" method="POST">
+                <div id="foodForm">
                     <div class="form-group">
 
                         <table style="width:100%">
@@ -178,8 +178,8 @@ if (isset($_POST['create_button'])) {
                         piece <input type="radio" name="piece" value="piece">
                     </div>
                     <button class="btn btn-secondary" onClick="cancel()">Cancel</button>
-                    <button type="submit" name="update_button" value="Update" class="btn btn-secondary" onClick="updateItem()">Update</button>
-                </form>
+                    <button class="btn btn-secondary update-this">Update</button>
+</div>
 
             </div>
         </div>
@@ -211,7 +211,6 @@ if (isset($_POST['create_button'])) {
                             echo "<td style='width:10%' class='td-center' data-toggle='tooltip' data-placement='top' title='Edit'><a rel='".$row['id']."' class='edit-this icon-on-hover' href='javascript:void(0)'><i class='material-icons'>edit</i></a></td>";
                             echo "<td style='width:5%' class='td-right' data-toggle='tooltip' data-placement='top' title='Add'><a rel='".$row['id']."' class='add-this'  href='javascript:void(0)'><i class='material-icons'>add_circle_outline</i></a></td>";
                             echo "</tr>";
-                            
                             
                         }
                     }
@@ -281,6 +280,7 @@ $(document).ready(function(){
 var id;
 var deletethis = 'delete';
 var editthis = 'edit';
+var updatethis = 'update';
 
 
 $(".delete-this").on('click', function(){
@@ -323,6 +323,15 @@ $(".edit-this").on('click', function(){
 $(".update-this").on('click', function(){
     document.getElementById("modalThree").classList.add('hidden');
     id = $(this).attr('rel');
+
+var edit_fname = document.getElementById('editFname').value; 
+var edit_fat = document.getElementById('editFat').value;
+var edit_carbs = document.getElementById('editCarbs').value;
+var edit_protein = document.getElementById('editProtein').value;
+var edit_kcals = document.getElementById('editKcals').value;
+var edit_price = document.getElementById('editPrice').value;
+
+console.log(edit_fname, edit_fat, edit_carbs, edit_protein, edit_kcals, edit_price);
 
     $.post("update.php", {id: id, updatethis: updatethis}, function(data){
 
