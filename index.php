@@ -177,7 +177,7 @@ if (isset($_POST['create_button'])) {
                         100 grams <input type="radio" name="grams" value="grams"><br>
                         piece <input type="radio" name="piece" value="piece">
                     </div>
-                    <button class="btn btn-secondary" onClick="cancel()">Cancel</button>
+                    <button class="btn btn-secondary" onClick="cancel3()">Cancel</button>
                     <button class="btn btn-secondary update-this">Update</button>
 </div>
 
