@@ -142,32 +142,32 @@ if (isset($_POST['create_button'])) {
                         <table style="width:100%">
                             <tr>
                                 <td>name</td>
-                                <td><input id="editFname" name="reg_fname" type="text" class="form-control form-control-sm formFoodItem" required></td>
+                                <td><input id="editFname" name="reg_edit_fname" type="text" class="form-control form-control-sm formFoodItem" required></td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <td>fat</td>
-                                <td><input id="editFat" name="reg_fat" type="text" class="form-control form-control-sm formFoodItem" required></td>
+                                <td><input id="editFat" name="reg_edit_fat" type="text" class="form-control form-control-sm formFoodItem" required></td>
                                 <td>grams</td>
                             </tr>
                             <tr>
                                 <td>carbs</td>
-                                <td><input id="editCarbs" name="reg_carbs" type="text" class="form-control form-control-sm formFoodItem" required></td>
+                                <td><input id="editCarbs" name="reg_edit_carbs" type="text" class="form-control form-control-sm formFoodItem" required></td>
                                 <td>grams</td>
                             </tr>
                             <tr>
                                 <td>protein</td>
-                                <td><input id="editProtein" name="reg_protein" type="text" class="form-control form-control-sm formFoodItem" required></td>
+                                <td><input id="editProtein" name="reg_edit_protein" type="text" class="form-control form-control-sm formFoodItem" required></td>
                                 <td>grams</td>
                             </tr>
                             <tr>
                                 <td>kcals</td>
-                                <td><input id="editKcals" name="reg_kcals" type="text" class="form-control form-control-sm formFoodItem" required></td>
+                                <td><input id="editKcals" name="reg_edit_kcals" type="text" class="form-control form-control-sm formFoodItem" required></td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <td>price: €</td>
-                                <td><input id="editPrice" name="reg_price" type="text" class="form-control form-control-sm formFoodItem" required></td>
+                                <td><input id="editPrice" name="reg_edit_price" type="text" class="form-control form-control-sm formFoodItem" required></td>
                                 <td></td>
                             </tr>
 
