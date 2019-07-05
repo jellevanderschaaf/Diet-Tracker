@@ -232,7 +232,25 @@ if (isset($_POST['create_button'])) {
 
             <div id="listToday"></div>
 
+
+            <table style="width:100%">
+  <tr>
+    <th>Food Item</th>
+    <th>Quantity</th> 
+    <th>Fat</th>
+    <th>Carbs</th>
+    <th>Protein</th>
+    <th>Costs</th>
+    <th>Kcals</th>
+  </tr>
+</table>
+
+
+
         </div>
+
+
+
         <div class="grid-item">
             <h5>Totals</h5>
             <hr>
@@ -272,9 +290,13 @@ if (isset($_POST['create_button'])) {
  
 
     <script>
+
 $(document).ready(function(){
+
     $(function () {
+
   $('[data-toggle="tooltip"]').tooltip()
+
 })
 
 var id;
@@ -330,7 +352,7 @@ var edit_protein = document.getElementById('editProtein').value;
 var edit_kcals = document.getElementById('editKcals').value;
 var edit_price = document.getElementById('editPrice').value;
 
-    $.post("update.php", {id: id, edit_fname: edit_fname, edit_fat: edit_fat,  edit_carbs: edit_carbs, edit_protein: edit_protein, edit_kcals: edit_kcals, edit_price: edit_price, updatethis: updatethis}, function(data){
+    $.post("update.php", {id: id, edit_fname: edit_fname, edit_fat: edit_fat, edit_carbs: edit_carbs, edit_protein: edit_protein, edit_kcals: edit_kcals, edit_price: edit_price, updatethis: updatethis}, function(data){
 
     });
 
