@@ -235,13 +235,12 @@ if (isset($_POST['create_button'])) {
 
             <table style="width:100%">
   <tr>
-    <th>Food Item</th>
-    <th>Quantity</th> 
-    <th>Fat</th>
-    <th>Carbs</th>
-    <th>Protein</th>
-    <th>Costs</th>
-    <th>Kcals</th>
+    <th style='width:24%'>Food Item</th>
+    <th style='width:14%'>Fat</th>
+    <th style='width:14%'>Carbs</th>
+    <th style='width:14%'>Protein</th>
+    <th style='width:14%'>Costs</th>
+    <th style='width:14%'>Kcals</th>
   </tr>
 </table>
 
