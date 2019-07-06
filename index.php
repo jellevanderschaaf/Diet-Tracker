@@ -290,7 +290,8 @@ if (isset($_POST['create_button'])) {
                 
 
                 <div class="grid-item-right-sub">
-           
+                <h5 class="headerLeftRight">Statistics</h5>
+            <hr>
 
             
                 </div>
