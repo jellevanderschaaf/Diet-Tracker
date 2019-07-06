@@ -192,14 +192,20 @@ if (isset($_POST['create_button'])) {
     <div class="grid-container">
         <div class="grid-item grid-item-left">
             
-            <h5>Food Items</h5>
+            <h5 class="headerLeftRight">Food Items</h5>
             <hr>
 
             
             <div id="test" class="foodList">
-
+<table>
+            <tr>
+    <th id="tableFood" style='width:33%'>Food</th>
+    <th id="tableDrinks" style='width:33%'>Drinks</th>
+    <th id="tableJunk" style='width:33%'>Junk</th>
+  </tr>
+</table>
             <table class="foodlist-table" style='width:100%'>
-                    
+                   
                     <?php
                     $sql = "SELECT id, fname from food_items";
                     $result = $con->query($sql);
@@ -235,12 +241,12 @@ if (isset($_POST['create_button'])) {
 
             <table class="mainTable" style="width:100%">
   <tr>
-    <th style='width:34%'>Food Item</th>
-    <th style='width:12%'>Fat</th>
-    <th style='width:12%'>Carbs</th>
-    <th style='width:12%'>Protein</th>
-    <th style='width:12%'>Costs</th>
-    <th style='width:12%'>Kcals</th>
+    <th id="tableFoodItem" style='width:34%'>Food Item</th>
+    <th id="tableFat" style='width:12%'>Fat</th>
+    <th id="tableCarbs" style='width:12%'>Carbs</th>
+    <th id="tableProtein" style='width:12%'>Protein</th>
+    <th id="tableCosts" style='width:12%'>Costs</th>
+    <th id="tableKcals" style='width:12%'>Kcals</th>
   </tr>
 </table>
 
@@ -251,7 +257,7 @@ if (isset($_POST['create_button'])) {
 
 
         <div class="grid-item">
-            <h5>Totals</h5>
+            <h5 class="headerLeftRight">Totals</h5>
             <hr>
 
             <div class="totalsContainer">

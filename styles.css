@@ -39,7 +39,7 @@
     
     hr {
         margin: 0;
-        padding-bottom: 15px;
+        padding-bottom: 10px;
     }
     
     .input {
@@ -56,6 +56,7 @@
         float: right;
         margin-top: 10px;
         margin-right: 15px;
+        font-weight: 400;
     }
     
     .btn-secondary {
@@ -118,6 +119,7 @@
     
     .food-list-tr {
         margin-bottom: 3px;
+        height: 15px;
     }
     
     .food-list-tr:hover .td-left {
@@ -313,6 +315,31 @@
     }
     
     .mainTable th {
-        background-color: grey;
+        color: white;
         border-radius: 5px;
+        font-weight: 600;
+    }
+    
+    #tableFoodItem {
+        background-color: #5C6165;
+    }
+    
+    #tableFat {
+        background-color: rgba(250, 147, 28, 0.8);
+    }
+    
+    #tableCarbs {
+        background-color: rgba(236, 59, 66, 0.8);
+    }
+    
+    #tableProtein {
+        background-color: rgba(161, 223, 245, 0.8);
+    }
+    
+    #tableCosts {
+        background-color: #5C6165;
+    }
+    
+    #tableKcals {
+        background-color: #5C6165;
     }
