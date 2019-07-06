@@ -257,7 +257,9 @@ if (isset($_POST['create_button'])) {
 
 
 
-        <div class="grid-item">
+        <div class="grid-item-right">
+
+        <div class="grid-item-right-sub">
             <h5 class="headerLeftRight">Totals</h5>
             <hr>
 
@@ -282,16 +284,22 @@ if (isset($_POST['create_button'])) {
                 <div id="totalCosts" class="totals"></div>
             </div>
 
-            <div>
-                <canvas id="chart"></canvas>
-            </div>
+            
 
         </div>
+                
 
+                <div class="grid-item-right-sub">
+                <h5 class="headerLeftRight">Totals</h5>
+            <hr>
+
+            
+                </div>
+                </div>
 
     </div>
 
-    </div>
+    
 
  
 
