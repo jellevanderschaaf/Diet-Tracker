@@ -389,3 +389,15 @@
         color: white;
         text-align: center;
     }
+    
+    .fa-search {
+        display: flex;
+        float: right;
+        padding-right: 15px;
+        padding-top: 5px;
+    }
+    
+    .headerStatistics {
+        position: absolute;
+        left: 140;
+    }

@@ -293,6 +293,13 @@ if (isset($_POST['create_button'])) {
                 <h5 class="headerLeftRight">Statistics</h5>
             <hr>
 
+            <table class="foodlist-table2" style='width:100%'>
+            <tr>
+    <th id="tableFood" style='width:33%'>Kcals</th>
+    <th id="tableDrinks" style='width:33%'>Weight</th>
+    <th id="tableJunk" style='width:33%'>Costs</th>
+  </tr>
+</table>   
             
                 </div>
                 </div>
