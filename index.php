@@ -290,7 +290,7 @@ if (isset($_POST['create_button'])) {
                 
 
                 <div class="grid-item-right-sub">
-                <h5 class="headerLeftRight">Statistics</h5>
+                <h5 class="headerStatistics">Statistics<i class="fas fa-expand"></i></h5>
             <hr>
 
             <table class="foodlist-table2" style='width:100%'>
@@ -300,7 +300,7 @@ if (isset($_POST['create_button'])) {
     <th id="tableJunk" style='width:33%'>Costs</th>
   </tr>
 </table>   
-            
+
                 </div>
                 </div>
     </div>

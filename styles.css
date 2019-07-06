@@ -390,7 +390,7 @@
         text-align: center;
     }
     
-    .fa-search {
+    .fa-expand {
         display: flex;
         float: right;
         padding-right: 15px;
@@ -398,6 +398,5 @@
     }
     
     .headerStatistics {
-        position: absolute;
-        left: 140;
+        margin-left: 30px;
     }
