@@ -344,13 +344,17 @@
         background-color: #5C6165;
     }
     
+    .foodlist-table2 {
+        border-collapse: separate;
+        border-spacing: 5px;
+        margin-bottom: 10px;
+        padding: 0px 10px 0px 10px;
+    }
+    
     .foodlist-table2 th {
         background-color: #5C6165;
         border-radius: 5px;
+        font-weight: 600;
+        color: white;
+        text-align: center;
     }
-    
-    #tableFood {}
-    
-    #tableDrinks {}
-    
-    #tableJunk {}
