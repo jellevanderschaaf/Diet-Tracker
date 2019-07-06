@@ -102,8 +102,8 @@
     
     .grid-item-right {
         display: grid;
-        grid-template-rows: 50% - 8px 50% - 7px;
-        grid-row-gap: 15px;
+        grid-template-rows: 50% 50%;
+        row-gap: 7.5px;
         height: 100%;
         min-width: 300px;
     }
@@ -116,6 +116,18 @@
         -moz-box-shadow: 0 0 10px grey;
         -webkit-box-shadow: 0 0 10px grey;
         -o-box-shadow: 0 0 10px grey;
+        height: calc(100% - 7.5px);
+    }
+    
+    .grid-item-right-sub-one {
+        background-color: #FFFFFF;
+        border-radius: 5px;
+        text-align: center;
+        box-shadow: 0 0 10px grey;
+        -moz-box-shadow: 0 0 10px grey;
+        -webkit-box-shadow: 0 0 10px grey;
+        -o-box-shadow: 0 0 10px grey;
+        height: calc(100% - 7.5px);
     }
     
     .foodList {

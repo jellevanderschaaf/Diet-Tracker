@@ -259,7 +259,7 @@ if (isset($_POST['create_button'])) {
 
         <div class="grid-item-right">
 
-        <div class="grid-item-right-sub">
+        <div class="grid-item-right-sub-one">
             <h5 class="headerLeftRight">Totals</h5>
             <hr>
 
@@ -290,13 +290,11 @@ if (isset($_POST['create_button'])) {
                 
 
                 <div class="grid-item-right-sub">
-                <h5 class="headerLeftRight">Totals</h5>
-            <hr>
+           
 
             
                 </div>
                 </div>
-
     </div>
 
     
