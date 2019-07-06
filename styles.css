@@ -343,3 +343,14 @@
     #tableKcals {
         background-color: #5C6165;
     }
+    
+    .foodlist-table2 th {
+        background-color: #5C6165;
+        border-radius: 5px;
+    }
+    
+    #tableFood {}
+    
+    #tableDrinks {}
+    
+    #tableJunk {}

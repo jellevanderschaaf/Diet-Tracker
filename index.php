@@ -197,7 +197,7 @@ if (isset($_POST['create_button'])) {
 
             
             <div id="test" class="foodList">
-<table>
+<table class="foodlist-table2" style='width:100%'>
             <tr>
     <th id="tableFood" style='width:33%'>Food</th>
     <th id="tableDrinks" style='width:33%'>Drinks</th>
