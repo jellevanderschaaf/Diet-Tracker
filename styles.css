@@ -423,7 +423,10 @@
     }
     
     .buttonSubmit {
+        display: flex;
         color: white;
         background-color: #5C6165;
         border-color: #5C6165;
+        margin: 0px;
+        float: right;
     }
