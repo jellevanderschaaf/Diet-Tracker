@@ -252,7 +252,11 @@ if (isset($_POST['create_button'])) {
   </tr>
 </table>
 
-
+<div class="inputWeight">
+Morning weight: <input type="text"> 
+Evening weight: <input type="text">
+<button>Submit</button> 
+                </div>
 
         </div>
 
