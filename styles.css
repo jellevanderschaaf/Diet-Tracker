@@ -109,7 +109,7 @@
         min-width: 300px;
     }
     
-    .grid-item-right-sub {
+    .grid-item-right-sub-two {
         background-color: #FFFFFF;
         border-radius: 5px;
         text-align: center;
@@ -118,6 +118,7 @@
         -webkit-box-shadow: 0 0 10px grey;
         -o-box-shadow: 0 0 10px grey;
         height: calc(100% - 7.5px);
+        position: relative;
     }
     
     .grid-item-right-sub-one {
@@ -408,6 +409,11 @@
     }
     
     #chart {
+        position: absolute;
+        bottom: 5px;
+    }
+    
+    #chartTwo {
         position: absolute;
         bottom: 5px;
     }

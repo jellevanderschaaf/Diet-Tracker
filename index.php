@@ -288,7 +288,7 @@ Morning weight: <input type="text" class="form-control form-control-sm inputFiel
         </div>
                 
 
-                <div class="grid-item-right-sub">
+                <div class="grid-item-right-sub-two">
                 <h5 class="headerStatistics">Statistics<i class="fas fa-expand"></i></h5>
             <hr>
 
