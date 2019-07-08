@@ -418,6 +418,10 @@
         bottom: 15px;
     }
     
+    .inputFieldWeight {
+        display: inline-block;
+    }
+    
     .buttonSubmit {
         color: white;
         background-color: #5C6165;
