@@ -98,6 +98,7 @@
         -moz-box-shadow: 0 0 10px grey;
         -webkit-box-shadow: 0 0 10px grey;
         -o-box-shadow: 0 0 10px grey;
+        position: relative;
     }
     
     .grid-item-right {
@@ -409,4 +410,10 @@
     #chart {
         position: absolute;
         bottom: 5px;
+    }
+    
+    .inputWeight {
+        position: absolute;
+        left: 15px;
+        bottom: 15px;
     }
