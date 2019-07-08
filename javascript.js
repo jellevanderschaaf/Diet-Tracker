@@ -110,7 +110,7 @@ function cancel3() {
 }
 
 
-/* Add and remove Food Items
+
 
 function addFoodItemToList(value) {
     console.log(value);
@@ -168,7 +168,11 @@ let barChart = new Chart(chart, {
         labels: ['Fat', 'Carbs', 'Protein'],
         datasets: [{
             label: 'Grams',
-            data: [],
+            data: [
+                120,
+                36,
+                140,
+            ],
             backgroundColor: ['rgba(250, 147, 28, 0.8)', 'rgba(236, 59, 66, 0.8)', 'rgba(161, 223, 245, 0.8)']
         }],
     },
@@ -205,5 +209,3 @@ function updateChart() {
     barChart.data.datasets[0].data = [totalFatsSum, totalCarbsSum, totalProteinSum];
     barChart.update();
 };
-
-*/

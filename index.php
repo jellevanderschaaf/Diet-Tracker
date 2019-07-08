@@ -42,19 +42,20 @@ if (isset($_POST['create_button'])) {
     <meta charset="utf-8">
     <title>Diet Tracker</title>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
     
     
-    <script type="text/javascript" src="javascript.js"></script>
+    
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/ad07c4a8ed.js"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
 </head>
 
 <body>
@@ -272,7 +273,12 @@ if (isset($_POST['create_button'])) {
   </tr>
 </table>
 
-            
+
+<div>
+                <canvas id="chart"></canvas>
+            </div>
+           
+
 
         </div>
                 
@@ -373,6 +379,7 @@ var edit_price = document.getElementById('editPrice').value;
 
 </script>
 
+<script type="text/javascript" src="javascript.js"></script>
 
 </body>
 
