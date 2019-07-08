@@ -263,26 +263,14 @@ if (isset($_POST['create_button'])) {
             <h5 class="headerLeftRight">Totals</h5>
             <hr>
 
-            <div class="totalsContainer">
-                <div class="totalsLabels">Kcals:</div>
-                <div id="totalKcal" class="totals"></div>
-            </div>
-            <div class="totalsContainer">
-                <div class="totalsLabels">Fat:</div>
-                <div id="totalFats" class="totals"></div>
-            </div>
-            <div class="totalsContainer">
-                <div class="totalsLabels">Carbs:</div>
-                <div id="totalCarbs" class="totals"></div>
-            </div>
-            <div class="totalsContainer">
-                <div class="totalsLabels">Protein:</div>
-                <div id="totalProtein" class="totals"></div>
-            </div>
-            <div class="totalsContainer">
-                <div class="totalsLabels">Costs:</div>
-                <div id="totalCosts" class="totals"></div>
-            </div>
+            <table class="totalsTable" style="width:100%">
+  <tr>
+    <td  style='width:25%'>Kcals:</td>
+    <td  style='width:25%'>...</td>
+    <td  style='width:25%'>Costs:</td>
+    <td  style='width:25%'>...</td>
+  </tr>
+</table>
 
             
 
