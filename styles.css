@@ -411,6 +411,7 @@
         position: absolute;
         bottom: 5px;
     }
+    /* weight section */
     
     .inputWeight {
         position: absolute;
@@ -434,3 +435,6 @@
     .inputFields {
         float: left;
     }
+    
+    .inputFieldWeightTwo {}
+    /* weight section end */
