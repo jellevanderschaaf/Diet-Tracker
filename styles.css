@@ -421,6 +421,7 @@
     
     .inputFieldWeight {
         display: inline-block;
+        margin: 0px 2px 0px 2px;
     }
     
     .buttonSubmit {
