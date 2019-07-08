@@ -434,7 +434,6 @@
     
     .inputFields {
         float: left;
+        border-radius: 5px;
     }
-    
-    .inputFieldWeightTwo {}
     /* weight section end */

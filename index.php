@@ -45,8 +45,7 @@ if (isset($_POST['create_button'])) {
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Stylish&display=swap" rel="stylesheet">
     
     
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -300,6 +299,8 @@ Morning weight: <input type="text" class="form-control form-control-sm inputFiel
     <th id="tableJunk" style='width:33%'>Costs</th>
   </tr>
 </table>   
+
+<canvas id="chartTwo"></canvas>
 
                 </div>
                 </div>

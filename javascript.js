@@ -158,7 +158,7 @@ function addFoodItemToList(value) {
     updateChart();
 }
 
-// Chart
+// Chart one
 
 let chart = document.getElementById('chart').getContext('2d');
 
@@ -209,3 +209,50 @@ function updateChart() {
     barChart.data.datasets[0].data = [totalFatsSum, totalCarbsSum, totalProteinSum];
     barChart.update();
 };
+
+// Chart two
+
+let chartTwo = document.getElementById('chartTwo').getContext('2d');
+
+let lineChart = new Chart(chartTwo, {
+    type: 'line',
+    data: {
+        labels: ['Fat', 'Carbs', 'Protein'],
+        datasets: [{
+            label: 'Grams',
+            data: [
+                120,
+                36,
+                140,
+            ],
+            backgroundColor: ['rgba(250, 147, 28, 0.8)', 'rgba(236, 59, 66, 0.8)', 'rgba(161, 223, 245, 0.8)']
+        }],
+    },
+    options: {
+        title: {
+            display: false,
+            text: 'Macros',
+            fontSize: 15,
+        },
+        legend: {
+            display: false
+        },
+        scales: {
+            yAxes: [{
+                display: false,
+                ticks: {
+                    beginAtZero: true,
+                    display: false,
+                },
+                gridLines: {
+                    display: false
+                }
+            }],
+            xAxes: [{
+                gridLines: {
+                    display: false
+                }
+            }]
+        }
+    }
+});
