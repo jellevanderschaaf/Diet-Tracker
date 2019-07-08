@@ -417,3 +417,9 @@
         left: 15px;
         bottom: 15px;
     }
+    
+    .buttonSubmit {
+        color: white;
+        background-color: #5C6165;
+        border-color: #5C6165;
+    }
