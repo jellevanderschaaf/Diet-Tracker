@@ -229,13 +229,15 @@ let lineChart = new Chart(chartTwo, {
                 62.9,
                 63.2,
             ],
-            backgroundColor: ['rgba(161, 223, 245, 0.8)']
+            backgroundColor: ['rgba(161, 223, 245, 0.3)'],
+            borderColor: ['rgba(92, 97, 101, 0.3)'],
+
         }],
     },
     options: {
         title: {
             display: false,
-            text: 'Macros',
+            text: 'Weight',
             fontSize: 15,
         },
         legend: {
