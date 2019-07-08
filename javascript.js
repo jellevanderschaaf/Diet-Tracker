@@ -217,15 +217,19 @@ let chartTwo = document.getElementById('chartTwo').getContext('2d');
 let lineChart = new Chart(chartTwo, {
     type: 'line',
     data: {
-        labels: ['Fat', 'Carbs', 'Protein'],
+        labels: ['02-07', '03-07', '04-07', '05-07', '06-07', '07-07', '08-07'],
         datasets: [{
-            label: 'Grams',
+            label: 'Kg',
             data: [
-                120,
-                36,
-                140,
+                63.7,
+                63.3,
+                63.1,
+                63.5,
+                63.2,
+                62.9,
+                63.2,
             ],
-            backgroundColor: ['rgba(250, 147, 28, 0.8)', 'rgba(236, 59, 66, 0.8)', 'rgba(161, 223, 245, 0.8)']
+            backgroundColor: ['rgba(161, 223, 245, 0.8)']
         }],
     },
     options: {
