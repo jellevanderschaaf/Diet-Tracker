@@ -414,8 +414,8 @@
     
     .inputWeight {
         position: absolute;
-        left: 15px;
         bottom: 15px;
+        padding: 0px 15px 0px 15px;
     }
     
     .inputFieldWeight {
@@ -429,4 +429,8 @@
         border-color: #5C6165;
         margin: 0px;
         float: right;
+    }
+    
+    .inputFields {
+        float: left;
     }
