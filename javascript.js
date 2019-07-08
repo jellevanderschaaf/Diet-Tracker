@@ -245,7 +245,7 @@ let lineChart = new Chart(chartTwo, {
             yAxes: [{
                 display: false,
                 ticks: {
-                    beginAtZero: true,
+                    beginAtZero: false,
                     display: false,
                 },
                 gridLines: {
