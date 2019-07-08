@@ -274,9 +274,9 @@ if (isset($_POST['create_button'])) {
 </table>
 
 
-<div>
+
                 <canvas id="chart"></canvas>
-            </div>
+            
            
 
 

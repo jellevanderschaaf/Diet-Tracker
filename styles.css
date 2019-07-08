@@ -128,6 +128,7 @@
         -webkit-box-shadow: 0 0 10px grey;
         -o-box-shadow: 0 0 10px grey;
         height: calc(100% - 7.5px);
+        position: relative;
     }
     
     .foodList {
@@ -403,4 +404,9 @@
     
     .totalsTable {
         margin-top: 5px;
+    }
+    
+    #chart {
+        position: absolute;
+        bottom: 5px;
     }
