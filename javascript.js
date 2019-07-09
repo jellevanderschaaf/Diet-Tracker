@@ -266,6 +266,62 @@ let lineChart = new Chart(chartTwo, {
     }
 });
 
+// Chart Three
+
+
+let chartThree = document.getElementById('chartThree').getContext('2d');
+
+let lineChartTwo = new Chart(chartThree, {
+    type: 'line',
+    data: {
+        labels: ['02-07', '03-07', '04-07', '05-07', '06-07', '07-07', '08-07'],
+        datasets: [{
+            label: ['Kg'],
+            data: [
+                10.68,
+                12.95,
+                10.24,
+                8.88,
+                9.95,
+                11.12,
+                12.20,
+            ],
+            backgroundColor: ['rgba(161, 223, 245, 0.3)'],
+            borderColor: ['rgba(92, 97, 101, 0.3)'],
+            pointBorderColor: 'rgba(92, 97, 101, 0.7)',
+            pointBackgroundColor: 'rgba(92, 97, 101, 0.7)',
+
+        }],
+    },
+    options: {
+        title: {
+            display: false,
+            text: 'Costs',
+            fontSize: 15,
+        },
+        legend: {
+            display: false
+        },
+        scales: {
+            yAxes: [{
+                display: false,
+                ticks: {
+                    beginAtZero: false,
+                    display: false,
+                },
+                gridLines: {
+                    display: false
+                }
+            }],
+            xAxes: [{
+                gridLines: {
+                    display: false
+                }
+            }]
+        }
+    }
+});
+
 
 // Chart header functions
 

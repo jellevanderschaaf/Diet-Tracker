@@ -301,6 +301,7 @@ Morning weight: <input type="text" class="form-control form-control-sm inputFiel
 </table>   
 
 <canvas id="chartTwo"></canvas>
+<canvas id="chartThree"></canvas>
 
                 </div>
                 </div>
