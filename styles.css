@@ -417,6 +417,11 @@
         position: absolute;
         bottom: 5px;
     }
+    
+    #chartThree {
+        position: absolute;
+        bottom: 5px;
+    }
     /* weight section */
     
     .inputWeight {
