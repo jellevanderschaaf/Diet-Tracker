@@ -287,9 +287,7 @@ let barChartTwo = new Chart(chartThree, {
                 12.20,
             ],
             backgroundColor: ['rgba(161, 223, 245, 0.3)'],
-            borderColor: ['rgba(92, 97, 101, 0.3)'],
-            pointBorderColor: 'rgba(92, 97, 101, 0.7)',
-            pointBackgroundColor: 'rgba(92, 97, 101, 0.7)',
+
 
         }],
     },
@@ -340,6 +338,7 @@ $('#tableKcalsGraph').click(function() {
     });
 
     $('#chartTwo').addClass("hidden");
+    $('#chartThree').addClass("hidden");
 
 });
 
@@ -357,6 +356,7 @@ $('#tableWeightGraph').click(function() {
     });
 
     $('#chartTwo').removeClass("hidden");
+    $('#chartThree').addClass("hidden");
 
 });
 
@@ -375,6 +375,7 @@ $('#tableCostsGraph').click(function() {
     });
 
     $('#chartTwo').addClass("hidden");
+    $('#chartThree').removeClass("hidden");
 
 });
 
