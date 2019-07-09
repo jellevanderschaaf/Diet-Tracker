@@ -282,8 +282,10 @@ $('#tableKcalsGraph').click(function() {
     $('#tableCostsGraph').css({
         'border-bottom': '0px',
     });
-});
 
+    $('#chartTwo').addClass("hidden");
+
+});
 
 $('#tableWeightGraph').click(function() {
     $('#tableKcalsGraph').css({
@@ -297,6 +299,9 @@ $('#tableWeightGraph').click(function() {
     $('#tableCostsGraph').css({
         'border-bottom': '0px',
     });
+
+    $('#chartTwo').removeClass("hidden");
+
 });
 
 
@@ -312,6 +317,9 @@ $('#tableCostsGraph').click(function() {
     $('#tableCostsGraph').css({
         'border-bottom': '4px solid lightgrey',
     });
+
+    $('#chartTwo').addClass("hidden");
+
 });
 
 //
