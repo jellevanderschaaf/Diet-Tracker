@@ -280,6 +280,36 @@ $('#tableKcalsGraph').click(function() {
     });
 
     $('#tableCostsGraph').css({
+        'border-bottom': '0px',
+    });
+});
+
+
+$('#tableWeightGraph').click(function() {
+    $('#tableKcalsGraph').css({
+        'border-bottom': '0px',
+    });
+
+    $('#tableWeightGraph').css({
+        'border-bottom': '4px solid lightgrey',
+    });
+
+    $('#tableCostsGraph').css({
+        'border-bottom': '0px',
+    });
+});
+
+
+$('#tableCostsGraph').click(function() {
+    $('#tableKcalsGraph').css({
+        'border-bottom': '0px',
+    });
+
+    $('#tableWeightGraph').css({
+        'border-bottom': '0px',
+    });
+
+    $('#tableCostsGraph').css({
         'border-bottom': '4px solid lightgrey',
     });
 });
