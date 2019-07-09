@@ -6,6 +6,7 @@
         background-color: #F0F4F7;
         height: 100%;
         color: #5C6165;
+        font-size: 14px;
     }
     
     .myNavbar {
@@ -36,6 +37,8 @@
         padding-top: 15px;
         padding-bottom: 15px;
         margin: 0;
+        font-weight: 500;
+        font-size: 17px;
     }
     
     hr {
@@ -318,6 +321,8 @@
         font-family: 'Stylish', sans-serif;
         position: relative;
         top: 1px;
+        font-weight: 500;
+        font-size: 16px;
     }
     
     .fa-angle-left {
@@ -452,8 +457,8 @@
     /* weight section end */
     
     th {
-        font-weight: 600;
-        font-size: 15px;
+        font-weight: 500;
+        font-size: 14px;
         height: 26px;
     }
     
@@ -461,7 +466,7 @@
         cursor: pointer;
         padding: 0;
         font-weight: 600;
-        font-size: 15px;
+        font-size: 14px;
     }
     
     #tableWeightGraph {
@@ -469,20 +474,20 @@
         cursor: pointer;
         padding: 0;
         font-weight: 600;
-        font-size: 15px;
+        font-size: 14px;
     }
     
     #tableCostsGraph {
         cursor: pointer;
         padding: 0;
         font-weight: 600;
-        font-size: 15px;
+        font-size: 14px;
     }
     
     #tableFood {
         cursor: pointer;
         padding: 0;
         font-weight: 600;
-        font-size: 15px;
+        font-size: 14px;
         border-bottom: 4px solid lightgrey;
     }
