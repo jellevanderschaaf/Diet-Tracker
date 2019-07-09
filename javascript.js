@@ -271,12 +271,12 @@ let lineChart = new Chart(chartTwo, {
 
 let chartThree = document.getElementById('chartThree').getContext('2d');
 
-let lineChartTwo = new Chart(chartThree, {
-    type: 'line',
+let barChartTwo = new Chart(chartThree, {
+    type: 'bar',
     data: {
         labels: ['02-07', '03-07', '04-07', '05-07', '06-07', '07-07', '08-07'],
         datasets: [{
-            label: ['Kg'],
+            label: ['€'],
             data: [
                 10.68,
                 12.95,
