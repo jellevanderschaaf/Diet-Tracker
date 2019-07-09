@@ -219,7 +219,7 @@ let lineChart = new Chart(chartTwo, {
     data: {
         labels: ['02-07', '03-07', '04-07', '05-07', '06-07', '07-07', '08-07'],
         datasets: [{
-            label: 'Kg',
+            label: ['Kg'],
             data: [
                 63.7,
                 63.3,
@@ -231,6 +231,8 @@ let lineChart = new Chart(chartTwo, {
             ],
             backgroundColor: ['rgba(161, 223, 245, 0.3)'],
             borderColor: ['rgba(92, 97, 101, 0.3)'],
+            pointBorderColor: 'rgba(92, 97, 101, 0.7)',
+            pointBackgroundColor: 'rgba(92, 97, 101, 0.7)',
 
         }],
     },
