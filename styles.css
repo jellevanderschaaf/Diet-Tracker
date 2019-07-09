@@ -450,15 +450,30 @@
     }
     /* weight section end */
     
+    th {
+        font-weight: 600;
+        font-size: 15px;
+        height: 26px;
+    }
+    
     #tableKcalsGraph {
         cursor: pointer;
+        padding: 0;
+        font-weight: 600;
+        font-size: 15px;
     }
     
     #tableWeightGraph {
         border-bottom: 4px solid lightgrey;
         cursor: pointer;
+        padding: 0;
+        font-weight: 600;
+        font-size: 15px;
     }
     
     #tableCostsGraph {
         cursor: pointer;
+        padding: 0;
+        font-weight: 600;
+        font-size: 15px;
     }
