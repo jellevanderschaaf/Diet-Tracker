@@ -274,6 +274,14 @@ $('#tableKcalsGraph').click(function() {
     $('#tableKcalsGraph').css({
         'border-bottom': '4px solid lightgrey',
     });
+
+    $('#tableWeightGraph').css({
+        'border-bottom': '0px',
+    });
+
+    $('#tableCostsGraph').css({
+        'border-bottom': '4px solid lightgrey',
+    });
 });
 
 //
