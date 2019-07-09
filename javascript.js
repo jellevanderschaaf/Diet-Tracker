@@ -286,7 +286,7 @@ let barChartTwo = new Chart(chartThree, {
                 11.12,
                 12.20,
             ],
-            backgroundColor: ['rgba(161, 223, 245, 0.3)'],
+
 
 
         }],
