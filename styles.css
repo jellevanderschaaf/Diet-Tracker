@@ -445,6 +445,15 @@
     }
     /* weight section end */
     
+    #tableKcalsGraph {
+        cursor: pointer;
+    }
+    
     #tableWeightGraph {
-        border-bottom: 5px solid lightgrey;
+        border-bottom: 4px solid lightgrey;
+        cursor: pointer;
+    }
+    
+    #tableCostsGraph {
+        cursor: pointer;
     }
