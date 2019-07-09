@@ -272,10 +272,7 @@ Morning weight: <input type="text" class="form-control form-control-sm inputFiel
 
             <table class="totalsTable" style="width:100%">
   <tr>
-    <td  style='width:25%'>Kcals:</td>
-    <td  style='width:25%'>...</td>
-    <td  style='width:25%'>Costs:</td>
-    <td  style='width:25%'>...</td>
+    <td  style='width:100%'>Kcals:&emsp;2756&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Costs:&emsp;€ 12,20</td>
   </tr>
 </table>
 

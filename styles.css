@@ -413,6 +413,8 @@
     
     .totalsTable {
         margin-top: 5px;
+        text-align: left;
+        margin-left: 15px;
     }
     
     #chart {
