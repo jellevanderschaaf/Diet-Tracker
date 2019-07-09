@@ -158,6 +158,7 @@ function addFoodItemToList(value) {
     updateChart();
 }
 
+
 // Chart one
 
 let chart = document.getElementById('chart').getContext('2d');
@@ -264,3 +265,15 @@ let lineChart = new Chart(chartTwo, {
         }
     }
 });
+
+
+// Chart header functions
+
+
+$('#tableKcalsGraph').click(function() {
+    $('#tableKcalsGraph').css({
+        'border-bottom': '4px solid lightgrey',
+    });
+});
+
+//

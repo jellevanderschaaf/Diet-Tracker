@@ -295,7 +295,7 @@ Morning weight: <input type="text" class="form-control form-control-sm inputFiel
             <table class="foodlist-table2" style='width:100%'>
             <tr>
     <th id="tableKcalsGraph" style='width:33%'>Kcals</th>
-    <th id="tableWeightGraph" style='width:33%'>Weight</th>
+    <th id="tableWeightGraph" style='width:33%' onClick="graphHeaderWeight()">Weight</th>
     <th id="tableCostsGraph" style='width:33%'>Costs</th>
   </tr>
 </table>   
