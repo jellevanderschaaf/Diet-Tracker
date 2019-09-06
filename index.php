@@ -117,7 +117,7 @@ if (isset($_POST['create_button'])) {
                         piece <input type="radio" name="piece" value="piece">
                     </div>
                     <button class="btn btn-secondary" onClick="cancel()">Cancel</button>
-                    <button type="submit" name="create_button" value="Create" class="btn btn-secondary" onClick="createItem()">Create</button>
+                    <button type="submit" name="create_button" value="Create" class="btn btn-secondary">Create</button>
                 </form>
 
             </div>
