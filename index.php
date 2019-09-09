@@ -117,7 +117,7 @@ if (isset($_POST['create_button'])) {
                         piece <input type="radio" name="piece" value="piece">
                     </div>
                     <button class="btn btn-secondary" onClick="cancel()">Cancel</button>
-                    <button type="submit" name="create_button" value="Create" class="btn btn-secondary">Create</button>
+                    <button type="submit" name="create_button" value="Create" class="btn btn-secondary" ">Create</button>
                 </form>
 
             </div>
@@ -222,7 +222,7 @@ if (isset($_POST['create_button'])) {
                             
                         }
                     }
-                    $con->close();
+                  
                   
                     ?>
             </table>
@@ -250,6 +250,26 @@ if (isset($_POST['create_button'])) {
     <th id="tableCosts" style='width:12%'>Costs</th>
     <th id="tableKcals" style='width:12%'>Kcals</th>
   </tr>
+
+  <?php
+                    $sql = "SELECT id, fname, fat, carbs, protein, costs, kcals from food_items_date";
+                    $result = $con->query($sql);
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td style='width:34%'>{$row['fname']}</td>";
+                            echo "<td style='width:12%'>{$row['fat']}</td>";
+                            echo "<td style='width:12%'>{$row['carbs']}</td>";
+                            echo "<td style='width:12%'>{$row['protein']}</td>";
+                            echo "<td style='width:12%'>{$row['costs']}</td>";
+                            echo "<td style='width:12%'>{$row['kcals']}</td>";
+                            echo "</tr>";          
+                        }
+                    }
+                    $con->close();
+                  
+                    ?>
+
 </table>
 
 <div class="inputWeight" style='width:100%'>
