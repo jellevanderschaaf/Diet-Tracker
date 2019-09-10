@@ -403,15 +403,15 @@ var edit_price = document.getElementById('editPrice').value;
 
 
 
-
-
-
 $(".add-this").on('click', function(){
     
     id = $(this).attr('rel');
    
     $.post("add.php", {id: id, addthis: addthis}, function(data){
         
+        var formData = JSON.parse(data);
+
+
 });
 
 });
