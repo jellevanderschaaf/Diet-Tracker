@@ -261,8 +261,8 @@ if (isset($_POST['create_button'])) {
                             echo "<td style='width:12%'>{$row['fat']}</td>";
                             echo "<td style='width:12%'>{$row['carbs']}</td>";
                             echo "<td style='width:12%'>{$row['protein']}</td>";
-                            echo "<td style='width:12%'>{$row['kcals']}</td>";
                             echo "<td style='width:12%'>{$row['price']}</td>";
+                            echo "<td style='width:12%'>{$row['kcals']}</td>";
                             echo "</tr>";          
                         }
                     }
@@ -409,7 +409,13 @@ $(".add-this").on('click', function(){
    
     $.post("add.php", {id: id, addthis: addthis}, function(data){
         
-        var formData = JSON.parse(data);
+        var returnData = JSON.parse(data);
+        
+        $(".mainTable").append( "<tr><td style='width:34%'>" + returnData.fname + "</td><td style='width:12%'>" + returnData.fat + "</td><td style='width:12%'>" + returnData.carbs + "</td><td style='width:12%'>" + returnData.protein + "</td><td style='width:12%'>" + returnData.price + "</td><td style='width:12%'>" + returnData.kcals + "</td></tr>" );
+
+console.log(formData.kcals);
+        
+
 
 
 });
