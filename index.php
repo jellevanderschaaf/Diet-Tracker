@@ -217,7 +217,7 @@ if (isset($_POST['create_button'])) {
                             echo "<td width:75%' class='td-left' rel='".$row['id']."'>{$row['fname']}</td> ";
                             echo "<td style='width:10%' class='td-center' data-toggle='tooltip' data-placement='top' title='Delete'><a rel='".$row['id']."' class='delete-this icon-on-hover'  href='javascript:void(0)'><i class='material-icons'>delete_outline</i></a></td>";
                             echo "<td style='width:10%' class='td-center' data-toggle='tooltip' data-placement='top' title='Edit'><a rel='".$row['id']."' class='edit-this icon-on-hover' href='javascript:void(0)'><i class='material-icons'>edit</i></a></td>";
-                            echo "<td style='width:5%' class='td-right' data-toggle='tooltip' data-placement='top' title='Add'><a rel='".$row['id']."' class='add-this'  href='javascript:void(0)'><i class='material-icons'>add_circle_outline</i></a></td>";
+                            echo "<td style='width:5%' class='td-right' data-toggle='tooltip' data-placement='top' title='Add'><a rel='".$row['id']."' class='add-this' icon-on-hover  href='javascript:void(0)'><i class='material-icons'>add_circle_outline</i></a></td>";
                             echo "</tr>";
                             
                         }
@@ -252,7 +252,7 @@ if (isset($_POST['create_button'])) {
   </tr>
 
   <?php
-                    $sql = "SELECT id, fname, fat, carbs, protein, costs, kcals from food_items_date";
+                    $sql = "SELECT id, fname, fat, carbs, protein, price, kcals from food_items_date";
                     $result = $con->query($sql);
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
@@ -261,8 +261,8 @@ if (isset($_POST['create_button'])) {
                             echo "<td style='width:12%'>{$row['fat']}</td>";
                             echo "<td style='width:12%'>{$row['carbs']}</td>";
                             echo "<td style='width:12%'>{$row['protein']}</td>";
-                            echo "<td style='width:12%'>{$row['costs']}</td>";
                             echo "<td style='width:12%'>{$row['kcals']}</td>";
+                            echo "<td style='width:12%'>{$row['price']}</td>";
                             echo "</tr>";          
                         }
                     }
@@ -343,6 +343,7 @@ var id;
 var deletethis = 'delete';
 var editthis = 'edit';
 var updatethis = 'update';
+var addthis = 'add';
 
 
 $(".delete-this").on('click', function(){
@@ -401,7 +402,22 @@ var edit_price = document.getElementById('editPrice').value;
 });
 
 
+
+
+
+
+$(".add-this").on('click', function(){
+    
+    id = $(this).attr('rel');
+   
+    $.post("add.php", {id: id, addthis: addthis}, function(data){
+        
 });
+
+});
+
+});
+
 
 </script>
 
