@@ -1,23 +1,19 @@
-// Global variables
+var table = document.getElementById("mainTable");
 
-var idCounter = 10;
-var valueRemove;
-
-var totalKcals = [];
-var totalFats = [];
-var totalCarbs = [];
-var totalProtein = [];
-var totalCosts = [];
-
-var totalKcalsSum;
-var totalFatsSum;
-var totalCarbsSum;
-var totalProteinSum;
-var totalCostsSum;
-
-// Food Items objects
+var totalFat = 0;
+var totalCarbs = 0;
+var totalProtein = 0;
+var totalCosts = 0;
+var totalKcals = 0;
 
 
+for (var i = 1; i < table.rows.length; i++) {
+    totalFat = totalFat + parseInt(table.rows[i].cells[1].innerHTML);
+    totalCarbs = totalCarbs + parseInt(table.rows[i].cells[2].innerHTML);
+    totalProtein = totalProtein + parseInt(table.rows[i].cells[3].innerHTML);
+    totalCosts = totalCosts + parseInt(table.rows[i].cells[4].innerHTML);
+    totalKcals = totalKcals + parseInt(table.rows[i].cells[5].innerHTML);
+}
 
 
 

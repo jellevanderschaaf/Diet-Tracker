@@ -1,5 +1,4 @@
 <?php include("db.php"); 
-
 $fname = "";
 $fat =  "";
 $carbs = "";
@@ -119,12 +118,9 @@ if (isset($_POST['create_button'])) {
                     <button class="btn btn-secondary" onClick="cancel()">Cancel</button>
                     <button type="submit" name="create_button" value="Create" class="btn btn-secondary" ">Create</button>
                 </form>
-
             </div>
         </div>
     </div>
-
-
     <div id="modalTwo" class="_modal hidden">
         <div class="modal_box_two">
             <p>Are you sure you want to delete this food item?</p>
@@ -132,14 +128,11 @@ if (isset($_POST['create_button'])) {
             <button class="btn btn-secondary delete-this2">Delete</button>
 </div>
 </div>
-
-
 <div id="modalThree" class="_modal hidden">
         <div class="modal_box_one">
         <div id="createFoodItem">
                 <div id="foodForm">
                     <div class="form-group">
-
                         <table style="width:100%">
                             <tr>
                                 <td>name</td>
@@ -171,9 +164,7 @@ if (isset($_POST['create_button'])) {
                                 <td><input id="editPrice" name="reg_edit_price" type="text" class="form-control form-control-sm formFoodItem" required></td>
                                 <td></td>
                             </tr>
-
                         </table>
-
                         list per:<br>
                         100 grams <input type="radio" name="grams" value="grams"><br>
                         piece <input type="radio" name="piece" value="piece">
@@ -181,21 +172,15 @@ if (isset($_POST['create_button'])) {
                     <button class="btn btn-secondary" onClick="cancel3()">Cancel</button>
                     <button class="btn btn-secondary update-this">Update</button>
 </div>
-
             </div>
         </div>
     </div>
-
     <!-- -->
-
-
-
     <div class="grid-container">
         <div class="grid-item grid-item-left">
             
             <h5 class="headerLeftRight">Food Items</h5>
             <hr>
-
             <table class="foodlist-table2" style='width:100%'>
             <tr>
     <th id="tableFood" style='width:33%'>Food</th>
@@ -205,7 +190,6 @@ if (isset($_POST['create_button'])) {
 </table>   
             
             <div id="test" class="foodList">
-
             <table class="foodlist-table" style='width:100%'>
                    
                     <?php
@@ -228,20 +212,14 @@ if (isset($_POST['create_button'])) {
             </table>
           
             </div>
-
             <button class="btn btn-secondary new-food-item" onClick="createFoodItem()">New Food Item</button>
-
         </div>
         <div class="grid-item">
         <i class="fa fa-angle-left"></i></i><h5 class="date"><?php echo date('d-m-Y');?></h5><i class="fa fa-angle-right"></i>
             <hr>
-
             
-
             <div id="listToday"></div>
-
-
-            <table class="mainTable" style="width:100%">
+            <table id="mainTable" class="mainTable" style="width:100%">
   <tr>
     <th id="tableFoodItem" style='width:34%'>Food Item</th>
     <th id="tableFat" style='width:12%'>Fat</th>
@@ -250,7 +228,6 @@ if (isset($_POST['create_button'])) {
     <th id="tableCosts" style='width:12%'>Costs</th>
     <th id="tableKcals" style='width:12%'>Kcals</th>
   </tr>
-
   <?php
                     $sql = "SELECT id, fname, fat, carbs, protein, price, kcals from food_items_date";
                     $result = $con->query($sql);
@@ -269,9 +246,7 @@ if (isset($_POST['create_button'])) {
                     $con->close();
                   
                     ?>
-
 </table>
-
 <div class="inputWeight" style='width:100%'>
 <div class="inputFields">
 Morning weight: <input type="text" class="form-control form-control-sm inputFieldWeight" style='width:50px'> kg
@@ -279,37 +254,24 @@ Morning weight: <input type="text" class="form-control form-control-sm inputFiel
                 </div>
 <button class="btn btn-secondary buttonSubmit">Submit</button> 
                 </div>
-
         </div>
-
-
-
         <div class="grid-item-right">
-
         <div class="grid-item-right-sub-one">
             <h5 class="headerLeftRight">Totals</h5>
             <hr>
-
             <table class="totalsTable" style="width:100%">
   <tr>
     <td  style='width:100%'>Kcals:&emsp;2756&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Costs:&emsp;€ 12,20</td>
   </tr>
 </table>
-
-
-
                 <canvas id="chart"></canvas>
             
            
-
-
         </div>
                 
-
                 <div class="grid-item-right-sub-two">
                 <h5 class="headerStatistics">Statistics<i class="fas fa-expand"></i></h5>
             <hr>
-
             <table class="foodlist-table2" style='width:100%'>
             <tr>
     <th id="tableKcalsGraph" style='width:33%'>Kcals</th>
@@ -317,53 +279,35 @@ Morning weight: <input type="text" class="form-control form-control-sm inputFiel
     <th id="tableCostsGraph" style='width:33%'>Costs</th>
   </tr>
 </table>   
-
 <canvas id="chartTwo"></canvas>
 <canvas id="chartThree" class="hidden"></canvas>
-
                 </div>
                 </div>
     </div>
-
     
-
  
-
     <script>
-
 $(document).ready(function(){
-
+    
     $(function () {
-
   $('[data-toggle="tooltip"]').tooltip()
-
 })
-
 var id;
 var deletethis = 'delete';
 var editthis = 'edit';
 var updatethis = 'update';
 var addthis = 'add';
-
-
 $(".delete-this").on('click', function(){
-
 document.getElementById("modalTwo").classList.remove('hidden');
 id = $(this).attr('rel');
-
 });
-
 $(".delete-this2").on('click', function(){
-
     document.getElementById("modalTwo").classList.add('hidden');
     $.post("delete.php", {id: id, deletethis: deletethis}, function(data){
     
 });
-
 $("a[rel=" + id + "]").parents('tr').remove();
-
 });  
-
 $(".edit-this").on('click', function(){
     document.getElementById("modalThree").classList.remove('hidden');
     id = $(this).attr('rel');
@@ -380,7 +324,6 @@ $(".edit-this").on('click', function(){
         document.getElementById('editPrice').value = formData.price;
       
 });
-
 });
    
 $(".update-this").on('click', function(){
@@ -392,16 +335,10 @@ var edit_carbs = document.getElementById('editCarbs').value;
 var edit_protein = document.getElementById('editProtein').value;
 var edit_kcals = document.getElementById('editKcals').value;
 var edit_price = document.getElementById('editPrice').value;
-
     $.post("update.php", {id: id, edit_fname: edit_fname, edit_fat: edit_fat, edit_carbs: edit_carbs, edit_protein: edit_protein, edit_kcals: edit_kcals, edit_price: edit_price, updatethis: updatethis}, function(data){
-
     });
-
     $(".td-left[rel=" + id + "]").html(edit_fname);
-
 });
-
-
 
 $(".add-this").on('click', function(){
     
@@ -413,7 +350,7 @@ $(".add-this").on('click', function(){
         
         $(".mainTable").append( "<tr><td style='width:34%'>" + returnData.fname + "</td><td style='width:12%'>" + returnData.fat + "</td><td style='width:12%'>" + returnData.carbs + "</td><td style='width:12%'>" + returnData.protein + "</td><td style='width:12%'>" + returnData.price + "</td><td style='width:12%'>" + returnData.kcals + "</td></tr>" );
 
-console.log(formData.kcals);
+        console.log(totalFat);
         
 
 
@@ -421,6 +358,13 @@ console.log(formData.kcals);
 });
 
 });
+
+
+
+
+
+
+
 
 });
 
