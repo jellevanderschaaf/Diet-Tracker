@@ -44,7 +44,6 @@ function cancel3() {
 
 
 
-
 // Chart one
 
 let chart = document.getElementById('chart').getContext('2d');
@@ -56,9 +55,9 @@ let barChart = new Chart(chart, {
         datasets: [{
             label: 'Grams',
             data: [
-                120,
-                36,
-                140,
+                totalFat,
+                totalCarbs,
+                totalProtein,
             ],
             backgroundColor: ['rgba(250, 147, 28, 0.8)', 'rgba(236, 59, 66, 0.8)', 'rgba(161, 223, 245, 0.8)']
         }],
@@ -93,8 +92,10 @@ let barChart = new Chart(chart, {
 });
 
 function updateChart() {
-    barChart.data.datasets[0].data = [totalFatsSum, totalCarbsSum, totalProteinSum];
+
+    barChart.data.datasets[0].data = [totalFat, totalCarbs, totalProtein];
     barChart.update();
+    console.log('test');
 };
 
 // Chart two

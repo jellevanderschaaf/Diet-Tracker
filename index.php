@@ -62,7 +62,7 @@ if (isset($_POST['create_button'])) {
     <nav class="myNavbar">
         <img class="navbarImage" src="diet.png" width=35px height=35px>
         <a class="navbar-brand" href="#">Diet Tracker</a>
-        <button class="btn btn-success">Login</button>
+       
         </div>
         </div>
     </nav>
@@ -350,9 +350,17 @@ $(".add-this").on('click', function(){
         
         $(".mainTable").append( "<tr><td style='width:34%'>" + returnData.fname + "</td><td style='width:12%'>" + returnData.fat + "</td><td style='width:12%'>" + returnData.carbs + "</td><td style='width:12%'>" + returnData.protein + "</td><td style='width:12%'>" + returnData.price + "</td><td style='width:12%'>" + returnData.kcals + "</td></tr>" );
 
-        console.log(totalFat);
-        
 
+        for (var i = 1; i < table.rows.length; i++) {
+    totalFat = totalFat + parseInt(table.rows[i].cells[1].innerHTML);
+    totalCarbs = totalCarbs + parseInt(table.rows[i].cells[2].innerHTML);
+    totalProtein = totalProtein + parseInt(table.rows[i].cells[3].innerHTML);
+    totalCosts = totalCosts + parseInt(table.rows[i].cells[4].innerHTML);
+    totalKcals = totalKcals + parseInt(table.rows[i].cells[5].innerHTML);
+}
+
+       
+        updateChart();
 
 
 });
