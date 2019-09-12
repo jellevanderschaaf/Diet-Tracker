@@ -229,12 +229,24 @@ if (isset($_POST['create_button'])) {
     <th id="tableKcals" style='width:12%'>Kcals</th>
   </tr>
   <?php
-                    $sql = "SELECT id, fname, fat, carbs, protein, price, kcals from food_items_date";
+                    $sql = "SELECT id, fname, fat, carbs, protein, price, kcals, list from food_items_date";
                     $result = $con->query($sql);
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr>";
-                            echo "<td style='width:34%'>{$row['fname']}</td>";
+                          
+                        if ($row['list'] == 'grams') {
+
+                            echo "<td style='width:34%'>{$row['fname']}<input class='inputQuantity'>gr</td>";
+                          
+                        }
+
+                        if ($row['list'] == 'piece') {
+
+                            echo "<td style='width:34%'>{$row['fname']}<input class='inputQuantity'>stuks</td>";
+                          
+                        }
+
                             echo "<td style='width:12%'>{$row['fat']}</td>";
                             echo "<td style='width:12%'>{$row['carbs']}</td>";
                             echo "<td style='width:12%'>{$row['protein']}</td>";

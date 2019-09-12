@@ -498,3 +498,9 @@
     .fa-expand {
         color: #5C6165;
     }
+    
+    .inputQuantity {
+        width: 30px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
