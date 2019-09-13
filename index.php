@@ -171,8 +171,8 @@ if (isset($_POST['create_button'])) {
                             </tr>
                         </table>
                         list per:<br>
-                        100 grams <input type="radio" name="grams" value="grams"><br>
-                        piece <input type="radio" name="piece" value="piece">
+                        100 grams <input type="radio" name="radio" value="grams" class="radioButtonEdit"><br>
+                        piece <input type="radio" name="radio" value="piece" class="radioButtonEdit">
                     </div>
                     <button class="btn btn-secondary" onClick="cancel3()">Cancel</button>
                     <button class="btn btn-secondary update-this">Update</button>
@@ -348,6 +348,7 @@ $(".delete-this2").on('click', function(){
 });
 $("a[rel=" + id + "]").parents('tr').remove();
 });  
+
 $(".edit-this").on('click', function(){
     document.getElementById("modalThree").classList.remove('hidden');
     id = $(this).attr('rel');
@@ -362,6 +363,16 @@ $(".edit-this").on('click', function(){
         document.getElementById('editProtein').value = formData.protein;
         document.getElementById('editKcals').value = formData.kcals;
         document.getElementById('editPrice').value = formData.price;
+        
+        console.log(formData.list);
+
+        if (formData.list == 'grams') {
+            $('.radioButtonEdit:first').attr('checked', true);
+        }
+
+        if (formData.list == 'piece') {
+            $('.radioButtonEdit:last').attr('checked', true);
+        }
       
 });
 });

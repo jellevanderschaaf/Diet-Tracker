@@ -23,6 +23,8 @@ if(isset($_POST['updatethis'])) {
    $price = mysqli_real_escape_string($con, $_POST['edit_price']);
    $price = $_POST['edit_price'];
 
+   
+
     $query = "UPDATE food_items SET fname = '$fname', fat = '$fat', carbs = '$carbs', protein = '$protein', kcals = '$kcals', price = '$price' WHERE id = $id ";
 
     $result_set = mysqli_query($con, $query);
