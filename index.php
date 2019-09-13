@@ -171,8 +171,8 @@ if (isset($_POST['create_button'])) {
                             </tr>
                         </table>
                         list per:<br>
-                        100 grams <input type="radio" name="radio" value="grams" class="radioButtonEdit"><br>
-                        piece <input type="radio" name="radio" value="piece" class="radioButtonEdit">
+                        100 grams <input type="radio" name="radioEdit" value="grams" class="radioButtonEdit"><br>
+                        piece <input type="radio" name="radioEdit" value="piece" class="radioButtonEdit">
                     </div>
                     <button class="btn btn-secondary" onClick="cancel3()">Cancel</button>
                     <button class="btn btn-secondary update-this">Update</button>
@@ -364,7 +364,6 @@ $(".edit-this").on('click', function(){
         document.getElementById('editKcals').value = formData.kcals;
         document.getElementById('editPrice').value = formData.price;
         
-        console.log(formData.list);
 
         if (formData.list == 'grams') {
             $('.radioButtonEdit:first').attr('checked', true);
@@ -386,9 +385,22 @@ var edit_carbs = document.getElementById('editCarbs').value;
 var edit_protein = document.getElementById('editProtein').value;
 var edit_kcals = document.getElementById('editKcals').value;
 var edit_price = document.getElementById('editPrice').value;
-    $.post("update.php", {id: id, edit_fname: edit_fname, edit_fat: edit_fat, edit_carbs: edit_carbs, edit_protein: edit_protein, edit_kcals: edit_kcals, edit_price: edit_price, updatethis: updatethis}, function(data){
+
+if  ($('.radioButtonEdit:first').is(":checked")) {
+    var edit_list = 'grams';
+}
+
+else  {
+    var edit_list = 'piece';
+};
+
+
+
+    $.post("update.php", {id: id, edit_fname: edit_fname, edit_fat: edit_fat, edit_carbs: edit_carbs, edit_protein: edit_protein, edit_kcals: edit_kcals, edit_price: edit_price, edit_list: edit_list, updatethis: updatethis}, function(data){
     });
+
     $(".td-left[rel=" + id + "]").html(edit_fname);
+
 });
 
 $(".add-this").on('click', function(){
@@ -424,10 +436,6 @@ $(".inputQuantity").keyup(function(){
     id = $(this).attr('rel');    
 var edit_quantity = document.getElementById(id).value; 
 
-
-console.log(edit_quantity);
-console.log(id);
-console.log('test');
 
     $.post("setquantity.php", {id: id, edit_quantity: edit_quantity, setthisquantity: setthisquantity}, function(){
     });
