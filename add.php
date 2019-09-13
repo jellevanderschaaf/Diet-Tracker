@@ -5,7 +5,7 @@ if(isset($_POST['addthis'])) {
         $id = mysqli_real_escape_string($con, $_POST['id']);
         $id = $_POST['id'];
     
-    $query =  "INSERT INTO food_items_date (fname, fat, carbs, protein, kcals, price) SELECT fname, fat, carbs, protein, kcals, price FROM food_items WHERE id = $id";
+    $query =  "INSERT INTO food_items_date (fname, fat, carbs, protein, kcals, price, list, quantity) SELECT fname, fat, carbs, protein, kcals, price, list, quantity FROM food_items WHERE id = $id";
     $result_set = mysqli_query($con, $query);
     $queryTwo = "SELECT * FROM food_items_date ORDER BY ID DESC LIMIT 1";
     $result_setTwo = mysqli_query($con, $queryTwo);

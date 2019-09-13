@@ -23,6 +23,14 @@ if (isset($_POST['create_button'])) {
 
     $list =  $_POST['radio'];
 
+    if ($list == 'grams') {
+        $quantity = 100;
+    }
+
+    if ($list == 'piece') {
+        $quantity = 1;
+    }
+
 
     // Check if fname already exists
     $query = "SELECT count(*) as allcount FROM food_items WHERE fname='" . $fname . "'";
@@ -31,7 +39,7 @@ if (isset($_POST['create_button'])) {
     $allcount = $row['allcount'];
     // insert
     if (empty($error_array) && $allcount == 0) {
-        $query = mysqli_query($con, "INSERT INTO food_items VALUES ('', '$fname', '$fat', '$carbs', '$protein', '$kcals', '$price', '$list')");
+        $query = mysqli_query($con, "INSERT INTO food_items VALUES ('', '$fname', '$fat', '$carbs', '$protein', '$kcals', '$price', '$list', '$quantity')");
     }
 }
 ?>
@@ -388,15 +396,17 @@ var edit_price = document.getElementById('editPrice').value;
 
 if  ($('.radioButtonEdit:first').is(":checked")) {
     var edit_list = 'grams';
+    var edit_quantity = 100;
 }
 
 else  {
     var edit_list = 'piece';
+    var edit_quantity = 1;
 };
 
 
 
-    $.post("update.php", {id: id, edit_fname: edit_fname, edit_fat: edit_fat, edit_carbs: edit_carbs, edit_protein: edit_protein, edit_kcals: edit_kcals, edit_price: edit_price, edit_list: edit_list, updatethis: updatethis}, function(data){
+    $.post("update.php", {id: id, edit_fname: edit_fname, edit_fat: edit_fat, edit_carbs: edit_carbs, edit_protein: edit_protein, edit_kcals: edit_kcals, edit_price: edit_price, edit_list: edit_list, edit_quantity: edit_quantity, updatethis: updatethis}, function(data){
     });
 
     $(".td-left[rel=" + id + "]").html(edit_fname);

@@ -26,7 +26,10 @@ if(isset($_POST['updatethis'])) {
    $list = mysqli_real_escape_string($con, $_POST['edit_list']);
    $list = $_POST['edit_list'];
 
-    $query = "UPDATE food_items SET fname = '$fname', fat = '$fat', carbs = '$carbs', protein = '$protein', kcals = '$kcals', price = '$price', list ='$list' WHERE id = $id ";
+   $quantity = mysqli_real_escape_string($con, $_POST['edit_quantity']);
+   $quantity= $_POST['edit_quantity'];
+
+    $query = "UPDATE food_items SET fname = '$fname', fat = '$fat', carbs = '$carbs', protein = '$protein', kcals = '$kcals', price = '$price', list ='$list', quantity ='$quantity' WHERE id = $id ";
 
     $result_set = mysqli_query($con, $query);
 
