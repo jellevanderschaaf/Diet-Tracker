@@ -5,6 +5,7 @@ $carbs = "";
 $protein = "";
 $kcals = "";
 $price = "";
+$list = "";
 $error_array = "";
 if (isset($_POST['create_button'])) {
     $fname = strip_tags($_POST['reg_fname']);
@@ -19,6 +20,10 @@ if (isset($_POST['create_button'])) {
     $_SESSION['reg_kcals'] = $kcals;
     $price = strip_tags($_POST['reg_price']);
     $_SESSION['reg_price'] = $price;
+
+    $list =  $_POST['radio'];
+
+
     // Check if fname already exists
     $query = "SELECT count(*) as allcount FROM food_items WHERE fname='" . $fname . "'";
     $result = mysqli_query($con, $query);
@@ -26,7 +31,7 @@ if (isset($_POST['create_button'])) {
     $allcount = $row['allcount'];
     // insert
     if (empty($error_array) && $allcount == 0) {
-        $query = mysqli_query($con, "INSERT INTO food_items VALUES ('', '$fname', '$fat', '$carbs', '$protein', '$kcals', '$price')");
+        $query = mysqli_query($con, "INSERT INTO food_items VALUES ('', '$fname', '$fat', '$carbs', '$protein', '$kcals', '$price', '$list')");
     }
 }
 ?>
@@ -112,11 +117,11 @@ if (isset($_POST['create_button'])) {
                         </table>
 
                         list per:<br>
-                        100 grams <input type="radio" name="grams" value="grams"><br>
-                        piece <input type="radio" name="piece" value="piece">
+                        100 grams <input type="radio" name="radio" value="grams"><br>
+                        piece <input type="radio" name="radio" value="piece">
                     </div>
                     <button class="btn btn-secondary" onClick="cancel()">Cancel</button>
-                    <button type="submit" name="create_button" value="Create" class="btn btn-secondary" ">Create</button>
+                    <button type="submit" name="create_button" value="Create" class="btn btn-secondary">Create</button>
                 </form>
             </div>
         </div>
