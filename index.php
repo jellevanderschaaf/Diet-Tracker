@@ -229,7 +229,7 @@ if (isset($_POST['create_button'])) {
     <th id="tableKcals" style='width:12%'>Kcals</th>
   </tr>
   <?php
-                    $sql = "SELECT id, fname, fat, carbs, protein, price, kcals, list from food_items_date";
+                    $sql = "SELECT id, fname, fat, carbs, protein, price, kcals, list, quantity from food_items_date";
                     $result = $con->query($sql);
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
@@ -237,13 +237,13 @@ if (isset($_POST['create_button'])) {
                           
                         if ($row['list'] == 'grams') {
 
-                            echo "<td style='width:34%'>{$row['fname']}<input class='inputQuantity'>gr</td>";
+                            echo "<td style='width:34%'>{$row['fname']}<input id='".$row['id']."' class='inputQuantity' value='{$row['quantity']}'><a rel='".$row['id']."' class='set-this-quantity' icon-on-hover href='javascript:void(0)'><i class='material-icons'>add_circle_outline</i></a>gr</td>";
                           
                         }
 
                         if ($row['list'] == 'piece') {
 
-                            echo "<td style='width:34%'>{$row['fname']}<input class='inputQuantity'>stuks</td>";
+                            echo "<td style='width:34%'>{$row['fname']}<input id='".$row['id']."' class='inputQuantity' value='{$row['quantity']}'><a rel='".$row['id']."' class='set-this-quantity' icon-on-hover href='javascript:void(0)'><i class='material-icons'>add_circle_outline</i></a>stuks</td>";
                           
                         }
 
@@ -309,6 +309,8 @@ var deletethis = 'delete';
 var editthis = 'edit';
 var updatethis = 'update';
 var addthis = 'add';
+var setthisquantity = 'setthisquantity';
+
 $(".delete-this").on('click', function(){
 document.getElementById("modalTwo").classList.remove('hidden');
 id = $(this).attr('rel');
@@ -380,7 +382,20 @@ $(".add-this").on('click', function(){
 });
 
 
+$(".set-this-quantity").on('click', function(){
+  
+    id = $(this).attr('rel');    
+var edit_quantity = document.getElementById(id).value; 
 
+
+console.log(edit_quantity);
+console.log(id);
+console.log('test');
+
+    $.post("setquantity.php", {id: id, edit_quantity: edit_quantity, setthisquantity: setthisquantity}, function(){
+    });
+    
+});
 
 
 
