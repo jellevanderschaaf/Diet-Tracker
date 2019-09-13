@@ -238,7 +238,7 @@ if (isset($_POST['create_button'])) {
                           
                         if ($row['list'] == 'grams') {
 
-                            echo "<td style='width:34%'>{$row['fname']}<input id='".$row['id']."' class='inputQuantity' value='{$row['quantity']}'><a rel='".$row['id']."' class='set-this-quantity' icon-on-hover href='javascript:void(0)'><i class='material-icons'>add_circle_outline</i></a>gr</td>";
+                            echo "<td style='width:34%'>{$row['fname']}<input id='".$row['id']."' class='inputQuantity' value='{$row['quantity']}' rel='".$row['id']."'>gr</td>";
                           
                             $fatAdjusted = $row['fat'] / 100 * $row['quantity'];
                             $carbsAdjusted = $row['carbs'] / 100 * $row['quantity'];
@@ -257,7 +257,7 @@ if (isset($_POST['create_button'])) {
 
                         if ($row['list'] == 'piece') {
 
-                            echo "<td style='width:34%'>{$row['fname']}<input id='".$row['id']."' class='inputQuantity' value='{$row['quantity']}'><a rel='".$row['id']."' class='set-this-quantity' icon-on-hover href='javascript:void(0)'><i class='material-icons'>add_circle_outline</i></a>stuks</td>";
+                            echo "<td style='width:34%'>{$row['fname']}<input id='".$row['id']."' class='inputQuantity' value='{$row['quantity']}' rel='".$row['id']."'>stuks</td>";
                           
                         
 
@@ -403,7 +403,7 @@ $(".add-this").on('click', function(){
 });
 
 
-$(".set-this-quantity").on('click', function(){
+$(".inputQuantity").keyup(function(){
   
     id = $(this).attr('rel');    
 var edit_quantity = document.getElementById(id).value; 
