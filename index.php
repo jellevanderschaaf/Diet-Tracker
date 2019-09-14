@@ -450,7 +450,7 @@ else {
        
         updateChart();
 
-console.log(returnData.id);
+
 
 });
 
@@ -460,13 +460,37 @@ console.log(returnData.id);
 $("body").on('keyup', '.inputQuantity', function(){
   
     id = $(this).attr('rel');    
-var edit_quantity = document.getElementById(id).value; 
+    var edit_quantity = document.getElementById(id).value; 
 
-console.log('lol');
+    $.post("setquantity.php", {id: id, edit_quantity: edit_quantity, setthisquantity: setthisquantity}, function(data){
 
-    $.post("setquantity.php", {id: id, edit_quantity: edit_quantity, setthisquantity: setthisquantity}, function(){
-    });
-    
+        var returnData = JSON.parse(data);
+     
+if (returnData.list == 'grams') {
+
+    var newTableRow =  "<tr><td style='width:34%'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>gr</td><td style='width:12%'>" + returnData.fat / 100 * returnData.quantity + "</td><td style='width:12%'>" + returnData.carbs / 100 * returnData.quantity + "</td><td style='width:12%'>" + returnData.protein / 100 * returnData.quantity + "</td><td style='width:12%'>" + returnData.price / 100 * returnData.quantity + "</td><td style='width:12%'>" + returnData.kcals / 100 * returnData.quantity + "</td></tr>";
+    $('#'+ id).parent().parent().replaceWith(newTableRow);
+
+}
+
+else {
+
+    var newTableRow =  "<tr><td style='width:34%'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>gr</td><td style='width:12%'>" + returnData.fat * returnData.quantity + "</td><td style='width:12%'>" + returnData.carbs * returnData.quantity + "</td><td style='width:12%'>" + returnData.protein * returnData.quantity + "</td><td style='width:12%'>" + returnData.price * returnData.quantity + "</td><td style='width:12%'>" + returnData.kcals * returnData.quantity + "</td></tr>";
+    $('#'+ id).parent().parent().replaceWith(newTableRow);
+}
+
+for (var i = 1; i < table.rows.length; i++) {
+    totalFat = totalFat + parseInt(table.rows[i].cells[1].innerHTML);
+    totalCarbs = totalCarbs + parseInt(table.rows[i].cells[2].innerHTML);
+    totalProtein = totalProtein + parseInt(table.rows[i].cells[3].innerHTML);
+    totalCosts = totalCosts + parseInt(table.rows[i].cells[4].innerHTML);
+    totalKcals = totalKcals + parseInt(table.rows[i].cells[5].innerHTML);
+
+}
+updateChart();
+
+});
+
 });
 
 });
