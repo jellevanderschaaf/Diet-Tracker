@@ -421,8 +421,23 @@ $(".add-this").on('click', function(){
         
         var returnData = JSON.parse(data);
         
-        $(".mainTable").append( "<tr><td style='width:34%'>" + returnData.fname + "</td><td style='width:12%'>" + returnData.fat + "</td><td style='width:12%'>" + returnData.carbs + "</td><td style='width:12%'>" + returnData.protein + "</td><td style='width:12%'>" + returnData.price + "</td><td style='width:12%'>" + returnData.kcals + "</td></tr>" );
+if (returnData.list == 'grams') {
 
+
+        $(".mainTable").append( "<tr><td style='width:34%'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>gr</td><td style='width:12%'>" + returnData.fat + "</td><td style='width:12%'>" + returnData.carbs + "</td><td style='width:12%'>" + returnData.protein + "</td><td style='width:12%'>" + returnData.price + "</td><td style='width:12%'>" + returnData.kcals + "</td></tr>" );
+
+
+
+
+}
+
+else {
+
+         $(".mainTable").append( "<tr><td style='width:34%'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>stuks</td><td style='width:12%'>" + returnData.fat + "</td><td style='width:12%'>" + returnData.carbs + "</td><td style='width:12%'>" + returnData.protein + "</td><td style='width:12%'>" + returnData.price + "</td><td style='width:12%'>" + returnData.kcals + "</td></tr>" );
+
+
+}
+       
 
         for (var i = 1; i < table.rows.length; i++) {
     totalFat = totalFat + parseInt(table.rows[i].cells[1].innerHTML);
@@ -435,26 +450,24 @@ $(".add-this").on('click', function(){
        
         updateChart();
 
+console.log(returnData.id);
 
 });
 
 });
 
 
-$(".inputQuantity").keyup(function(){
+$("body").on('keyup', '.inputQuantity', function(){
   
     id = $(this).attr('rel');    
 var edit_quantity = document.getElementById(id).value; 
 
+console.log('lol');
 
     $.post("setquantity.php", {id: id, edit_quantity: edit_quantity, setthisquantity: setthisquantity}, function(){
     });
     
 });
-
-
-
-
 
 });
 
