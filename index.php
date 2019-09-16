@@ -457,6 +457,7 @@ else {
 });
 
 
+
 $("body").on('keyup', '.inputQuantity', function(){
   
     id = $(this).attr('rel');    
@@ -468,14 +469,26 @@ $("body").on('keyup', '.inputQuantity', function(){
      
 if (returnData.list == 'grams') {
 
-    var newTableRow =  "<tr><td style='width:34%'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>gr</td><td style='width:12%'>" + returnData.fat / 100 * returnData.quantity + "</td><td style='width:12%'>" + returnData.carbs / 100 * returnData.quantity + "</td><td style='width:12%'>" + returnData.protein / 100 * returnData.quantity + "</td><td style='width:12%'>" + returnData.price / 100 * returnData.quantity + "</td><td style='width:12%'>" + returnData.kcals / 100 * returnData.quantity + "</td></tr>";
+var fat = returnData.fat / 100 * returnData.quantity;
+var carbs = returnData.carbs / 100 * returnData.quantity;
+var protein = returnData.protein / 100 * returnData.quantity;
+var price = returnData.price / 100 * returnData.quantity;
+var kcals = returnData.kcals / 100 * returnData.quantity;
+
+    var newTableRow =  "<tr><td style='width:34%'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>gr</td><td style='width:12%'>" + fat.toFixed(1) + "</td><td style='width:12%'>" + carbs.toFixed(1) + "</td><td style='width:12%'>" + protein.toFixed(1) + "</td><td style='width:12%'>" + price.toFixed(2) + "</td><td style='width:12%'>" + kcals + "</td></tr>";
     $('#'+ id).parent().parent().replaceWith(newTableRow);
 
 }
 
 else {
 
-    var newTableRow =  "<tr><td style='width:34%'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>gr</td><td style='width:12%'>" + returnData.fat * returnData.quantity + "</td><td style='width:12%'>" + returnData.carbs * returnData.quantity + "</td><td style='width:12%'>" + returnData.protein * returnData.quantity + "</td><td style='width:12%'>" + returnData.price * returnData.quantity + "</td><td style='width:12%'>" + returnData.kcals * returnData.quantity + "</td></tr>";
+var fat = returnData.fat * returnData.quantity;
+var carbs = returnData.carbs * returnData.quantity;
+var protein = returnData.protein * returnData.quantity;
+var price = returnData.price  * returnData.quantity;
+var kcals = returnData.kcals * returnData.quantity;
+
+    var newTableRow =  "<tr><td style='width:34%'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>stuks</td><td style='width:12%'>" + fat.toFixed(1) + "</td><td style='width:12%'>" + carbs.toFixed(1) + "</td><td style='width:12%'>" + protein.toFixed(1) + "</td><td style='width:12%'>" + price.toFixed(2) + "</td><td style='width:12%'>" + kcals + "</td></tr>";
     $('#'+ id).parent().parent().replaceWith(newTableRow);
 }
 
