@@ -253,10 +253,10 @@ if (isset($_POST['create_button'])) {
 
                             echo "<td style='width:34%'>{$row['fname']}<input id='".$row['id']."' class='inputQuantity' value='{$row['quantity']}' rel='".$row['id']."'>gr</td>";
                           
-                            $fatAdjusted = $row['fat'] / 100 * $row['quantity'];
-                            $carbsAdjusted = $row['carbs'] / 100 * $row['quantity'];
-                            $proteinAdjusted = $row['protein'] / 100 * $row['quantity'];
-                            $priceAdjusted = $row['price'] / 100 * $row['quantity'];
+                            $fatAdjusted = number_format($row['fat'] / 100 * $row['quantity'], 1);
+                            $carbsAdjusted = number_format($row['carbs'] / 100 * $row['quantity'], 1);
+                            $proteinAdjusted = number_format($row['protein'] / 100 * $row['quantity'], 1);
+                            $priceAdjusted = number_format($row['price'] / 100 * $row['quantity'], 2);
                             $kcalsAdjusted = $row['kcals'] / 100 * $row['quantity'];
     
                                 echo "<td style='width:12%'>{$fatAdjusted}</td>";
@@ -274,10 +274,10 @@ if (isset($_POST['create_button'])) {
                           
                         
 
-                        $fatAdjusted = $row['fat'] * $row['quantity'];
-                        $carbsAdjusted = $row['carbs'] * $row['quantity'];
-                        $proteinAdjusted = $row['protein'] * $row['quantity'];
-                        $priceAdjusted = $row['price'] * $row['quantity'];
+                        $fatAdjusted = number_format($row['fat'] * $row['quantity'], 1);
+                        $carbsAdjusted = number_format($row['carbs'] * $row['quantity'], 1);
+                        $proteinAdjusted = number_format($row['protein'] * $row['quantity'], 1);
+                        $priceAdjusted = number_format($row['price'] * $row['quantity'], 2);
                         $kcalsAdjusted = $row['kcals'] * $row['quantity'];
 
                             echo "<td style='width:12%'>{$fatAdjusted}</td>";
