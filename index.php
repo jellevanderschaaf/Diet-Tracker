@@ -254,7 +254,7 @@ if (isset($_POST['create_button'])) {
                         if ($row['list'] == 'grams') {
 
                             echo "<td style='width:34%' class='mainTableFirstColumn'>{$row['fname']}<input id='".$row['id']."' class='inputQuantity' value='{$row['quantity']}' rel='".$row['id']."'>gr<a rel='".$row['id']."' 
-                            class='remove-from-daily-list icon-on-hover'  href='javascript:void(0)'><i class='far fa-minus-square'></i></a></td>";
+                            class='remove-from-daily-list icon-on-hover remove-this'  href='javascript:void(0)'><i class='far fa-minus-square'></i></a></td>";
                           
                             $fatAdjusted = number_format($row['fat'] / 100 * $row['quantity'], 1);
                             $carbsAdjusted = number_format($row['carbs'] / 100 * $row['quantity'], 1);
@@ -274,7 +274,7 @@ if (isset($_POST['create_button'])) {
                         if ($row['list'] == 'piece') {
 
                             echo "<td style='width:34%' class='mainTableFirstColumn'>{$row['fname']}<input id='".$row['id']."' class='inputQuantity' value='{$row['quantity']}' rel='".$row['id']."'>stuks<a rel='".$row['id']."' 
-                            class='remove-from-daily-list icon-on-hover'  href='javascript:void(0)'><i class='far fa-minus-square'></i></a></td>";
+                            class='remove-from-daily-list icon-on-hover remove-this'  href='javascript:void(0)'><i class='far fa-minus-square'></i></a></td>";
                             
                           
                           
@@ -350,6 +350,7 @@ var editthis = 'edit';
 var updatethis = 'update';
 var addthis = 'add';
 var setthisquantity = 'setthisquantity';
+var removethis = 'removethis';
 
 $(".delete-this").on('click', function(){
 document.getElementById("modalTwo").classList.remove('hidden');
@@ -518,6 +519,20 @@ updateChart();
 });
 
 });
+
+
+$(".remove-this").on('click', function(){
+    
+    id = $(this).attr('rel');
+    $.post("remove.php", {id: id, removethis: removethis}, function(data){
+    
+});
+
+$("a[rel=" + id + "]").parents('tr').remove();
+
+});  
+
+
 
 });
 
