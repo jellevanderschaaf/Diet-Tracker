@@ -241,6 +241,8 @@ if (isset($_POST['create_button'])) {
     <th id="tableCosts" style='width:12%'>Costs</th>
     <th id="tableKcals" style='width:12%'>Kcals</th>
   </tr>
+                </table>
+                <table class="mainTable2">
   <?php
                     $sql = "SELECT id, fname, fat, carbs, protein, price, kcals, list, quantity from food_items_date";
                     $result = $con->query($sql);
@@ -251,7 +253,7 @@ if (isset($_POST['create_button'])) {
                           
                         if ($row['list'] == 'grams') {
 
-                            echo "<td style='width:34%'>{$row['fname']}<input id='".$row['id']."' class='inputQuantity' value='{$row['quantity']}' rel='".$row['id']."'>gr</td>";
+                            echo "<td style='width:34%' class='mainTableFirstColumn'>{$row['fname']}<input id='".$row['id']."' class='inputQuantity' value='{$row['quantity']}' rel='".$row['id']."'>gr</td>";
                           
                             $fatAdjusted = number_format($row['fat'] / 100 * $row['quantity'], 1);
                             $carbsAdjusted = number_format($row['carbs'] / 100 * $row['quantity'], 1);
@@ -259,18 +261,18 @@ if (isset($_POST['create_button'])) {
                             $priceAdjusted = number_format($row['price'] / 100 * $row['quantity'], 2);
                             $kcalsAdjusted = $row['kcals'] / 100 * $row['quantity'];
     
-                                echo "<td style='width:12%'>{$fatAdjusted}</td>";
-                                echo "<td style='width:12%'>{$carbsAdjusted}</td>";
-                                echo "<td style='width:12%'>{$proteinAdjusted}</td>";
-                                echo "<td style='width:12%'>{$priceAdjusted}</td>";
-                                echo "<td style='width:12%'>{$kcalsAdjusted}</td>";
+                                echo "<td style='width:12%' class='mainTableColumns'>{$fatAdjusted}</td>";
+                                echo "<td style='width:12%' class='mainTableColumns'>{$carbsAdjusted}</td>";
+                                echo "<td style='width:12%' class='mainTableColumns'>{$proteinAdjusted}</td>";
+                                echo "<td style='width:12%' class='mainTableColumns'>€ {$priceAdjusted}</td>";
+                                echo "<td style='width:12%' class='mainTableColumnKcal'>{$kcalsAdjusted}</td>";
                                 echo "</tr>";   
 
                         }
 
                         if ($row['list'] == 'piece') {
 
-                            echo "<td style='width:34%'>{$row['fname']}<input id='".$row['id']."' class='inputQuantity' value='{$row['quantity']}' rel='".$row['id']."'>stuks</td>";
+                            echo "<td style='width:34%' class='mainTableFirstColumn'>{$row['fname']}<input id='".$row['id']."' class='inputQuantity' value='{$row['quantity']}' rel='".$row['id']."'>stuks</td>";
                           
                         
 
@@ -280,11 +282,11 @@ if (isset($_POST['create_button'])) {
                         $priceAdjusted = number_format($row['price'] * $row['quantity'], 2);
                         $kcalsAdjusted = $row['kcals'] * $row['quantity'];
 
-                            echo "<td style='width:12%'>{$fatAdjusted}</td>";
-                            echo "<td style='width:12%'>{$carbsAdjusted}</td>";
-                            echo "<td style='width:12%'>{$proteinAdjusted}</td>";
-                            echo "<td style='width:12%'>{$priceAdjusted}</td>";
-                            echo "<td style='width:12%'>{$kcalsAdjusted}</td>";
+                            echo "<td style='width:12%' class='mainTableColumns'>{$fatAdjusted}</td>";
+                            echo "<td style='width:12%' class='mainTableColumns'>{$carbsAdjusted}</td>";
+                            echo "<td style='width:12%' class='mainTableColumns'>{$proteinAdjusted}</td>";
+                            echo "<td style='width:12%' class='mainTableColumns'>€ {$priceAdjusted}</td>";
+                            echo "<td style='width:12%' class='mainTableColumnKcal'>{$kcalsAdjusted}</td>";
                             echo "</tr>";          
                         }
                     }
@@ -424,7 +426,7 @@ $(".add-this").on('click', function(){
 if (returnData.list == 'grams') {
 
 
-        $(".mainTable").append( "<tr><td style='width:34%'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>gr</td><td style='width:12%'>" + returnData.fat + "</td><td style='width:12%'>" + returnData.carbs + "</td><td style='width:12%'>" + returnData.protein + "</td><td style='width:12%'>" + returnData.price + "</td><td style='width:12%'>" + returnData.kcals + "</td></tr>" );
+        $(".mainTable2").append( "<tr><td style='width:34%' class='mainTableFirstColumn'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>gr</td><td style='width:12%'>" + returnData.fat + "</td><td style='width:12%'>" + returnData.carbs + "</td><td style='width:12%'>" + returnData.protein + "</td><td style='width:12%'>€ " + returnData.price + "</td><td style='width:12%'>" + returnData.kcals + "</td></tr>" );
 
 
 
@@ -433,7 +435,7 @@ if (returnData.list == 'grams') {
 
 else {
 
-         $(".mainTable").append( "<tr><td style='width:34%'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>stuks</td><td style='width:12%'>" + returnData.fat + "</td><td style='width:12%'>" + returnData.carbs + "</td><td style='width:12%'>" + returnData.protein + "</td><td style='width:12%'>" + returnData.price + "</td><td style='width:12%'>" + returnData.kcals + "</td></tr>" );
+         $(".mainTable2").append( "<tr><td style='width:34%' class='mainTableFirstColumn'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>stuks</td><td style='width:12%'>" + returnData.fat + "</td><td style='width:12%'>" + returnData.carbs + "</td><td style='width:12%'>" + returnData.protein + "</td><td style='width:12%'>€ " + returnData.price + "</td><td style='width:12%'>" + returnData.kcals + "</td></tr>" );
 
 
 }

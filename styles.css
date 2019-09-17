@@ -353,12 +353,42 @@
         border-collapse: separate;
         border-spacing: 5px 5px;
         padding: 0px 10px 0px 10px;
+        margin-bottom: 10px;
     }
     
     .mainTable th {
         color: white;
         border-radius: 5px;
         font-weight: 600;
+    }
+    
+    .mainTable2 {
+        width: 100%;
+        border-collapse: separate;
+        padding: 0px 10px 0px 10px;
+    }
+    
+    .mainTableFirstColumn {
+        text-align: left;
+        padding-left: 20px;
+    }
+    
+    .inputQuantity {
+        border: none;
+        text-align: center;
+        color: #5C6165;
+    }
+    
+    .mainTableColumns {
+        text-align: center;
+        font-size: 13px;
+        color: #5f6368;
+    }
+    
+    .mainTableColumnKcal {
+        color: #3c4043;
+        font-size: 14px;
+        font-weight: 500;
     }
     
     #tableFoodItem {
@@ -503,4 +533,11 @@
         width: 30px;
         margin-left: 10px;
         margin-right: 10px;
+    }
+    
+    .mainTable body:before {
+        content: "@";
+        display: block;
+        line-height: 10px;
+        text-indent: -99999px;
     }
