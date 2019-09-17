@@ -20,18 +20,13 @@ if (isset($_POST['create_button'])) {
     $_SESSION['reg_kcals'] = $kcals;
     $price = strip_tags($_POST['reg_price']);
     $_SESSION['reg_price'] = $price;
-
     $list =  $_POST['radio'];
-
     if ($list == 'grams') {
         $quantity = 100;
     }
-
     if ($list == 'piece') {
         $quantity = 1;
     }
-
-
     // Check if fname already exists
     $query = "SELECT count(*) as allcount FROM food_items WHERE fname='" . $fname . "'";
     $result = mysqli_query($con, $query);
@@ -252,7 +247,6 @@ if (isset($_POST['create_button'])) {
                             echo "<tr class='mainTable2-tr'>";
                           
                         if ($row['list'] == 'grams') {
-
                             echo "<td style='width:34%' class='mainTableFirstColumn'>{$row['fname']}<input id='".$row['id']."' class='inputQuantity' value='{$row['quantity']}' rel='".$row['id']."'>gr<a rel='".$row['id']."' 
                             class='remove-from-daily-list icon-on-hover remove-this'  href='javascript:void(0)'><i class='far fa-minus-square'></i></a></td>";
                           
@@ -268,24 +262,19 @@ if (isset($_POST['create_button'])) {
                                 echo "<td style='width:12%' class='mainTableColumns'>€ {$priceAdjusted}</td>";
                                 echo "<td style='width:12%' class='mainTableColumnKcal'>{$kcalsAdjusted}</td>";
                                 echo "</tr>";   
-
                         }
-
                         if ($row['list'] == 'piece') {
-
                             echo "<td style='width:34%' class='mainTableFirstColumn'>{$row['fname']}<input id='".$row['id']."' class='inputQuantity' value='{$row['quantity']}' rel='".$row['id']."'>stuks<a rel='".$row['id']."' 
                             class='remove-from-daily-list icon-on-hover remove-this'  href='javascript:void(0)'><i class='far fa-minus-square'></i></a></td>";
                             
                           
                           
                         
-
                         $fatAdjusted = number_format($row['fat'] * $row['quantity'], 1);
                         $carbsAdjusted = number_format($row['carbs'] * $row['quantity'], 1);
                         $proteinAdjusted = number_format($row['protein'] * $row['quantity'], 1);
                         $priceAdjusted = number_format($row['price'] * $row['quantity'], 2);
                         $kcalsAdjusted = number_format($row['kcals'] * $row['quantity'], 0);
-
                             echo "<td style='width:12%' class='mainTableColumns'>{$fatAdjusted}</td>";
                             echo "<td style='width:12%' class='mainTableColumns'>{$carbsAdjusted}</td>";
                             echo "<td style='width:12%' class='mainTableColumns'>{$proteinAdjusted}</td>";
@@ -351,7 +340,6 @@ var updatethis = 'update';
 var addthis = 'add';
 var setthisquantity = 'setthisquantity';
 var removethis = 'removethis';
-
 $(".delete-this").on('click', function(){
 document.getElementById("modalTwo").classList.remove('hidden');
 id = $(this).attr('rel');
@@ -363,7 +351,6 @@ $(".delete-this2").on('click', function(){
 });
 $("a[rel=" + id + "]").parents('tr').remove();
 });  
-
 $(".edit-this").on('click', function(){
     document.getElementById("modalThree").classList.remove('hidden');
     id = $(this).attr('rel');
@@ -379,11 +366,9 @@ $(".edit-this").on('click', function(){
         document.getElementById('editKcals').value = formData.kcals;
         document.getElementById('editPrice').value = formData.price;
         
-
         if (formData.list == 'grams') {
             $('.radioButtonEdit:first').attr('checked', true);
         }
-
         if (formData.list == 'piece') {
             $('.radioButtonEdit:last').attr('checked', true);
         }
@@ -400,26 +385,18 @@ var edit_carbs = document.getElementById('editCarbs').value;
 var edit_protein = document.getElementById('editProtein').value;
 var edit_kcals = document.getElementById('editKcals').value;
 var edit_price = document.getElementById('editPrice').value;
-
 if  ($('.radioButtonEdit:first').is(":checked")) {
     var edit_list = 'grams';
     var edit_quantity = 100;
 }
-
 else  {
     var edit_list = 'piece';
     var edit_quantity = 1;
 };
-
-
-
     $.post("update.php", {id: id, edit_fname: edit_fname, edit_fat: edit_fat, edit_carbs: edit_carbs, edit_protein: edit_protein, edit_kcals: edit_kcals, edit_price: edit_price, edit_list: edit_list, edit_quantity: edit_quantity, updatethis: updatethis}, function(data){
     });
-
     $(".td-left[rel=" + id + "]").html(edit_fname);
-
 });
-
 $(".add-this").on('click', function(){
     
     id = $(this).attr('rel');
@@ -434,25 +411,14 @@ $(".add-this").on('click', function(){
     var price = parseFloat(returnData.price).toFixed(2);
     var kcals = parseFloat(returnData.kcals).toFixed(0);
                                           
-
 if (returnData.list == 'grams') {
-
-
-
-        $(".mainTable2").append( "<tr><td style='width:34%' class='mainTableFirstColumn'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>gr</td><td style='width:12%' class='mainTableColumns'>" + fat + "</td><td style='width:12%' class='mainTableColumns'>" + carbs + "</td><td style='width:12%' class='mainTableColumns'>" + protein + "</td><td style='width:12%' class='mainTableColumns'>€ " + price + "</td><td style='width:12%' class='mainTableColumnKcal'>" + kcals + "</td></tr>" );
-
+        $(".mainTable2").append( "<tr><td style='width:34%' class='mainTableFirstColumn'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>gr<a rel='" +  returnData.id + "'class='remove-from-daily-list icon-on-hover remove-this'  href='javascript:void(0)'><i class='far fa-minus-square'></i></a></td><td style='width:12%' class='mainTableColumns'>" + fat + "</td><td style='width:12%' class='mainTableColumns'>" + carbs + "</td><td style='width:12%' class='mainTableColumns'>" + protein + "</td><td style='width:12%' class='mainTableColumns'>€ " + price + "</td><td style='width:12%' class='mainTableColumnKcal'>" + kcals + "</td></tr>" );
 }
-
 else {
-
-    var fat = returnData.fat
-
-         $(".mainTable2").append( "<tr><td style='width:34%' class='mainTableFirstColumn'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>stuks</td><td style='width:12%' class='mainTableColumns'>" + fat + "</td><td style='width:12%' class='mainTableColumns'>" + carbs + "</td><td style='width:12%' class='mainTableColumns'>" + protein + "</td><td style='width:12%' class='mainTableColumns'>€ " + price + "</td><td style='width:12%' class='mainTableColumnKcal'>" + kcals + "</td></tr>" );
-
+    
+         $(".mainTable2").append( "<tr><td style='width:34%' class='mainTableFirstColumn'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>stuks<a rel='" +  returnData.id + "'class='remove-from-daily-list icon-on-hover remove-this'  href='javascript:void(0)'><i class='far fa-minus-square'></i></a></td><td style='width:12%' class='mainTableColumns'>" + fat + "</td><td style='width:12%' class='mainTableColumns'>" + carbs + "</td><td style='width:12%' class='mainTableColumns'>" + protein + "</td><td style='width:12%' class='mainTableColumns'>€ " + price + "</td><td style='width:12%' class='mainTableColumnKcal'>" + kcals + "</td></tr>" );
 }
        
-
-
         for (var i = 1; i < table.rows.length; i++) {
     totalFat = totalFat + parseInt(table.rows[i].cells[1].innerHTML);
     totalCarbs = totalCarbs + parseInt(table.rows[i].cells[2].innerHTML);
@@ -460,83 +426,57 @@ else {
     totalCosts = totalCosts + parseInt(table.rows[i].cells[4].innerHTML);
     totalKcals = totalKcals + parseInt(table.rows[i].cells[5].innerHTML);
 }
-
        
         updateChart();
-
-
-
 });
-
 });
-
-
-
 $("body").on('keyup', '.inputQuantity', function(){
   
     id = $(this).attr('rel');    
     var edit_quantity = document.getElementById(id).value; 
-
     $.post("setquantity.php", {id: id, edit_quantity: edit_quantity, setthisquantity: setthisquantity}, function(data){
-
         var returnData = JSON.parse(data);
      
 if (returnData.list == 'grams') {
-
 var fat = returnData.fat / 100 * returnData.quantity;
 var carbs = returnData.carbs / 100 * returnData.quantity;
 var protein = returnData.protein / 100 * returnData.quantity;
 var price = returnData.price / 100 * returnData.quantity;
 var kcals = returnData.kcals / 100 * returnData.quantity;
-
-    var newTableRow =  "<tr><td style='width:34%' class='mainTableFirstColumn'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>gr</td><td style='width:12%'  class='mainTableColumns'>" + fat.toFixed(1) + "</td><td style='width:12%'  class='mainTableColumns'>" + carbs.toFixed(1) + "</td><td style='width:12%'  class='mainTableColumns'>" + protein.toFixed(1) + "</td><td style='width:12%'  class='mainTableColumns'>€ " + price.toFixed(2) + "</td><td style='width:12%' class='mainTableColumnKcal'>" + kcals.toFixed(0) + "</td></tr>";
+    var newTableRow =  "<tr><td style='width:34%' class='mainTableFirstColumn'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>gr<a rel='" +  returnData.id + "'class='remove-from-daily-list icon-on-hover remove-this'  href='javascript:void(0)'><i class='far fa-minus-square'></i></a></td><td style='width:12%'  class='mainTableColumns'>" + fat.toFixed(1) + "</td><td style='width:12%'  class='mainTableColumns'>" + carbs.toFixed(1) + "</td><td style='width:12%'  class='mainTableColumns'>" + protein.toFixed(1) + "</td><td style='width:12%'  class='mainTableColumns'>€ " + price.toFixed(2) + "</td><td style='width:12%' class='mainTableColumnKcal'>" + kcals.toFixed(0) + "</td></tr>";
     $('#'+ id).parent().parent().replaceWith(newTableRow);
-
 }
-
 else {
-
 var fat = returnData.fat * returnData.quantity;
 var carbs = returnData.carbs * returnData.quantity;
 var protein = returnData.protein * returnData.quantity;
 var price = returnData.price  * returnData.quantity;
 var kcals = returnData.kcals * returnData.quantity;
-
-    var newTableRow =  "<tr><td style='width:34%' class='mainTableFirstColumn'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>stuks</td><td style='width:12%'  class='mainTableColumns'>" + fat.toFixed(1) + "</td><td style='width:12%'  class='mainTableColumns'>" + carbs.toFixed(1) + "</td><td style='width:12%'  class='mainTableColumns'>" + protein.toFixed(1) + "</td><td style='width:12%'  class='mainTableColumns'>€ " + price.toFixed(2) + "</td><td style='width:12%' class='mainTableColumnKcal'>" + kcals.toFixed(0) + "</td></tr>";
+    var newTableRow =  "<tr><td style='width:34%' class='mainTableFirstColumn'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>stuks<a rel='" +  returnData.id + "'class='remove-from-daily-list icon-on-hover remove-this'  href='javascript:void(0)'><i class='far fa-minus-square'></i></a></td><td style='width:12%'  class='mainTableColumns'>" + fat.toFixed(1) + "</td><td style='width:12%'  class='mainTableColumns'>" + carbs.toFixed(1) + "</td><td style='width:12%'  class='mainTableColumns'>" + protein.toFixed(1) + "</td><td style='width:12%'  class='mainTableColumns'>€ " + price.toFixed(2) + "</td><td style='width:12%' class='mainTableColumnKcal'>" + kcals.toFixed(0) + "</td></tr>";
     $('#'+ id).parent().parent().replaceWith(newTableRow);
 }
-
 for (var i = 1; i < table.rows.length; i++) {
     totalFat = totalFat + parseInt(table.rows[i].cells[1].innerHTML);
     totalCarbs = totalCarbs + parseInt(table.rows[i].cells[2].innerHTML);
     totalProtein = totalProtein + parseInt(table.rows[i].cells[3].innerHTML);
     totalCosts = totalCosts + parseInt(table.rows[i].cells[4].innerHTML);
     totalKcals = totalKcals + parseInt(table.rows[i].cells[5].innerHTML);
-
 }
 updateChart();
-
+});
 });
 
-});
+$("body").on('click', '.remove-this', function(){
 
 
-$(".remove-this").on('click', function(){
     
     id = $(this).attr('rel');
     $.post("remove.php", {id: id, removethis: removethis}, function(data){
     
 });
-
 $("a[rel=" + id + "]").parents('tr').remove();
-
 });  
-
-
-
 });
-
-
 </script>
 
 <script type="text/javascript" src="javascript.js"></script>
