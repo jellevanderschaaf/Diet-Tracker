@@ -15,22 +15,23 @@
                 top: 0px;
                 padding-top: 0px;
                 padding-bottom: 0px;
-                height: 50px;
+                height: 35px;
                 width: 100%;
                 background-color: #343a40;
             }
             
             .navbarImage {
-                margin-left: 15px;
-                margin-bottom: 20px;
+                margin-left: 8px;
+                margin-bottom: 15px;
             }
             
             .navbar-brand {
                 color: white;
                 margin-top: 0px;
                 margin-left: 5px;
-                font-size: 30px;
+                font-size: 25px;
                 font-family: 'Stylish', sans-serif;
+                line-height: 30px;
             }
             
             h5 {
@@ -87,7 +88,7 @@
                 grid-template-columns: 310px 600px 310px;
                 grid-gap: 15px;
                 width: 100%;
-                padding-top: 65px;
+                padding-top: 50px;
                 padding-bottom: 15px;
                 position: relative;
             }
