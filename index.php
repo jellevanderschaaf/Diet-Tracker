@@ -249,7 +249,7 @@ if (isset($_POST['create_button'])) {
                     
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
-                            echo "<tr>";
+                            echo "<tr class='mainTable2-tr'>";
                           
                         if ($row['list'] == 'grams') {
 

@@ -155,11 +155,6 @@
         border-spacing: 0 5px;
     }
     
-    .food-list-tr {
-        margin-bottom: 3px;
-        height: 15px;
-    }
-    
     .food-list-tr:hover .td-left {
         background-color: #f2f2f2;
         border-top-left-radius: 5px;
@@ -366,7 +361,10 @@
         width: 100%;
         border-collapse: separate;
         padding: 0px 10px 0px 10px;
+        border-spacing: 8px;
     }
+    
+    .mainTable2-tr>td {}
     
     .mainTableFirstColumn {
         text-align: left;
