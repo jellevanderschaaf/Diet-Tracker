@@ -22,7 +22,7 @@
             
             .navbarImage {
                 margin-left: 8px;
-                margin-bottom: 15px;
+                margin-bottom: 10px;
             }
             
             .navbar-brand {
@@ -31,7 +31,7 @@
                 margin-left: 5px;
                 font-size: 25px;
                 font-family: 'Stylish', sans-serif;
-                line-height: 30px;
+                line-height: 25px;
             }
             
             h5 {
@@ -457,27 +457,37 @@
             
             .inputWeight {
                 position: absolute;
+                display: flex;
                 bottom: 15px;
                 padding: 0px 15px 0px 15px;
+                justify-content: flex-start;
+            }
+            
+            .inputFields {
+                border-radius: 5px;
+                margin-right: auto;
             }
             
             .inputFieldWeight {
                 display: inline-block;
                 margin: 0px 2px 0px 2px;
+                width: 30px;
             }
             
             .buttonSubmit {
-                display: flex;
                 color: white;
                 background-color: #5C6165;
                 border-color: #5C6165;
                 margin: 0px;
-                float: right;
+                margin-right: 15px;
             }
             
-            .inputFields {
-                float: left;
-                border-radius: 5px;
+            .buttonLockUnlock {
+                color: white;
+                background-color: #5C6165;
+                border-color: #5C6165;
+                margin: 0px;
+                margin-left: auto;
             }
             /* weight section end */
             

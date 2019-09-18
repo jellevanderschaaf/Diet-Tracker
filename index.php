@@ -290,10 +290,11 @@ if (isset($_POST['create_button'])) {
 </table>
 <div class="inputWeight" style='width:100%'>
 <div class="inputFields">
-Morning weight: <input type="text" class="form-control form-control-sm inputFieldWeight" style='width:50px'> kg
-&emsp;&emsp;Evening weight: <input type="text" class="form-control form-control-sm inputFieldWeight" style='width:50px'> kg
+Morning: <input type="text" class="form-control form-control-sm inputFieldWeight" style='width:50px'> kg
+&emsp;&emsp;Evening: <input type="text" class="form-control form-control-sm inputFieldWeight" style='width:50px'> kg
                 </div>
-<button class="btn btn-secondary buttonSubmit">Submit</button> 
+<button class="btn btn-secondary buttonSubmit">Submit weight</button> 
+<button class="btn btn-secondary buttonLockUnlock"><i class="fas fa-unlock"></i></button> 
                 </div>
         </div>
         <div class="grid-item-right">
@@ -301,8 +302,8 @@ Morning weight: <input type="text" class="form-control form-control-sm inputFiel
             <h5 class="headerLeftRight">Totals</h5>
             <hr>
             <div class='containerTotals'>
-                <div id="totalKcals"></div>
                     <div id="totalCosts"></div>
+                    <div id="totalKcals"></div>
             </div>
             
                 <canvas id="chart"></canvas>
