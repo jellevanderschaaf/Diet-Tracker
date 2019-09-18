@@ -237,7 +237,7 @@ if (isset($_POST['create_button'])) {
     <th id="tableKcals" style='width:12%'>Kcals</th>
   </tr>
                 </table>
-                <table class="mainTable2">
+                <table id="mainTable2"class="mainTable2">
   <?php
                     $sql = "SELECT id, fname, fat, carbs, protein, price, kcals, list, quantity from food_items_date";
                     $result = $con->query($sql);
@@ -259,7 +259,7 @@ if (isset($_POST['create_button'])) {
                                 echo "<td style='width:12%' class='mainTableColumns'>{$fatAdjusted}</td>";
                                 echo "<td style='width:12%' class='mainTableColumns'>{$carbsAdjusted}</td>";
                                 echo "<td style='width:12%' class='mainTableColumns'>{$proteinAdjusted}</td>";
-                                echo "<td style='width:12%' class='mainTableColumns'>€ {$priceAdjusted}</td>";
+                                echo "<td style='width:12%' class='mainTableColumns'>{$priceAdjusted}</td>";
                                 echo "<td style='width:12%' class='mainTableColumnKcal'>{$kcalsAdjusted}</td>";
                                 echo "</tr>";   
                         }
@@ -278,7 +278,7 @@ if (isset($_POST['create_button'])) {
                             echo "<td style='width:12%' class='mainTableColumns'>{$fatAdjusted}</td>";
                             echo "<td style='width:12%' class='mainTableColumns'>{$carbsAdjusted}</td>";
                             echo "<td style='width:12%' class='mainTableColumns'>{$proteinAdjusted}</td>";
-                            echo "<td style='width:12%' class='mainTableColumns'>€ {$priceAdjusted}</td>";
+                            echo "<td style='width:12%' class='mainTableColumns'>{$priceAdjusted}</td>";
                             echo "<td style='width:12%' class='mainTableColumnKcal'>{$kcalsAdjusted}</td>";
                             echo "</tr>";          
                         }
@@ -300,11 +300,11 @@ Morning weight: <input type="text" class="form-control form-control-sm inputFiel
         <div class="grid-item-right-sub-one">
             <h5 class="headerLeftRight">Totals</h5>
             <hr>
-            <table class="totalsTable" style="width:100%">
-  <tr>
-    <td  style='width:100%'>Kcals:&emsp;2756&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Costs:&emsp;€ 12,20</td>
-  </tr>
-</table>
+            <div class='containerTotals'>
+                <div id="totalKcals"></div>
+                    <div id="totalCosts"></div>
+            </div>
+            
                 <canvas id="chart"></canvas>
             
            
@@ -329,6 +329,8 @@ Morning weight: <input type="text" class="form-control form-control-sm inputFiel
  
     <script>
 $(document).ready(function(){
+    
+    updateChart();
     
     $(function () {
   $('[data-toggle="tooltip"]').tooltip()
@@ -412,21 +414,25 @@ $(".add-this").on('click', function(){
     var kcals = parseFloat(returnData.kcals).toFixed(0);
                                           
 if (returnData.list == 'grams') {
-        $(".mainTable2").append( "<tr><td style='width:34%' class='mainTableFirstColumn'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>gr<a rel='" +  returnData.id + "'class='remove-from-daily-list icon-on-hover remove-this'  href='javascript:void(0)'><i class='far fa-minus-square'></i></a></td><td style='width:12%' class='mainTableColumns'>" + fat + "</td><td style='width:12%' class='mainTableColumns'>" + carbs + "</td><td style='width:12%' class='mainTableColumns'>" + protein + "</td><td style='width:12%' class='mainTableColumns'>€ " + price + "</td><td style='width:12%' class='mainTableColumnKcal'>" + kcals + "</td></tr>" );
+        $(".mainTable2").append( "<tr><td style='width:34%' class='mainTableFirstColumn'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>gr<a rel='" +  returnData.id + "'class='remove-from-daily-list icon-on-hover remove-this'  href='javascript:void(0)'><i class='far fa-minus-square'></i></a></td><td style='width:12%' class='mainTableColumns'>" + fat + "</td><td style='width:12%' class='mainTableColumns'>" + carbs + "</td><td style='width:12%' class='mainTableColumns'>" + protein + "</td><td style='width:12%' class='mainTableColumns'>" + price + "</td><td style='width:12%' class='mainTableColumnKcal'>" + kcals + "</td></tr>" );
 }
 else {
     
-         $(".mainTable2").append( "<tr><td style='width:34%' class='mainTableFirstColumn'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>stuks<a rel='" +  returnData.id + "'class='remove-from-daily-list icon-on-hover remove-this'  href='javascript:void(0)'><i class='far fa-minus-square'></i></a></td><td style='width:12%' class='mainTableColumns'>" + fat + "</td><td style='width:12%' class='mainTableColumns'>" + carbs + "</td><td style='width:12%' class='mainTableColumns'>" + protein + "</td><td style='width:12%' class='mainTableColumns'>€ " + price + "</td><td style='width:12%' class='mainTableColumnKcal'>" + kcals + "</td></tr>" );
+         $(".mainTable2").append( "<tr><td style='width:34%' class='mainTableFirstColumn'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>stuks<a rel='" +  returnData.id + "'class='remove-from-daily-list icon-on-hover remove-this'  href='javascript:void(0)'><i class='far fa-minus-square'></i></a></td><td style='width:12%' class='mainTableColumns'>" + fat + "</td><td style='width:12%' class='mainTableColumns'>" + carbs + "</td><td style='width:12%' class='mainTableColumns'>" + protein + "</td><td style='width:12%' class='mainTableColumns'>" + price + "</td><td style='width:12%' class='mainTableColumnKcal'>" + kcals + "</td></tr>" );
 }
        
+
+
         for (var i = 1; i < table.rows.length; i++) {
     totalFat = totalFat + parseInt(table.rows[i].cells[1].innerHTML);
     totalCarbs = totalCarbs + parseInt(table.rows[i].cells[2].innerHTML);
     totalProtein = totalProtein + parseInt(table.rows[i].cells[3].innerHTML);
     totalCosts = totalCosts + parseInt(table.rows[i].cells[4].innerHTML);
     totalKcals = totalKcals + parseInt(table.rows[i].cells[5].innerHTML);
+
 }
-       
+
+
         updateChart();
 });
 });
@@ -443,7 +449,7 @@ var carbs = returnData.carbs / 100 * returnData.quantity;
 var protein = returnData.protein / 100 * returnData.quantity;
 var price = returnData.price / 100 * returnData.quantity;
 var kcals = returnData.kcals / 100 * returnData.quantity;
-    var newTableRow =  "<tr><td style='width:34%' class='mainTableFirstColumn'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>gr<a rel='" +  returnData.id + "'class='remove-from-daily-list icon-on-hover remove-this'  href='javascript:void(0)'><i class='far fa-minus-square'></i></a></td><td style='width:12%'  class='mainTableColumns'>" + fat.toFixed(1) + "</td><td style='width:12%'  class='mainTableColumns'>" + carbs.toFixed(1) + "</td><td style='width:12%'  class='mainTableColumns'>" + protein.toFixed(1) + "</td><td style='width:12%'  class='mainTableColumns'>€ " + price.toFixed(2) + "</td><td style='width:12%' class='mainTableColumnKcal'>" + kcals.toFixed(0) + "</td></tr>";
+    var newTableRow =  "<tr><td style='width:34%' class='mainTableFirstColumn'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>gr<a rel='" +  returnData.id + "'class='remove-from-daily-list icon-on-hover remove-this'  href='javascript:void(0)'><i class='far fa-minus-square'></i></a></td><td style='width:12%'  class='mainTableColumns'>" + fat.toFixed(1) + "</td><td style='width:12%'  class='mainTableColumns'>" + carbs.toFixed(1) + "</td><td style='width:12%'  class='mainTableColumns'>" + protein.toFixed(1) + "</td><td style='width:12%'  class='mainTableColumns'>" + price.toFixed(2) + "</td><td style='width:12%' class='mainTableColumnKcal'>" + kcals.toFixed(0) + "</td></tr>";
     $('#'+ id).parent().parent().replaceWith(newTableRow);
 }
 else {
@@ -452,7 +458,7 @@ var carbs = returnData.carbs * returnData.quantity;
 var protein = returnData.protein * returnData.quantity;
 var price = returnData.price  * returnData.quantity;
 var kcals = returnData.kcals * returnData.quantity;
-    var newTableRow =  "<tr><td style='width:34%' class='mainTableFirstColumn'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>stuks<a rel='" +  returnData.id + "'class='remove-from-daily-list icon-on-hover remove-this'  href='javascript:void(0)'><i class='far fa-minus-square'></i></a></td><td style='width:12%'  class='mainTableColumns'>" + fat.toFixed(1) + "</td><td style='width:12%'  class='mainTableColumns'>" + carbs.toFixed(1) + "</td><td style='width:12%'  class='mainTableColumns'>" + protein.toFixed(1) + "</td><td style='width:12%'  class='mainTableColumns'>€ " + price.toFixed(2) + "</td><td style='width:12%' class='mainTableColumnKcal'>" + kcals.toFixed(0) + "</td></tr>";
+    var newTableRow =  "<tr><td style='width:34%' class='mainTableFirstColumn'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>stuks<a rel='" +  returnData.id + "'class='remove-from-daily-list icon-on-hover remove-this'  href='javascript:void(0)'><i class='far fa-minus-square'></i></a></td><td style='width:12%'  class='mainTableColumns'>" + fat.toFixed(1) + "</td><td style='width:12%'  class='mainTableColumns'>" + carbs.toFixed(1) + "</td><td style='width:12%'  class='mainTableColumns'>" + protein.toFixed(1) + "</td><td style='width:12%'  class='mainTableColumns'>" + price.toFixed(2) + "</td><td style='width:12%' class='mainTableColumnKcal'>" + kcals.toFixed(0) + "</td></tr>";
     $('#'+ id).parent().parent().replaceWith(newTableRow);
 }
 for (var i = 1; i < table.rows.length; i++) {
@@ -462,19 +468,25 @@ for (var i = 1; i < table.rows.length; i++) {
     totalCosts = totalCosts + parseInt(table.rows[i].cells[4].innerHTML);
     totalKcals = totalKcals + parseInt(table.rows[i].cells[5].innerHTML);
 }
-updateChart();
+
+
+        updateChart();
+
 });
 });
 
 $("body").on('click', '.remove-this', function(){
 
-
-    
     id = $(this).attr('rel');
     $.post("remove.php", {id: id, removethis: removethis}, function(data){
     
 });
+
 $("a[rel=" + id + "]").parents('tr').remove();
+
+
+        updateChart();
+
 });  
 });
 </script>

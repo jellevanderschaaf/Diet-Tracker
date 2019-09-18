@@ -1,4 +1,4 @@
-var table = document.getElementById("mainTable");
+var table = document.getElementById("mainTable2");
 
 var totalFat = 0;
 var totalCarbs = 0;
@@ -7,7 +7,7 @@ var totalCosts = 0;
 var totalKcals = 0;
 
 
-for (var i = 1; i < table.rows.length; i++) {
+for (var i = 0; i < table.rows.length; i++) {
     totalFat = totalFat + parseInt(table.rows[i].cells[1].innerHTML);
     totalCarbs = totalCarbs + parseInt(table.rows[i].cells[2].innerHTML);
     totalProtein = totalProtein + parseInt(table.rows[i].cells[3].innerHTML);
@@ -15,7 +15,8 @@ for (var i = 1; i < table.rows.length; i++) {
     totalKcals = totalKcals + parseInt(table.rows[i].cells[5].innerHTML);
 }
 
-
+document.getElementById("totalKcals").innerHTML = 'Kcals:&emsp;' + totalKcals;
+document.getElementById("totalCosts").innerHTML = 'Costs:&emsp; € ' + totalCosts;
 
 // Create food items
 
@@ -93,9 +94,30 @@ let barChart = new Chart(chart, {
 
 function updateChart() {
 
+    var table = document.getElementById("mainTable2");
+
+    var totalFat = 0;
+    var totalCarbs = 0;
+    var totalProtein = 0;
+    var totalCosts = 0;
+    var totalKcals = 0;
+
+
+    for (var i = 0; i < table.rows.length; i++) {
+        totalFat = totalFat + parseInt(table.rows[i].cells[1].innerHTML);
+        totalCarbs = totalCarbs + parseInt(table.rows[i].cells[2].innerHTML);
+        totalProtein = totalProtein + parseInt(table.rows[i].cells[3].innerHTML);
+        totalCosts = totalCosts + parseInt(table.rows[i].cells[4].innerHTML);
+        totalKcals = totalKcals + parseInt(table.rows[i].cells[5].innerHTML);
+    }
+
+
     barChart.data.datasets[0].data = [totalFat, totalCarbs, totalProtein];
     barChart.update();
-    console.log('test');
+
+    document.getElementById("totalKcals").innerHTML = 'Kcals:&emsp;' + totalKcals;
+    document.getElementById("totalCosts").innerHTML = 'Costs:&emsp; € ' + totalCosts;
+
 };
 
 // Chart two
