@@ -68,11 +68,15 @@ if (isset($_POST['create_button'])) {
 <body>
 
     <nav class="myNavbar">
-        <img class="navbarImage" src="diet.png" width=27px height=27px>
+        <img class="navbarImage" src="diet.png" width=23px height=23px>
         <a class="navbar-brand" href="#">Diet Tracker</a>
+        <i class="fas fa-redo-alt"></i>
+       <div class="navbar-minimize-maximize">
        
-        </div>
-        </div>
+       <i class="far fa-window-minimize navbar-icon-right"></i>   
+       <i class="fas fa-window-maximize navbar-icon-right"></i>
+</div>
+        
     </nav>
 
 

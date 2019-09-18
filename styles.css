@@ -11,6 +11,8 @@
             
             .myNavbar {
                 position: absolute;
+                display: flex;
+                flex-direction: row;
                 left: 0px;
                 top: 0px;
                 padding-top: 0px;
@@ -21,17 +23,39 @@
             }
             
             .navbarImage {
-                margin-left: 8px;
+                margin-left: 10px;
                 margin-bottom: 10px;
+                position: relative;
+                top: 5px;
             }
             
             .navbar-brand {
                 color: white;
                 margin-top: 0px;
-                margin-left: 5px;
+                margin-left: 10px;
                 font-size: 25px;
                 font-family: 'Stylish', sans-serif;
                 line-height: 25px;
+            }
+            
+            .navbar-icon-right {
+                color: white;
+                position: relative;
+                top: 8px;
+                margin-left: 10px;
+            }
+            
+            .fa-redo-alt {
+                color: white;
+                position: relative;
+                top: 12px;
+                right: 5px;
+            }
+            
+            .navbar-minimize-maximize {
+                justify-content: flex-end;
+                margin-left: auto;
+                padding-right: 10px;
             }
             
             h5 {
