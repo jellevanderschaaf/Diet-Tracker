@@ -8,15 +8,16 @@ var totalKcals = 0;
 
 
 for (var i = 0; i < table.rows.length; i++) {
-    totalFat = totalFat + parseInt(table.rows[i].cells[1].innerHTML);
-    totalCarbs = totalCarbs + parseInt(table.rows[i].cells[2].innerHTML);
-    totalProtein = totalProtein + parseInt(table.rows[i].cells[3].innerHTML);
-    totalCosts = totalCosts + parseInt(table.rows[i].cells[4].innerHTML);
-    totalKcals = totalKcals + parseInt(table.rows[i].cells[5].innerHTML);
+    totalFat = totalFat + Number(table.rows[i].cells[1].innerHTML);
+    totalCarbs = totalCarbs + Number(table.rows[i].cells[2].innerHTML);
+    totalProtein = totalProtein + Number(table.rows[i].cells[3].innerHTML);
+    totalCosts = totalCosts + Number(table.rows[i].cells[4].innerHTML);
+    totalKcals = totalKcals + Number(table.rows[i].cells[5].innerHTML);
 }
 
+
 document.getElementById("totalKcals").innerHTML = 'Kcals:&emsp;' + totalKcals;
-document.getElementById("totalCosts").innerHTML = 'Costs:&emsp; € ' + totalCosts;
+document.getElementById("totalCosts").innerHTML = 'Costs:&emsp; € ' + totalCosts.toFixed(2);
 
 // Create food items
 
@@ -102,21 +103,21 @@ function updateChart() {
     var totalCosts = 0;
     var totalKcals = 0;
 
-
     for (var i = 0; i < table.rows.length; i++) {
-        totalFat = totalFat + parseInt(table.rows[i].cells[1].innerHTML);
-        totalCarbs = totalCarbs + parseInt(table.rows[i].cells[2].innerHTML);
-        totalProtein = totalProtein + parseInt(table.rows[i].cells[3].innerHTML);
-        totalCosts = totalCosts + parseInt(table.rows[i].cells[4].innerHTML);
-        totalKcals = totalKcals + parseInt(table.rows[i].cells[5].innerHTML);
+        totalFat = totalFat + Number(table.rows[i].cells[1].innerHTML);
+        totalCarbs = totalCarbs + Number(table.rows[i].cells[2].innerHTML);
+        totalProtein = totalProtein + Number(table.rows[i].cells[3].innerHTML);
+        totalCosts = totalCosts + Number(table.rows[i].cells[4].innerHTML);
+        totalKcals = totalKcals + Number(table.rows[i].cells[5].innerHTML);
     }
+
 
 
     barChart.data.datasets[0].data = [totalFat, totalCarbs, totalProtein];
     barChart.update();
 
     document.getElementById("totalKcals").innerHTML = 'Kcals:&emsp;' + totalKcals;
-    document.getElementById("totalCosts").innerHTML = 'Costs:&emsp; € ' + totalCosts;
+    document.getElementById("totalCosts").innerHTML = 'Costs:&emsp; € ' + totalCosts.toFixed(2);
 
 };
 
