@@ -254,11 +254,11 @@ if (isset($_POST['create_button'])) {
                             echo "<td style='width:34%' class='mainTableFirstColumn'>{$row['fname']}<input id='".$row['id']."' class='inputQuantity' value='{$row['quantity']}' rel='".$row['id']."'>gr<a rel='".$row['id']."' 
                             class='remove-from-daily-list icon-on-hover remove-this'  href='javascript:void(0)'><i class='far fa-minus-square'></i></a></td>";
                           
-                            $fatAdjusted = number_format($row['fat'] / 100 * $row['quantity'], 1);
-                            $carbsAdjusted = number_format($row['carbs'] / 100 * $row['quantity'], 1);
-                            $proteinAdjusted = number_format($row['protein'] / 100 * $row['quantity'], 1);
-                            $priceAdjusted = number_format($row['price'] / 100 * $row['quantity'], 2);
-                            $kcalsAdjusted = number_format($row['kcals'] / 100 * $row['quantity'], 0);
+                            $fatAdjusted = number_format($row['fat'] / 100 * $row['quantity'], 1, '.', '');
+                            $carbsAdjusted = number_format($row['carbs'] / 100 * $row['quantity'], 1, '.', '');
+                            $proteinAdjusted = number_format($row['protein'] / 100 * $row['quantity'], 1, '.', '');
+                            $priceAdjusted = number_format($row['price'] / 100 * $row['quantity'], 2, '.', '');
+                            $kcalsAdjusted = number_format($row['kcals'] / 100 * $row['quantity'], 0, '.', '');
     
                                 echo "<td style='width:12%' class='mainTableColumns'>{$fatAdjusted}</td>";
                                 echo "<td style='width:12%' class='mainTableColumns'>{$carbsAdjusted}</td>";
@@ -274,11 +274,11 @@ if (isset($_POST['create_button'])) {
                           
                           
                         
-                        $fatAdjusted = number_format($row['fat'] * $row['quantity'], 1);
-                        $carbsAdjusted = number_format($row['carbs'] * $row['quantity'], 1);
-                        $proteinAdjusted = number_format($row['protein'] * $row['quantity'], 1);
-                        $priceAdjusted = number_format($row['price'] * $row['quantity'], 2);
-                        $kcalsAdjusted = number_format($row['kcals'] * $row['quantity'], 0);
+                        $fatAdjusted = number_format($row['fat'] * $row['quantity'], 1, '.', '');
+                        $carbsAdjusted = number_format($row['carbs'] * $row['quantity'], 1, '.', '');
+                        $proteinAdjusted = number_format($row['protein'] * $row['quantity'], 1, '.', '');
+                        $priceAdjusted = number_format($row['price'] * $row['quantity'], 2, '.', '');
+                        $kcalsAdjusted = number_format($row['kcals'] * $row['quantity'], 0, '.', '');
                             echo "<td style='width:12%' class='mainTableColumns'>{$fatAdjusted}</td>";
                             echo "<td style='width:12%' class='mainTableColumns'>{$carbsAdjusted}</td>";
                             echo "<td style='width:12%' class='mainTableColumns'>{$proteinAdjusted}</td>";
