@@ -41,7 +41,7 @@
             .navbar-icon-right {
                 color: white;
                 position: relative;
-                top: 8px;
+                top: 7px;
                 margin-left: 10px;
             }
             
@@ -224,7 +224,7 @@
             }
             
             .chartjs-render-monitor {
-                padding-top: 20px;
+                padding: 0px 5px 0px 5px;
             }
             
             .hidden {

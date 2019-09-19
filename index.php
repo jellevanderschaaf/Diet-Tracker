@@ -297,7 +297,7 @@ if (isset($_POST['create_button'])) {
 Morning: <input type="text" class="form-control form-control-sm inputFieldWeight" style='width:50px'> kg
 &emsp;&emsp;Evening: <input type="text" class="form-control form-control-sm inputFieldWeight" style='width:50px'> kg
                 </div>
-<button class="btn btn-secondary buttonSubmit">Submit weight</button> 
+<button class="btn btn-secondary buttonSubmit">Submit Weight</button> 
 <button class="btn btn-secondary buttonLockUnlock"><i class="fas fa-unlock"></i></button> 
                 </div>
         </div>

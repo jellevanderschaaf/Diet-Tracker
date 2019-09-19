@@ -75,10 +75,12 @@ let barChart = new Chart(chart, {
         },
         scales: {
             yAxes: [{
-                display: false,
+                display: true,
                 ticks: {
                     beginAtZero: true,
-                    display: false,
+                    display: true,
+                    steps: 6,
+                    max: 250
                 },
                 gridLines: {
                     display: false
