@@ -313,10 +313,9 @@ Morning: <input type="text" class="form-control form-control-sm inputFieldWeight
                     <div id="totalCosts"></div>
                     <div id="totalKcals"></div>
             </div>
-            
+            <div id="chartWrapper">
                 <canvas id="chart"></canvas>
-            
-           
+                </div>
         </div>
                 
                 <div class="grid-item-right-sub-two">
@@ -535,7 +534,7 @@ if (typeof rfs != "undefined" && rfs) {
         wscript.SendKeys("{F11}");
     }
 }
-
+    updateChart();
 });
 
 

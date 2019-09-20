@@ -467,9 +467,11 @@
                 margin-left: 30px;
             }
             
-            #chart {
+            #chartWrapper {
+                width: 97%;
+                height: calc(100% - 122px);
                 position: absolute;
-                bottom: 5px;
+                bottom: 0px;
             }
             
             #chartTwo {

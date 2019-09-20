@@ -55,10 +55,18 @@ function cancel3() {
 
 
 
-
 // Chart one
 
 let chart = document.getElementById('chart').getContext('2d');
+
+var ctx = $('#chart')[0];
+
+ctx.height = 165;
+
+
+
+
+
 
 let barChart = new Chart(chart, {
     type: 'bar',
@@ -75,6 +83,8 @@ let barChart = new Chart(chart, {
         }],
     },
     options: {
+        responsive: true,
+        maintainAspectRatio: false,
         title: {
             display: false,
             text: 'Macros',
