@@ -309,10 +309,16 @@ Morning: <input type="text" class="form-control form-control-sm inputFieldWeight
         <div class="grid-item-right-sub-one">
             <h5 class="headerLeftRight">Totals</h5>
             <hr>
-            <div class='containerTotals'>
-                    <div id="totalCosts"></div>
-                    <div id="totalKcals"></div>
-            </div>
+
+
+            <table class="totalsTable" style='width:100%'>
+            <tr>
+    <th id="totalCosts" class="totalsHead" style='width:50%'></th>
+    <th id="totalKcals" class="totalsHead" style='width:50%'></th>
+  </tr>
+</table> 
+
+
             <div id="chartWrapper">
                 <canvas id="chart"></canvas>
                 </div>
@@ -428,8 +434,6 @@ else {
     
          $(".mainTable2").append( "<tr><td style='width:34%' class='mainTableFirstColumn'>" + returnData.fname + "<input id='" + returnData.id + "' class='inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>stuks<a rel='" +  returnData.id + "'class='remove-from-daily-list icon-on-hover remove-this'  href='javascript:void(0)'><i class='far fa-minus-square'></i></a></td><td style='width:12%' class='mainTableColumns'>" + fat + "</td><td style='width:12%' class='mainTableColumns'>" + carbs + "</td><td style='width:12%' class='mainTableColumns'>" + protein + "</td><td style='width:12%' class='mainTableColumns'>" + price + "</td><td style='width:12%' class='mainTableColumnKcal'>" + kcals + "</td></tr>" );
 }
-       
-
 
         for (var i = 1; i < table.rows.length; i++) {
     totalFat = totalFat + parseInt(table.rows[i].cells[1].innerHTML);
@@ -492,10 +496,6 @@ for (var i = 1; i < table.rows.length; i++) {
     totalCosts = totalCosts + parseInt(table.rows[i].cells[4].innerHTML);
     totalKcals = totalKcals + parseInt(table.rows[i].cells[5].innerHTML);
 }
-
-
-
-
 
         updateChart();
 
