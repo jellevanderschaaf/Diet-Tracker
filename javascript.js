@@ -6,6 +6,8 @@ $(".navbarImage").on('click', function() {
 
 
 
+
+
 var table = document.getElementById("mainTable2");
 
 var totalFat = 0;

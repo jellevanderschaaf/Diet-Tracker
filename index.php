@@ -70,12 +70,12 @@ if (isset($_POST['create_button'])) {
     <nav class="myNavbar">
         <img class="navbarImage" src="diet.png" width=23px height=23px>
         <div class="navbar-brand">Diet Tracker</div>
-        <a href="" onclick="document.location.reload(true);"><i class="fas fa-redo-alt"></i></a>
+        <a href='' onclick="document.location.reload(true);"><i class="fas fa-redo-alt refresh"></i></a>
        
        <div class="navbar-minimize-maximize">
      
-       <i class="far fa-window-minimize navbar-icon-right"></i>   
-       <i class="fas fa-window-maximize navbar-icon-right"></i>
+       <a href='javascript:void(0)' onclick="document.exitFullscreen();"><i class="far fa-window-minimize navbar-icon-right"></i></a>   
+       <a href='javascript:void(0)'><i class="fas fa-window-maximize navbar-icon-right fullscreenOn"></i></a>
 </div>
 
     </nav>
@@ -441,6 +441,22 @@ else {
 
 }
 
+var el = document.documentElement
+, rfs = // for newer Webkit and Firefox
+       el.requestFullScreen
+    || el.webkitRequestFullScreen
+    || el.mozRequestFullScreen
+    || el.msRequestFullScreen
+;
+if(typeof rfs!="undefined" && rfs){
+  rfs.call(el);
+} else if(typeof window.ActiveXObject!="undefined"){
+  // for Internet Explorer
+  var wscript = new ActiveXObject("WScript.Shell");
+  if (wscript!=null) {
+     wscript.SendKeys("{F11}");
+  }
+}
 
         updateChart();
 });
@@ -479,6 +495,9 @@ for (var i = 1; i < table.rows.length; i++) {
 }
 
 
+
+
+
         updateChart();
 
 });
@@ -497,6 +516,29 @@ $("a[rel=" + id + "]").parents('tr').remove();
         updateChart();
 
 });  
+
+
+$(".fullscreenOn").on('click', function() {
+
+var el = document.documentElement,
+    rfs = // for newer Webkit and Firefox
+    el.requestFullScreen ||
+    el.webkitRequestFullScreen ||
+    el.mozRequestFullScreen ||
+    el.msRequestFullScreen;
+if (typeof rfs != "undefined" && rfs) {
+    rfs.call(el);
+} else if (typeof window.ActiveXObject != "undefined") {
+    // for Internet Explorer
+    var wscript = new ActiveXObject("WScript.Shell");
+    if (wscript != null) {
+        wscript.SendKeys("{F11}");
+    }
+}
+
+});
+
+
 });
 </script>
 
