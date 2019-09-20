@@ -69,14 +69,15 @@ if (isset($_POST['create_button'])) {
 
     <nav class="myNavbar">
         <img class="navbarImage" src="diet.png" width=23px height=23px>
-        <a class="navbar-brand" href="#">Diet Tracker</a>
-        <i class="fas fa-redo-alt"></i>
-       <div class="navbar-minimize-maximize">
+        <div class="navbar-brand">Diet Tracker</div>
+        <a href="" onclick="document.location.reload(true);"><i class="fas fa-redo-alt"></i></a>
        
+       <div class="navbar-minimize-maximize">
+     
        <i class="far fa-window-minimize navbar-icon-right"></i>   
        <i class="fas fa-window-maximize navbar-icon-right"></i>
 </div>
-        
+
     </nav>
 
 
@@ -292,6 +293,9 @@ if (isset($_POST['create_button'])) {
                   
                     ?>
 </table>
+
+
+
 <div class="inputWeight" style='width:100%'>
 <div class="inputFields">
 Morning: <input type="text" class="form-control form-control-sm inputFieldWeight" style='width:50px'> kg

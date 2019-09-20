@@ -1,3 +1,11 @@
+$(".navbarImage").on('click', function() {
+
+    window.location.reload(true);
+
+});
+
+
+
 var table = document.getElementById("mainTable2");
 
 var totalFat = 0;

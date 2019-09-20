@@ -10,7 +10,6 @@
             }
             
             .myNavbar {
-                position: absolute;
                 display: flex;
                 flex-direction: row;
                 left: 0px;
@@ -48,8 +47,13 @@
             .fa-redo-alt {
                 color: white;
                 position: relative;
-                top: 12px;
+                top: 8px;
                 right: 5px;
+            }
+            
+            .fa-window-minimize {
+                position: relative;
+                top: 4px;
             }
             
             .navbar-minimize-maximize {
@@ -107,12 +111,12 @@
             .grid-container {
                 display: grid;
                 box-sizing: border-box;
-                height: 100%;
+                height: calc(100% - 35px);
                 justify-content: center;
                 grid-template-columns: 310px 600px 310px;
                 grid-gap: 15px;
                 width: 100%;
-                padding-top: 50px;
+                padding-top: 15px;
                 padding-bottom: 15px;
                 position: relative;
             }
