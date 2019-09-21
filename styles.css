@@ -401,9 +401,19 @@
             }
             
             .inputQuantity {
+                width: 30px;
+                margin-left: 3px;
+                margin-right: 3px;
                 border: none;
                 text-align: center;
                 color: #5C6165;
+                height: 26px;
+                display: inline-block;
+                padding: 0px;
+            }
+            
+            .piece {
+                width: 23px;
             }
             
             .mainTableColumns {
@@ -562,12 +572,6 @@
             
             .fa-expand {
                 color: #5C6165;
-            }
-            
-            .inputQuantity {
-                width: 30px;
-                margin-left: 3px;
-                margin-right: 3px;
             }
             
             .mainTable body:before {
