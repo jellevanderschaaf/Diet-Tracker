@@ -502,7 +502,9 @@
             .inputFieldWeight {
                 display: inline-block;
                 margin: 0px 2px 0px 2px;
-                width: 30px;
+                width: 26px;
+                height: 26px;
+                text-align: center;
             }
             
             .buttonSubmit {
