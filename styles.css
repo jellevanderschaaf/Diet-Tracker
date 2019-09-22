@@ -343,7 +343,7 @@ a:hover {
 
 /* scrollbar */
 
-.date {
+#date {
     display: inline-block;
     padding-left: 50px;
     padding-right: 50px;

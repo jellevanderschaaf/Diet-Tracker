@@ -256,7 +256,7 @@ if (isset($_POST['create_button'])) {
             <button class="btn btn-secondary new-food-item" onClick="createFoodItem()">New Food Item</button>
         </div>
         <div class="grid-item">
-        <div class="headerDate"><form action="index.php" method="post"><button type="submit" name="datePrevious" value="GO" class="btn buttonPreviousDate"><i class="fa fa-angle-left "></i></button></form><h5 class="date"><?php echo $date;?></h5><form action="index.php" method="post"><button type="submit" name="dateNext" value="GO" class="btn buttonNextDate"><i class="fa fa-angle-right "></i></button></form></div>    
+        <div class="headerDate"><form action="index.php" method="post"><button type="submit" name="datePrevious" value="GO" class="btn buttonPreviousDate"><i class="fa fa-angle-left "></i></button></form><h5 id="date"><?php echo $date;?></h5><form action="index.php" method="post"><button type="submit" name="dateNext" value="GO" class="btn buttonNextDate"><i class="fa fa-angle-right "></i></button></form></div>    
             <hr>
             
 
@@ -445,8 +445,10 @@ else  {
 $(".add-this").on('click', function(){
     
     id = $(this).attr('rel');
+    var dateOne = document.getElementById('date').textContent;
+    var date =  JSON.stringify(dateOne);
    
-    $.post("add.php", {id: id, addthis: addthis}, function(data){
+    $.post("add.php", {id: id, date: date, addthis: addthis}, function(data){
         
     var returnData = JSON.parse(data);
     
@@ -455,6 +457,7 @@ $(".add-this").on('click', function(){
     var protein = parseFloat(returnData.protein).toFixed(1);
     var price = parseFloat(returnData.price).toFixed(2);
     var kcals = parseFloat(returnData.kcals).toFixed(0);
+    
                                           
 if (returnData.list == 'grams') {
         $(".mainTable2").append( "<tr><td style='width:39%' class='mainTableFirstColumn'>" + returnData.fname + "<input id='" + returnData.id + "' class='form-control form-control-sm inputQuantity' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>gr<a rel='" +  returnData.id + "'class='remove-from-daily-list icon-on-hover remove-this'  href='javascript:void(0)'><i class='far fa-minus-square'></i></a></td><td style='width:11%' class='mainTableColumns'>" + fat + "</td><td style='width:11%' class='mainTableColumns'>" + carbs + "</td><td style='width:11%' class='mainTableColumns'>" + protein + "</td><td style='width:11%' class='mainTableColumns'>" + price + "</td><td style='width:11%' class='mainTableColumnKcal'>" + kcals + "</td></tr>" );
@@ -470,23 +473,7 @@ else {
     totalCosts = totalCosts + parseInt(table.rows[i].cells[4].innerHTML);
     totalKcals = totalKcals + parseInt(table.rows[i].cells[5].innerHTML);
 }
-var el = document.documentElement
-, rfs = // for newer Webkit and Firefox
-       el.requestFullScreen
-    || el.webkitRequestFullScreen
-    || el.mozRequestFullScreen
-    || el.msRequestFullScreen
-;
-if(typeof rfs!="undefined" && rfs){
-  rfs.call(el);
-} else if(typeof window.ActiveXObject!="undefined"){
-  // for Internet Explorer
-  var wscript = new ActiveXObject("WScript.Shell");
-  if (wscript!=null) {
-     wscript.SendKeys("{F11}");
-  }
-}
-        updateChart();
+     updateChart();
 });
 });
 $("body").on('keyup', '.inputQuantity', function(){
