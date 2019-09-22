@@ -1,17 +1,30 @@
 <?php include("db.php"); 
 
 
-$_SESSION['date_counter'];
+
+$date = (new DateTime('now-2day'))->format('d-m-Y');
+//$date = (new DateTime('now-' . strval($_SESSION['date_counter']) . 'day'))->format('d-m-Y');
+
 
 if(isset($_POST['datePrevious'])) { 
-   
-        $_SESSION['date_counter'] += 1;   
+
+    if(!isset($_SESSION['date_counter2'])) {
+        $_SESSION['date_counter2'] = 0;
+    } else {
+        $_SESSION['date_counter2']++;   
     }
+}
 
     if(isset($_POST['dateNext'])) { 
+
+        if(!isset($_SESSION['date_counter2'])) {
+            $_SESSION['date_counter2'] = 0;
+        } else {
    
-        $_SESSION['date_counter'] -= 1;   
+        $_SESSION['date_counter2']--;   
     }
+    }
+   
 
 
 $fname = "";
@@ -243,7 +256,7 @@ if (isset($_POST['create_button'])) {
             <button class="btn btn-secondary new-food-item" onClick="createFoodItem()">New Food Item</button>
         </div>
         <div class="grid-item">
-        <form action="index.php" method="post"><button type="submit" name="datePrevious" value="GO"><i class="fa fa-angle-left"></i></button></form><h5 class="date"><?php echo (new DateTime('now-1day'))->format('d-m-Y') . $_SESSION['date_counter'];?></h5><form action="index.php" method="post"><button type="submit" name="dateNext" value="GO"><i class="fa fa-angle-right"></i></button></form>    
+        <form action="index.php" method="post"><button type="submit" name="datePrevious" value="GO"><i class="fa fa-angle-left"></i></button></form><h5 class="date"><?php echo $date . $_SESSION['date_counter2'];?></h5><form action="index.php" method="post"><button type="submit" name="dateNext" value="GO"><i class="fa fa-angle-right"></i></button></form>    
             <hr>
             
 
