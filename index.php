@@ -1,4 +1,19 @@
 <?php include("db.php"); 
+
+
+$_SESSION['date_counter'];
+
+if(isset($_POST['datePrevious'])) { 
+   
+        $_SESSION['date_counter'] += 1;   
+    }
+
+    if(isset($_POST['dateNext'])) { 
+   
+        $_SESSION['date_counter'] -= 1;   
+    }
+
+
 $fname = "";
 $fat =  "";
 $carbs = "";
@@ -228,9 +243,10 @@ if (isset($_POST['create_button'])) {
             <button class="btn btn-secondary new-food-item" onClick="createFoodItem()">New Food Item</button>
         </div>
         <div class="grid-item">
-        <i class="fa fa-angle-left"></i></i><h5 class="date"><?php echo date('d-m-Y');?></h5><i class="fa fa-angle-right"></i>
+        <form action="index.php" method="post"><button type="submit" name="datePrevious" value="GO"><i class="fa fa-angle-left"></i></button></form><h5 class="date"><?php echo (new DateTime('now-1day'))->format('d-m-Y') . $_SESSION['date_counter'];?></h5><form action="index.php" method="post"><button type="submit" name="dateNext" value="GO"><i class="fa fa-angle-right"></i></button></form>    
             <hr>
             
+
             <div id="listToday"></div>
             <table id="mainTable" class="mainTable" style="width:100%">
   <tr>
@@ -521,6 +537,8 @@ if (typeof rfs != "undefined" && rfs) {
 }
     updateChart();
 });
+
+
 });
 </script>
 
