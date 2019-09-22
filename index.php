@@ -6,7 +6,7 @@ if(!isset($_SESSION['date_counter2'])) {
 
 
 $date = (new DateTime('now-' . $_SESSION['date_counter2'] . 'day'))->format('d-m-Y');
-//$date = (new DateTime('now-' . strval($_SESSION['date_counter']) . 'day'))->format('d-m-Y');
+$dateCheck = strval($date);
 
 
 
@@ -273,7 +273,7 @@ if (isset($_POST['create_button'])) {
                 </table>
                 <table id="mainTable2"class="mainTable2">
   <?php
-                    $sql = "SELECT id, fname, fat, carbs, protein, price, kcals, list, quantity from food_items_date";
+                    $sql = "SELECT id, fname, fat, carbs, protein, price, kcals, list, quantity from food_items_date WHERE thisdate = $dateCheck";
                     $result = $con->query($sql);
                     
                     if ($result->num_rows > 0) {
@@ -446,7 +446,7 @@ $(".add-this").on('click', function(){
     
     id = $(this).attr('rel');
     var dateOne = document.getElementById('date').textContent;
-    var date =  JSON.stringify(dateOne);
+    var date =  dateOne;
    
     $.post("add.php", {id: id, date: date, addthis: addthis}, function(data){
         
