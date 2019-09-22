@@ -434,16 +434,13 @@ else {
     
          $(".mainTable2").append( "<tr><td style='width:39%' class='mainTableFirstColumn'>" + returnData.fname + "<input id='" + returnData.id + "' class='form-control form-control-sm inputQuantity piece' value='" + returnData.quantity + "' rel='" +  returnData.id + "'>stuks<a rel='" +  returnData.id + "'class='remove-from-daily-list icon-on-hover remove-this'  href='javascript:void(0)'><i class='far fa-minus-square'></i></a></td><td style='width:11%' class='mainTableColumns'>" + fat + "</td><td style='width:11%' class='mainTableColumns'>" + carbs + "</td><td style='width:11%' class='mainTableColumns'>" + protein + "</td><td style='width:11%' class='mainTableColumns'>" + price + "</td><td style='width:11%' class='mainTableColumnKcal'>" + kcals + "</td></tr>" );
 }
-
         for (var i = 1; i < table.rows.length; i++) {
     totalFat = totalFat + parseInt(table.rows[i].cells[1].innerHTML);
     totalCarbs = totalCarbs + parseInt(table.rows[i].cells[2].innerHTML);
     totalProtein = totalProtein + parseInt(table.rows[i].cells[3].innerHTML);
     totalCosts = totalCosts + parseInt(table.rows[i].cells[4].innerHTML);
     totalKcals = totalKcals + parseInt(table.rows[i].cells[5].innerHTML);
-
 }
-
 var el = document.documentElement
 , rfs = // for newer Webkit and Firefox
        el.requestFullScreen
@@ -460,7 +457,6 @@ if(typeof rfs!="undefined" && rfs){
      wscript.SendKeys("{F11}");
   }
 }
-
         updateChart();
 });
 });
@@ -496,29 +492,18 @@ for (var i = 1; i < table.rows.length; i++) {
     totalCosts = totalCosts + parseInt(table.rows[i].cells[4].innerHTML);
     totalKcals = totalKcals + parseInt(table.rows[i].cells[5].innerHTML);
 }
-
         updateChart();
-
 });
 });
-
 $("body").on('click', '.remove-this', function(){
-
     id = $(this).attr('rel');
     $.post("remove.php", {id: id, removethis: removethis}, function(data){
     
 });
-
 $("a[rel=" + id + "]").parents('tr').remove();
-
-
         updateChart();
-
 });  
-
-
 $(".fullscreenOn").on('click', function() {
-
 var el = document.documentElement,
     rfs = // for newer Webkit and Firefox
     el.requestFullScreen ||
@@ -536,8 +521,6 @@ if (typeof rfs != "undefined" && rfs) {
 }
     updateChart();
 });
-
-
 });
 </script>
 

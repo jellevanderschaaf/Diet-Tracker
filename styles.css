@@ -1,625 +1,637 @@
-            html {
-                height: 100%;
-            }
-            
-            body {
-                background-color: #F0F4F7;
-                height: 100%;
-                color: #5C6165;
-                font-size: 14px;
-            }
-            
-            .myNavbar {
-                display: flex;
-                flex-direction: row;
-                left: 0px;
-                top: 0px;
-                padding-top: 0px;
-                padding-bottom: 0px;
-                height: 35px;
-                width: 100%;
-                background-color: #343a40;
-            }
-            
-            .navbarImage {
-                margin-left: 10px;
-                margin-bottom: 10px;
-                position: relative;
-                top: 5px;
-            }
-            
-            .navbar-brand {
-                color: white;
-                margin-top: 0px;
-                margin-left: 10px;
-                font-size: 25px;
-                font-family: 'Stylish', sans-serif;
-                line-height: 25px;
-            }
-            
-            .navbar-icon-right {
-                color: white;
-                position: relative;
-                top: 7px;
-                margin-left: 10px;
-            }
-            
-            .fa-redo-alt {
-                color: white;
-                position: relative;
-                top: 8px;
-                right: 5px;
-            }
-            
-            .fa-window-minimize {
-                position: relative;
-                top: 4px;
-            }
-            
-            .navbar-minimize-maximize {
-                justify-content: flex-end;
-                margin-left: auto;
-                padding-right: 10px;
-            }
-            
-            h5 {
-                padding-top: 15px;
-                padding-bottom: 15px;
-                margin: 0;
-                font-weight: 500;
-                font-size: 17px;
-            }
-            
-            hr {
-                margin: 0;
-                padding-bottom: 10px;
-            }
-            
-            .input {
-                border-radius: 5px;
-                height: 30px;
-                width: 120px;
-                display: inline-block;
-            }
-            
-            .btn-success {
-                margin-left: 5px;
-                height: 30px;
-                line-height: 10px;
-                float: right;
-                margin-top: 10px;
-                margin-right: 15px;
-                font-weight: 700;
-                font-family: 'Stylish', sans-serif;
-            }
-            
-            .btn-secondary {
-                margin-bottom: 10px;
-                height: 26px;
-                line-height: 6px;
-                background-color: white;
-                color: black;
-                font-size: 14px;
-            }
-            
-            .btn-danger {
-                width: 20px;
-                height: 20px;
-                padding: 0px;
-                line-height: 0px;
-            }
-            
-            .grid-container {
-                display: grid;
-                box-sizing: border-box;
-                height: calc(100% - 35px);
-                justify-content: center;
-                grid-template-columns: 310px 600px 310px;
-                grid-gap: 15px;
-                width: 100%;
-                padding-top: 15px;
-                padding-bottom: 15px;
-                position: relative;
-            }
-            
-            .grid-item {
-                height: 100%;
-                min-width: 300px;
-                background-color: #FFFFFF;
-                border-radius: 5px;
-                text-align: center;
-                box-shadow: 0 0 10px grey;
-                -moz-box-shadow: 0 0 10px grey;
-                -webkit-box-shadow: 0 0 10px grey;
-                -o-box-shadow: 0 0 10px grey;
-                position: relative;
-            }
-            
-            .grid-item-right {
-                display: grid;
-                grid-template-rows: 50% 50%;
-                row-gap: 7.5px;
-                height: 100%;
-                min-width: 300px;
-            }
-            
-            .grid-item-right-sub-two {
-                background-color: #FFFFFF;
-                border-radius: 5px;
-                text-align: center;
-                box-shadow: 0 0 10px grey;
-                -moz-box-shadow: 0 0 10px grey;
-                -webkit-box-shadow: 0 0 10px grey;
-                -o-box-shadow: 0 0 10px grey;
-                height: calc(100% - 7.5px);
-                position: relative;
-            }
-            
-            .grid-item-right-sub-one {
-                background-color: #FFFFFF;
-                border-radius: 5px;
-                text-align: center;
-                box-shadow: 0 0 10px grey;
-                -moz-box-shadow: 0 0 10px grey;
-                -webkit-box-shadow: 0 0 10px grey;
-                -o-box-shadow: 0 0 10px grey;
-                height: calc(100% - 7.5px);
-                position: relative;
-            }
-            
-            .foodList {
-                padding: 0px 7px 20px 15px;
-                text-align: left;
-                height: calc(100% - 140px);
-                overflow-y: scroll;
-            }
-            
-            .foodItem {
-                display: flex;
-                flex-direction: row;
-                justify-content: left;
-            }
-            
-            .foodlist-table {
-                border-collapse: separate;
-                border-spacing: 0 5px;
-            }
-            
-            .food-list-tr:hover .td-left {
-                background-color: #f2f2f2;
-                border-top-left-radius: 5px;
-                border-bottom-left-radius: 5px;
-            }
-            
-            .food-list-tr:hover .td-center {
-                background-color: #f2f2f2;
-            }
-            
-            .food-list-tr:hover .td-right {
-                background-color: #f2f2f2;
-                border-top-right-radius: 5px;
-                border-bottom-right-radius: 5px;
-            }
-            
-            .td-left {
-                padding-left: 5px;
-                padding-bottom: 3px;
-                background-color: #fafafa;
-                border-top-left-radius: 5px;
-                border-bottom-left-radius: 5px;
-            }
-            
-            .td-center {
-                background-color: #fafafa;
-            }
-            
-            .td-right {
-                background-color: #fafafa;
-                border-top-right-radius: 5px;
-                border-bottom-right-radius: 5px;
-            }
-            
-            .totalsLabels {
-                display: inline-block;
-            }
-            
-            .totals {
-                width: 50px;
-                display: inline-block;
-            }
-            
-            .chartjs-render-monitor {
-                padding: 0px 5px 0px 5px;
-            }
-            
-            .hidden {
-                visibility: hidden;
-            }
-            
-            .formFoodItem {
-                width: 150px;
-                margin: auto;
-                margin-bottom: 5px;
-            }
-            
-            td {
-                width: 33.33%;
-            }
-            
-            ._modal {
-                position: fixed;
-                display: flex;
-                z-index: 1;
-                left: 0;
-                top: 0;
-                height: 100%;
-                width: 100%;
-                overflow: auto;
-                background-color: rgba(0, 0, 0, 0.15);
-            }
-            
-            .modal_box_one {
-                background-color: white;
-                text-align: center;
-                margin: auto auto;
-                width: 300px;
-                padding: 20px;
-                border-radius: 5px;
-                box-shadow: 0 0 10px grey;
-                -moz-box-shadow: 0 0 10px grey;
-                -webkit-box-shadow: 0 0 10px grey;
-                -o-box-shadow: 0 0 10px grey;
-            }
-            
-            .modal_box_two {
-                background-color: white;
-                text-align: center;
-                margin: auto auto;
-                width: 300px;
-                padding: 20px;
-                border-radius: 5px;
-                box-shadow: 0 0 10px grey;
-                -moz-box-shadow: 0 0 10px grey;
-                -webkit-box-shadow: 0 0 10px grey;
-                -o-box-shadow: 0 0 10px grey;
-            }
-            
-            a {
-                color: lightgrey;
-            }
-            
-            a:hover {
-                color: grey;
-            }
-            
-            .material-icons {
-                position: relative;
-                top: 2px;
-                left: 6px;
-            }
-            
-            .food-list-tr:hover .icon-on-hover {
-                display: block;
-            }
-            
-            .icon-on-hover {
-                display: none;
-            }
-            
-            .new-food-item {
-                width: 90%;
-                position: absolute;
-                bottom: 5px;
-                left: 15px;
-                color: white;
-                background-color: #5C6165;
-                border-color: #5C6165;
-            }
-            
-            .grid-item-left {
-                position: relative;
-            }
-            /* scrollbar */
-            
-             ::-webkit-scrollbar {
-                width: 8px;
-            }
-            
-             ::-webkit-scrollbar-track {
-                background: white;
-            }
-            
-             ::-webkit-scrollbar-thumb {
-                background: lightgrey;
-                border-radius: 5px;
-            }
-            
-             ::-webkit-scrollbar-thumb:hover {
-                background: lightgrey;
-            }
-            /* scrollbar */
-            
-            .date {
-                display: inline-block;
-                padding-left: 100px;
-                padding-right: 100px;
-                padding-bottom: 14px;
-                font-family: 'Stylish', sans-serif;
-                position: relative;
-                top: 1px;
-                font-weight: 500;
-                font-size: 18px;
-            }
-            
-            .fa-angle-left {
-                color: #5C6165;
-                font-size: 28px;
-                position: relative;
-                top: 5px;
-            }
-            
-            .fa-angle-left:hover {
-                cursor: pointer;
-            }
-            
-            .fa-angle-right {
-                display: inline-block;
-                color: #5C6165;
-                font-size: 28px;
-                position: relative;
-                top: 5px;
-            }
-            
-            .fa-angle-right:hover {
-                cursor: pointer;
-            }
-            
-            .mainTable {
-                border-collapse: separate;
-                border-spacing: 5px 5px;
-                padding: 0px 10px 0px 10px;
-                margin-bottom: 10px;
-            }
-            
-            .mainTable th {
-                color: white;
-                border-radius: 5px;
-                font-weight: 600;
-            }
-            
-            .mainTable2 {
-                width: 100%;
-                border-collapse: separate;
-                padding: 0px 10px 0px 10px;
-                border-spacing: 8px;
-            }
-            
-            .mainTableFirstColumn {
-                text-align: left;
-                padding-left: 10px;
-                padding-right: 10px;
-            }
-            
-            .inputQuantity {
-                width: 30px;
-                margin-left: 3px;
-                margin-right: 3px;
-                border: none;
-                text-align: center;
-                color: #5C6165;
-                height: 26px;
-                display: inline-block;
-                padding: 0px;
-            }
-            
-            .piece {
-                width: 23px;
-            }
-            
-            .mainTableColumns {
-                text-align: center;
-                font-size: 13px;
-                color: #5f6368;
-            }
-            
-            .mainTableColumnKcal {
-                color: #3c4043;
-                font-size: 14px;
-                font-weight: 500;
-            }
-            
-            #tableFoodItem {
-                background-color: #5C6165;
-            }
-            
-            #tableFat {
-                background-color: rgba(250, 147, 28, 0.8);
-            }
-            
-            #tableCarbs {
-                background-color: rgba(236, 59, 66, 0.8);
-            }
-            
-            #tableProtein {
-                background-color: rgba(161, 223, 245, 0.8);
-            }
-            
-            #tableCosts {
-                background-color: #5C6165;
-            }
-            
-            #tableKcals {
-                background-color: #5C6165;
-            }
-            
-            .foodlist-table2 {
-                border-collapse: separate;
-                border-spacing: 5px;
-                margin-bottom: 10px;
-                padding: 0px 10px 0px 10px;
-            }
-            
-            .foodlist-table2 th {
-                background-color: #5C6165;
-                border-radius: 5px;
-                font-weight: 600;
-                color: white;
-                text-align: center;
-            }
-            
-            .fa-expand {
-                display: flex;
-                float: right;
-                padding-right: 15px;
-                padding-top: 5px;
-            }
-            
-            .headerStatistics {
-                margin-left: 30px;
-            }
-            
-            #chartWrapper {
-                width: 97%;
-                height: calc(100% - 122px);
-                position: absolute;
-                bottom: 0px;
-            }
-            
-            #chartTwo {
-                position: absolute;
-                bottom: 5px;
-            }
-            
-            #chartThree {
-                position: absolute;
-                bottom: 5px;
-            }
-            /* weight section */
-            
-            .inputWeight {
-                position: absolute;
-                display: flex;
-                bottom: 15px;
-                padding: 0px 15px 0px 15px;
-                justify-content: flex-start;
-            }
-            
-            .inputFields {
-                border-radius: 5px;
-                margin-right: auto;
-            }
-            
-            .inputFieldWeight {
-                display: inline-block;
-                margin: 0px 2px 0px 2px;
-                width: 26px;
-                height: 26px;
-                text-align: center;
-            }
-            
-            .buttonSubmit {
-                color: white;
-                background-color: #5C6165;
-                border-color: #5C6165;
-                margin: 0px;
-                margin-right: 50px;
-            }
-            
-            .buttonLockUnlock {
-                color: white;
-                background-color: #5C6165;
-                border-color: #5C6165;
-                margin: 0px;
-                margin-left: auto;
-            }
-            /* weight section end */
-            
-            th {
-                font-weight: 500;
-                font-size: 14px;
-                height: 26px;
-            }
-            
-            #tableKcalsGraph {
-                cursor: pointer;
-                padding: 0;
-                font-weight: 600;
-                font-size: 14px;
-            }
-            
-            #tableWeightGraph {
-                border-bottom: 4px solid lightgrey;
-                cursor: pointer;
-                padding: 0;
-                font-weight: 600;
-                font-size: 14px;
-            }
-            
-            #tableCostsGraph {
-                cursor: pointer;
-                padding: 0;
-                font-weight: 600;
-                font-size: 14px;
-            }
-            
-            #tableFood {
-                cursor: pointer;
-                padding: 0;
-                font-weight: 600;
-                font-size: 14px;
-                border-bottom: 4px solid lightgrey;
-            }
-            
-            .fa-expand {
-                color: #5C6165;
-            }
-            
-            .mainTable body:before {
-                content: "@";
-                display: block;
-                line-height: 10px;
-                text-indent: -99999px;
-            }
-            
-            .remove-from-daily-list {
-                display: inline-block;
-                float: right;
-                font-size: 14px;
-                position: relative;
-                top: 2px;
-            }
-            
-            .containerTotals {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-evenly;
-                font-size: 15px;
-                font-weight: 500;
-            }
-            
-            .totalsTable {
-                border-collapse: separate;
-                border-spacing: 5px;
-                margin-bottom: 10px;
-                padding: 0px 10px 0px 10px;
-            }
-            
-            .totalsHead {
-                background-color: white;
-                border-radius: 5px;
-                font-weight: 600;
-                color: #5C6165;
-                text-align: center;
-                border: 1px solid lightgrey;
-            }
-            
-            .buttonLockUnlock {
-                padding: 5px 7px 5px 7px;
-                background-color: #14db4d;
-                border: #14db4d;
-            }
-            
-            .buttonLockUnlock:hover {
-                background-color: #14db4d;
-                border: #14db4d;
-            }
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #F0F4F7;
+    height: 100%;
+    color: #5C6165;
+    font-size: 14px;
+}
+
+.myNavbar {
+    display: flex;
+    flex-direction: row;
+    left: 0px;
+    top: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 35px;
+    width: 100%;
+    background-color: #343a40;
+}
+
+.navbarImage {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    top: 5px;
+}
+
+.navbar-brand {
+    color: white;
+    margin-top: 0px;
+    margin-left: 10px;
+    font-size: 25px;
+    font-family: 'Stylish', sans-serif;
+    line-height: 25px;
+}
+
+.navbar-icon-right {
+    color: white;
+    position: relative;
+    top: 7px;
+    margin-left: 10px;
+}
+
+.fa-redo-alt {
+    color: white;
+    position: relative;
+    top: 8px;
+    right: 5px;
+}
+
+.fa-window-minimize {
+    position: relative;
+    top: 4px;
+}
+
+.navbar-minimize-maximize {
+    justify-content: flex-end;
+    margin-left: auto;
+    padding-right: 10px;
+}
+
+h5 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: 0;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+hr {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.input {
+    border-radius: 5px;
+    height: 30px;
+    width: 120px;
+    display: inline-block;
+}
+
+.btn-success {
+    margin-left: 5px;
+    height: 30px;
+    line-height: 10px;
+    float: right;
+    margin-top: 10px;
+    margin-right: 15px;
+    font-weight: 700;
+    font-family: 'Stylish', sans-serif;
+}
+
+.btn-secondary {
+    margin-bottom: 10px;
+    height: 26px;
+    line-height: 6px;
+    background-color: white;
+    color: black;
+    font-size: 14px;
+}
+
+.btn-danger {
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    line-height: 0px;
+}
+
+.grid-container {
+    display: grid;
+    box-sizing: border-box;
+    height: calc(100% - 35px);
+    justify-content: center;
+    grid-template-columns: 310px 600px 310px;
+    grid-gap: 15px;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: relative;
+}
+
+.grid-item {
+    height: 100%;
+    min-width: 300px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 0 10px grey;
+    -moz-box-shadow: 0 0 10px grey;
+    -webkit-box-shadow: 0 0 10px grey;
+    -o-box-shadow: 0 0 10px grey;
+    position: relative;
+}
+
+.grid-item-right {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    row-gap: 7.5px;
+    height: 100%;
+    min-width: 300px;
+}
+
+.grid-item-right-sub-two {
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 0 10px grey;
+    -moz-box-shadow: 0 0 10px grey;
+    -webkit-box-shadow: 0 0 10px grey;
+    -o-box-shadow: 0 0 10px grey;
+    height: calc(100% - 7.5px);
+    position: relative;
+}
+
+.grid-item-right-sub-one {
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 0 10px grey;
+    -moz-box-shadow: 0 0 10px grey;
+    -webkit-box-shadow: 0 0 10px grey;
+    -o-box-shadow: 0 0 10px grey;
+    height: calc(100% - 7.5px);
+    position: relative;
+}
+
+.foodList {
+    padding: 0px 7px 20px 15px;
+    text-align: left;
+    height: calc(100% - 140px);
+    overflow-y: scroll;
+}
+
+.foodItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.foodlist-table {
+    border-collapse: separate;
+    border-spacing: 0 5px;
+}
+
+.food-list-tr:hover .td-left {
+    background-color: #f2f2f2;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.food-list-tr:hover .td-center {
+    background-color: #f2f2f2;
+}
+
+.food-list-tr:hover .td-right {
+    background-color: #f2f2f2;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.td-left {
+    padding-left: 5px;
+    padding-bottom: 3px;
+    background-color: #fafafa;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.td-center {
+    background-color: #fafafa;
+}
+
+.td-right {
+    background-color: #fafafa;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.totalsLabels {
+    display: inline-block;
+}
+
+.totals {
+    width: 50px;
+    display: inline-block;
+}
+
+.chartjs-render-monitor {
+    padding: 0px 5px 0px 5px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.formFoodItem {
+    width: 150px;
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+td {
+    width: 33.33%;
+}
+
+._modal {
+    position: fixed;
+    display: flex;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.modal_box_one {
+    background-color: white;
+    text-align: center;
+    margin: auto auto;
+    width: 300px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px grey;
+    -moz-box-shadow: 0 0 10px grey;
+    -webkit-box-shadow: 0 0 10px grey;
+    -o-box-shadow: 0 0 10px grey;
+}
+
+.modal_box_two {
+    background-color: white;
+    text-align: center;
+    margin: auto auto;
+    width: 300px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px grey;
+    -moz-box-shadow: 0 0 10px grey;
+    -webkit-box-shadow: 0 0 10px grey;
+    -o-box-shadow: 0 0 10px grey;
+}
+
+a {
+    color: lightgrey;
+}
+
+a:hover {
+    color: grey;
+}
+
+.material-icons {
+    position: relative;
+    top: 2px;
+    left: 6px;
+}
+
+.food-list-tr:hover .icon-on-hover {
+    display: block;
+}
+
+.icon-on-hover {
+    display: none;
+}
+
+.new-food-item {
+    width: 90%;
+    position: absolute;
+    bottom: 5px;
+    left: 15px;
+    color: white;
+    background-color: #5C6165;
+    border-color: #5C6165;
+}
+
+.grid-item-left {
+    position: relative;
+}
+
+
+/* scrollbar */
+
+ ::-webkit-scrollbar {
+    width: 8px;
+}
+
+ ::-webkit-scrollbar-track {
+    background: white;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: lightgrey;
+    border-radius: 5px;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: lightgrey;
+}
+
+
+/* scrollbar */
+
+.date {
+    display: inline-block;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 14px;
+    font-family: 'Stylish', sans-serif;
+    position: relative;
+    top: 1px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.fa-angle-left {
+    color: #5C6165;
+    font-size: 28px;
+    position: relative;
+    top: 5px;
+}
+
+.fa-angle-left:hover {
+    cursor: pointer;
+}
+
+.fa-angle-right {
+    display: inline-block;
+    color: #5C6165;
+    font-size: 28px;
+    position: relative;
+    top: 5px;
+}
+
+.fa-angle-right:hover {
+    cursor: pointer;
+}
+
+.mainTable {
+    border-collapse: separate;
+    border-spacing: 5px 5px;
+    padding: 0px 10px 0px 10px;
+    margin-bottom: 8px;
+}
+
+.mainTable th {
+    color: white;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.mainTable2 {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 5px 7px;
+    padding: 0px 10px 0px 10px;
+}
+
+.mainTableFirstColumn {
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.inputQuantity {
+    width: 30px;
+    margin-left: 3px;
+    margin-right: 3px;
+    border: none;
+    text-align: center;
+    color: #5C6165;
+    height: 26px;
+    display: inline-block;
+    padding: 0px;
+}
+
+.piece {
+    width: 23px;
+}
+
+.mainTableColumns {
+    text-align: center;
+    font-size: 13px;
+    color: #5f6368;
+}
+
+.mainTableColumnKcal {
+    color: #3c4043;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#tableFoodItem {
+    background-color: #5C6165;
+}
+
+#tableFat {
+    background-color: rgba(250, 147, 28, 0.8);
+}
+
+#tableCarbs {
+    background-color: rgba(236, 59, 66, 0.8);
+}
+
+#tableProtein {
+    background-color: rgba(161, 223, 245, 0.8);
+}
+
+#tableCosts {
+    background-color: #5C6165;
+}
+
+#tableKcals {
+    background-color: #5C6165;
+}
+
+.foodlist-table2 {
+    border-collapse: separate;
+    border-spacing: 5px;
+    margin-bottom: 10px;
+    padding: 0px 10px 0px 10px;
+}
+
+.foodlist-table2 th {
+    background-color: #5C6165;
+    border-radius: 5px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
+
+.fa-expand {
+    display: flex;
+    float: right;
+    padding-right: 15px;
+    padding-top: 5px;
+}
+
+.headerStatistics {
+    margin-left: 30px;
+}
+
+#chartWrapper {
+    width: 97%;
+    height: calc(100% - 122px);
+    position: absolute;
+    bottom: 0px;
+}
+
+#chartTwo {
+    position: absolute;
+    bottom: 5px;
+}
+
+#chartThree {
+    position: absolute;
+    bottom: 5px;
+}
+
+
+/* weight section */
+
+.inputWeight {
+    position: absolute;
+    display: flex;
+    bottom: 15px;
+    padding: 0px 15px 0px 15px;
+    justify-content: flex-start;
+}
+
+.inputFields {
+    border-radius: 5px;
+    margin-right: auto;
+}
+
+.inputFieldWeight {
+    display: inline-block;
+    margin: 0px 2px 0px 2px;
+    width: 26px;
+    height: 26px;
+    text-align: center;
+}
+
+.buttonSubmit {
+    color: white;
+    background-color: #5C6165;
+    border-color: #5C6165;
+    margin: 0px;
+    margin-right: 50px;
+}
+
+.buttonLockUnlock {
+    color: white;
+    background-color: #5C6165;
+    border-color: #5C6165;
+    margin: 0px;
+    margin-left: auto;
+}
+
+
+/* weight section end */
+
+th {
+    font-weight: 500;
+    font-size: 14px;
+    height: 26px;
+}
+
+#tableKcalsGraph {
+    cursor: pointer;
+    padding: 0;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+#tableWeightGraph {
+    border-bottom: 4px solid lightgrey;
+    cursor: pointer;
+    padding: 0;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+#tableCostsGraph {
+    cursor: pointer;
+    padding: 0;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+#tableFood {
+    cursor: pointer;
+    padding: 0;
+    font-weight: 600;
+    font-size: 14px;
+    border-bottom: 4px solid lightgrey;
+}
+
+.fa-expand {
+    color: #5C6165;
+}
+
+.mainTable body:before {
+    content: "@";
+    display: block;
+    line-height: 10px;
+    text-indent: -99999px;
+}
+
+.remove-from-daily-list {
+    display: inline-block;
+    float: right;
+    font-size: 14px;
+    position: relative;
+    top: 2px;
+}
+
+.containerTotals {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.totalsTable {
+    border-collapse: separate;
+    border-spacing: 5px;
+    margin-bottom: 10px;
+    padding: 0px 10px 0px 10px;
+}
+
+.totalsHead {
+    background-color: white;
+    border-radius: 5px;
+    font-weight: 600;
+    color: #5C6165;
+    text-align: center;
+    border: 1px solid lightgrey;
+}
+
+.buttonLockUnlock {
+    padding: 5px 7px 5px 7px;
+    background-color: #14db4d;
+    border: #14db4d;
+}
+
+.buttonLockUnlock:hover {
+    background-color: #14db4d;
+    border: #14db4d;
+}
+
+.remove-this {
+    margin-right: 3px;
+}
