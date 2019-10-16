@@ -539,6 +539,33 @@ if (typeof rfs != "undefined" && rfs) {
 });
 
 
+
+var lockStatus = 'unlocked';
+
+$(".buttonLockUnlock").on('click', function(){
+    
+ if (lockStatus == 'unlocked') {
+    
+lockStatus = 'locked';
+
+    $(".buttonLockUnlock").css({
+        'background-color': '#F06268',
+    });
+
+} else {
+
+    lockStatus = 'unlocked';
+
+    $(".buttonLockUnlock").css({
+        'background-color': '#14DB4D',
+    });
+
+}
+
+});
+
+
+
 });
 </script>
 
