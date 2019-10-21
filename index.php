@@ -331,7 +331,7 @@ Morning: <input type="text" class="form-control form-control-sm inputFieldWeight
 &emsp;&emsp;Evening: <input type="text" class="form-control form-control-sm inputFieldWeight" style='width:50px'> kg
                 </div>
 <button class="btn btn-secondary buttonSubmit">Submit Weight</button> 
-<button class="btn btn-secondary buttonLockUnlock"><i class="fas fa-unlock"></i></button> 
+<div class="btn btn-secondary buttonLockUnlock"><i class="fas fa-unlock"></i></div> 
                 </div>
         </div>
         <div class="grid-item-right">
@@ -561,6 +561,9 @@ lockStatus = 'locked';
     });
 
 }
+
+$(this).find('i').toggleClass('fas fa-unlock').toggleClass('fas fa-lock');
+
 
 });
 
