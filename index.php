@@ -91,6 +91,7 @@ if (isset($_POST['create_button'])) {
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
 </head>
 
 <body>
@@ -563,7 +564,6 @@ lockStatus = 'locked';
 }
 
 $(this).find('i').toggleClass('fas fa-unlock').toggleClass('fas fa-lock');
-
 
 });
 

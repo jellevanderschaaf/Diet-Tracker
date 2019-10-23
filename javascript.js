@@ -200,13 +200,28 @@ let lineChart = new Chart(chartTwo, {
 
 // Chart Three
 
+var today = moment().format("DD/MM");
+var todayMinusOne = moment().subtract(1, 'days').format("DD/MM");
+var todayMinusTwo = moment().subtract(2, 'days').format("DD/MM");
+var todayMinusThree = moment().subtract(3, 'days').format("DD/MM");
+var todayMinusFour = moment().subtract(4, 'days').format("DD/MM");
+var todayMinusFive = moment().subtract(5, 'days').format("DD/MM");
+var todayMinusSix = moment().subtract(6, 'days').format("DD/MM");
+
 
 let chartThree = document.getElementById('chartThree').getContext('2d');
 
 let barChartTwo = new Chart(chartThree, {
     type: 'bar',
     data: {
-        labels: ['02-07', '03-07', '04-07', '05-07', '06-07', '07-07', '08-07'],
+        labels: [todayMinusSix,
+            todayMinusFive,
+            todayMinusFour,
+            todayMinusThree,
+            todayMinusTwo,
+            todayMinusOne,
+            today,
+        ],
         datasets: [{
             label: ['€'],
             data: [
