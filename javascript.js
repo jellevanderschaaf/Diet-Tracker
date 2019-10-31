@@ -52,6 +52,20 @@ function cancel3() {
 }
 
 
+// Load Graph data from database
+
+var graphthis = 'graph';
+
+$(document).ready(function() {
+
+    console.log('ready');
+    $.post("loadgraphs.php", { graphthis: graphthis }, function(data) {
+
+
+
+    });
+
+});
 
 
 
