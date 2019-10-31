@@ -411,6 +411,7 @@ $(".edit-this").on('click', function(){
         document.getElementById('editProtein').value = formData.protein;
         document.getElementById('editKcals').value = formData.kcals;
         document.getElementById('editPrice').value = formData.price;
+       
         
         if (formData.list == 'grams') {
             $('.radioButtonEdit:first').attr('checked', true);
