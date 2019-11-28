@@ -5,11 +5,11 @@ if(isset($_POST['graphthis'])) {
 
 
 
-$query = "SELECT sum(price) FROM food_items_date GROUP BY thisdate";
+$query = "SELECT thisdate, SUM(totalprice) FROM food_items_date GROUP BY thisdate";
 
 
 $result_set = mysqli_query($con, $query);
-$row = mysqli_fetch_array($result_set);
+$row = mysqli_fetch_all($result_set);
     
 if(!$result_set) {
 
