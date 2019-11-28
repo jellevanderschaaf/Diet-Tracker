@@ -3,9 +3,9 @@
 if(isset($_POST['graphthis'])) {
 
 
-$date = -2008;
 
-$query = "SELECT sum(price) FROM food_items_date WHERE thisdate = $date";
+
+$query = "SELECT sum(price) FROM food_items_date GROUP BY thisdate";
 
 
 $result_set = mysqli_query($con, $query);

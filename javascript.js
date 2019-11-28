@@ -62,7 +62,7 @@ $(document).ready(function() {
     $.post("loadgraphs.php", { graphthis: graphthis }, function(data) {
 
         var returnData = JSON.parse(data);
-        console.log(returnData[0]);
+        console.log(returnData);
 
     });
 
