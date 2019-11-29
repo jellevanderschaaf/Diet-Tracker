@@ -60,10 +60,6 @@ var ctx = $('#chart')[0];
 ctx.height = 165;
 
 
-
-
-
-
 let barChart = new Chart(chart, {
     type: 'bar',
     data: {
@@ -190,6 +186,8 @@ $(document).ready(function() {
                 }],
             },
             options: {
+                responsive: true,
+                maintainAspectRatio: false,
                 title: {
                     display: false,
                     text: 'Weight',
@@ -259,6 +257,8 @@ $(document).ready(function() {
                 }],
             },
             options: {
+                responsive: true,
+                maintainAspectRatio: false,
                 title: {
                     display: false,
                     text: 'Costs',
@@ -269,10 +269,12 @@ $(document).ready(function() {
                 },
                 scales: {
                     yAxes: [{
-                        display: false,
+                        display: true,
                         ticks: {
-                            beginAtZero: false,
-                            display: false,
+                            beginAtZero: true,
+                            display: true,
+                            steps: 1,
+                            max: 14
                         },
                         gridLines: {
                             display: false

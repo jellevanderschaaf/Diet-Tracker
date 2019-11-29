@@ -232,6 +232,10 @@ hr {
     padding: 0px 5px 0px 5px;
 }
 
+.chartjs-render-monitor {
+    padding: 0px 5px 0px 5px;
+}
+
 .hidden {
     visibility: hidden;
 }
@@ -485,6 +489,13 @@ a:hover {
 #chartWrapper {
     width: 97%;
     height: calc(100% - 122px);
+    position: absolute;
+    bottom: 0px;
+}
+
+#chartWrapperTwo {
+    width: 97%;
+    height: calc(100% - 100px);
     position: absolute;
     bottom: 0px;
 }

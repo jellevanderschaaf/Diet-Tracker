@@ -363,9 +363,11 @@ Morning: <input type="text" class="form-control form-control-sm inputFieldWeight
     <th id="tableWeightGraph" style='width:33%'>Weight</th>
     <th id="tableCostsGraph" style='width:33%'>Costs</th>
   </tr>
-</table>   
+</table>  
+<div id="chartWrapperTwo" style="height: 195px">
 <canvas id="chartTwo"></canvas>
 <canvas id="chartThree" class="hidden"></canvas>
+                </div>
                 </div>
                 </div>
     </div>
