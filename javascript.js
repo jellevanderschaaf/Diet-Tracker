@@ -51,25 +51,6 @@ function cancel3() {
     document.getElementById("modalThree").classList.add('hidden');
 }
 
-
-// Load Graph data from database
-
-var graphthis = 'graph';
-
-$(document).ready(function() {
-
-    console.log('ready');
-    $.post("loadgraphs.php", { graphthis: graphthis }, function(data) {
-
-        var returnData = JSON.parse(data);
-        console.log(returnData);
-
-    });
-
-});
-
-
-
 // Chart one
 
 let chart = document.getElementById('chart').getContext('2d');
@@ -158,130 +139,155 @@ function updateChart() {
 
 };
 
-// Chart two
 
-let chartTwo = document.getElementById('chartTwo').getContext('2d');
+// Load Graph data from database
 
-let lineChart = new Chart(chartTwo, {
-    type: 'line',
-    data: {
-        labels: ['02-07', '03-07', '04-07', '05-07', '06-07', '07-07', '08-07'],
-        datasets: [{
-            label: ['Kg'],
-            data: [
-                63.7,
-                63.3,
-                63.1,
-                63.5,
-                63.2,
-                62.9,
-                63.2,
-            ],
-            backgroundColor: ['rgba(161, 223, 245, 0.3)'],
-            borderColor: ['rgba(92, 97, 101, 0.3)'],
-            pointBorderColor: 'rgba(92, 97, 101, 0.7)',
-            pointBackgroundColor: 'rgba(92, 97, 101, 0.7)',
+var graphthis = 'graph';
 
-        }],
-    },
-    options: {
-        title: {
-            display: false,
-            text: 'Weight',
-            fontSize: 15,
-        },
-        legend: {
-            display: false
-        },
-        scales: {
-            yAxes: [{
-                display: false,
-                ticks: {
-                    beginAtZero: false,
+$(document).ready(function() {
+
+    var totalPriceToday = 'test';
+
+    console.log('ready');
+    $.post("loadgraphs.php", { graphthis: graphthis }, function(data) {
+
+        var returnData = JSON.parse(data);
+        console.log(returnData);
+
+        totalPriceToday = returnData[0][1];
+        totalPriceMinusOne = returnData[1][1];
+        totalPriceMinusTwo = returnData[2][1];
+        totalPriceMinusThree = returnData[3][1];
+        totalPriceMinusFour = returnData[4][1];
+        totalPriceMinusFive = returnData[5][1];
+        totalPriceMinusSix = returnData[6][1];
+
+
+        // Chart two
+
+        let chartTwo = document.getElementById('chartTwo').getContext('2d');
+
+        let lineChart = new Chart(chartTwo, {
+            type: 'line',
+            data: {
+                labels: ['02-07', '03-07', '04-07', '05-07', '06-07', '07-07', '08-07'],
+                datasets: [{
+                    label: ['Kg'],
+                    data: [
+                        63.7,
+                        63.3,
+                        63.1,
+                        63.5,
+                        63.2,
+                        62.9,
+                        63.2,
+                    ],
+                    backgroundColor: ['rgba(161, 223, 245, 0.3)'],
+                    borderColor: ['rgba(92, 97, 101, 0.3)'],
+                    pointBorderColor: 'rgba(92, 97, 101, 0.7)',
+                    pointBackgroundColor: 'rgba(92, 97, 101, 0.7)',
+
+                }],
+            },
+            options: {
+                title: {
                     display: false,
+                    text: 'Weight',
+                    fontSize: 15,
                 },
-                gridLines: {
+                legend: {
                     display: false
+                },
+                scales: {
+                    yAxes: [{
+                        display: false,
+                        ticks: {
+                            beginAtZero: false,
+                            display: false,
+                        },
+                        gridLines: {
+                            display: false
+                        }
+                    }],
+                    xAxes: [{
+                        gridLines: {
+                            display: false
+                        }
+                    }]
                 }
-            }],
-            xAxes: [{
-                gridLines: {
-                    display: false
-                }
-            }]
-        }
-    }
-});
+            }
+        });
 
-// Chart Three
+        // Chart Three
 
-var today = moment().format("DD/MM");
-var todayMinusOne = moment().subtract(1, 'days').format("DD/MM");
-var todayMinusTwo = moment().subtract(2, 'days').format("DD/MM");
-var todayMinusThree = moment().subtract(3, 'days').format("DD/MM");
-var todayMinusFour = moment().subtract(4, 'days').format("DD/MM");
-var todayMinusFive = moment().subtract(5, 'days').format("DD/MM");
-var todayMinusSix = moment().subtract(6, 'days').format("DD/MM");
+        var today = moment().format("DD/MM");
+        var todayMinusOne = moment().subtract(1, 'days').format("DD/MM");
+        var todayMinusTwo = moment().subtract(2, 'days').format("DD/MM");
+        var todayMinusThree = moment().subtract(3, 'days').format("DD/MM");
+        var todayMinusFour = moment().subtract(4, 'days').format("DD/MM");
+        var todayMinusFive = moment().subtract(5, 'days').format("DD/MM");
+        var todayMinusSix = moment().subtract(6, 'days').format("DD/MM");
 
 
-let chartThree = document.getElementById('chartThree').getContext('2d');
+        let chartThree = document.getElementById('chartThree').getContext('2d');
 
-let barChartTwo = new Chart(chartThree, {
-    type: 'bar',
-    data: {
-        labels: [todayMinusSix,
-            todayMinusFive,
-            todayMinusFour,
-            todayMinusThree,
-            todayMinusTwo,
-            todayMinusOne,
-            today,
-        ],
-        datasets: [{
-            label: ['€'],
-            data: [
-                10.68,
-                12.95,
-                10.24,
-                8.88,
-                9.95,
-                11.12,
-                12.20,
-            ],
+        let barChartTwo = new Chart(chartThree, {
+            type: 'bar',
+            data: {
+                labels: [todayMinusSix,
+                    todayMinusFive,
+                    todayMinusFour,
+                    todayMinusThree,
+                    todayMinusTwo,
+                    todayMinusOne,
+                    today,
+                ],
+                datasets: [{
+                    label: ['€'],
+                    data: [
+                        totalPriceMinusSix,
+                        totalPriceMinusFive,
+                        totalPriceMinusFour,
+                        totalPriceMinusThree,
+                        totalPriceMinusTwo,
+                        totalPriceMinusOne,
+                        totalPriceToday
+                    ],
 
 
 
-        }],
-    },
-    options: {
-        title: {
-            display: false,
-            text: 'Costs',
-            fontSize: 15,
-        },
-        legend: {
-            display: false
-        },
-        scales: {
-            yAxes: [{
-                display: false,
-                ticks: {
-                    beginAtZero: false,
+                }],
+            },
+            options: {
+                title: {
                     display: false,
+                    text: 'Costs',
+                    fontSize: 15,
                 },
-                gridLines: {
+                legend: {
                     display: false
+                },
+                scales: {
+                    yAxes: [{
+                        display: false,
+                        ticks: {
+                            beginAtZero: false,
+                            display: false,
+                        },
+                        gridLines: {
+                            display: false
+                        }
+                    }],
+                    xAxes: [{
+                        gridLines: {
+                            display: false
+                        }
+                    }]
                 }
-            }],
-            xAxes: [{
-                gridLines: {
-                    display: false
-                }
-            }]
-        }
-    }
+            }
+        });
+    });
 });
-
 
 // Chart header functions
 
