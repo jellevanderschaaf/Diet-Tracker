@@ -6,7 +6,7 @@ if(isset($_POST['addthis'])) {
         $id = $_POST['id'];
         $thisDate = $_POST['date'];
     
-    $query =  "INSERT INTO food_items_date (fname, fat, carbs, protein, kcals, price, list, quantity, thisdate) SELECT fname, fat, carbs, protein, kcals, price, list, quantity, $thisDate FROM food_items WHERE id = $id";
+    $query =  "INSERT INTO food_items_date (fname, fat, carbs, protein, kcals, price, list, quantity, thisdate, totalprice, fatkcals, carbskcals, proteinkcals, totalkcals) SELECT fname, fat, carbs, protein, kcals, price, list, quantity, $thisDate, price, fat * 9, carbs * 4, protein * 4, kcals FROM food_items WHERE id = $id";
     $result_set = mysqli_query($con, $query);
 
     //$queryThree =  "UPDATE food_items_date SET totalprice = price * quantity";
