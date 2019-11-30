@@ -9,13 +9,18 @@ if(isset($_POST['setthisquantity'])) {
     $quantity = $_POST['edit_quantity'];
 
 
+
+    
+
+
+
     $query = "UPDATE food_items_date SET quantity = '$quantity' WHERE id = $id ";
     $result_set = mysqli_query($con, $query);
 
-    $queryThree = "UPDATE food_items_date SET totalprice = price * quantity WHERE list = 'piece'";
+    $queryThree = "UPDATE food_items_date SET totalprice = price * quantity, totalfatkcals = fatkcals * quantity, totalcarbskcals = carbskcals * quantity, totalproteinkcals = proteinkcals * quantity, totalkcals = kcals * quantity WHERE list = 'piece'";
     $result_setThree = mysqli_query($con, $queryThree);
 
-    $queryFour = "UPDATE food_items_date SET totalprice = price / 100 * quantity WHERE list = 'grams'";
+    $queryFour = "UPDATE food_items_date SET totalprice = price / 100 * quantity, totalfatkcals = fatkcals / 100 * quantity, totalcarbskcals = carbskcals / 100 * quantity, totalproteinkcals = proteinkcals / 100 * quantity, totalkcals = kcals / 100 * quantity WHERE list = 'grams'";
     $result_setFour = mysqli_query($con, $queryFour);
 
     $queryTwo = "SELECT * FROM food_items_date WHERE id = $id";
