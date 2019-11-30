@@ -323,7 +323,7 @@ $(document).ready(function() {
                             totalPriceMinusOne,
                             totalPriceToday
                         ],
-                        backgroundColor: '#EBCCD1'
+                        backgroundColor: 'rgba(250, 147, 28, 0.6)'
                     },
                     {
                         label: ['Carbs'],
@@ -336,7 +336,7 @@ $(document).ready(function() {
                             2,
                             2
                         ],
-                        backgroundColor: '#FAEBCC'
+                        backgroundColor: 'rgba(236, 59, 66, 0.6)'
                     },
                     {
                         label: ['Protein'],
@@ -349,7 +349,7 @@ $(document).ready(function() {
                             1,
                             1
                         ],
-                        backgroundColor: '#D6E9C6'
+                        backgroundColor: 'rgba(161, 223, 245, 0.6)'
                     }
                 ],
             },
