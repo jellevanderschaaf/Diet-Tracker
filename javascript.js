@@ -325,6 +325,7 @@ $('#tableWeightGraph').click(function() {
         'border-bottom': '0px',
     });
 
+    $('#chartFour').addClass("hidden");
     $('#chartTwo').removeClass("hidden");
     $('#chartThree').addClass("hidden");
 
@@ -344,6 +345,7 @@ $('#tableCostsGraph').click(function() {
         'border-bottom': '4px solid lightgrey',
     });
 
+    $('#chartFour').addClass("hidden");
     $('#chartTwo').addClass("hidden");
     $('#chartThree').removeClass("hidden");
 
