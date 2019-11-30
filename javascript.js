@@ -166,6 +166,29 @@ $(document).ready(function() {
         totalPriceMinusFive = returnData[5][1];
         totalPriceMinusSix = returnData[6][1];
 
+        totalFatKcalsToday = returnData[0][2];
+        totalFatKcalsMinusOne = returnData[1][2];
+        totalFatKcalsMinusTwo = returnData[2][2];
+        totalFatKcalsMinusThree = returnData[3][2];
+        totalFatKcalsMinusFour = returnData[4][2];
+        totalFatKcalsMinusFive = returnData[5][2];
+        totalFatKcalsMinusSix = returnData[6][2];
+
+        totalCarbsKcalsToday = returnData[0][3];
+        totalCarbsKcalsMinusOne = returnData[1][3];
+        totalCarbsKcalsMinusTwo = returnData[2][3];
+        totalCarbsKcalsMinusThree = returnData[3][3];
+        totalCarbsKcalsMinusFour = returnData[4][3];
+        totalCarbsKcalsMinusFive = returnData[5][3];
+        totalCarbsKcalsMinusSix = returnData[6][3];
+
+        totalProteinKcalsToday = returnData[0][4];
+        totalProteinKcalsMinusOne = returnData[1][4];
+        totalProteinKcalsMinusTwo = returnData[2][4];
+        totalProteinKcalsMinusThree = returnData[3][4];
+        totalProteinKcalsMinusFour = returnData[4][4];
+        totalProteinKcalsMinusFive = returnData[5][4];
+        totalProteinKcalsMinusSix = returnData[6][4];
 
 
         // Chart two
@@ -315,39 +338,39 @@ $(document).ready(function() {
                 datasets: [{
                         label: ['Fat'],
                         data: [
-                            totalPriceMinusSix,
-                            totalPriceMinusFive,
-                            totalPriceMinusFour,
-                            totalPriceMinusThree,
-                            totalPriceMinusTwo,
-                            totalPriceMinusOne,
-                            totalPriceToday
+                            totalFatKcalsMinusSix,
+                            totalFatKcalsMinusFive,
+                            totalFatKcalsMinusFour,
+                            totalFatKcalsMinusThree,
+                            totalFatKcalsMinusTwo,
+                            totalFatKcalsMinusOne,
+                            totalFatKcalsToday
                         ],
                         backgroundColor: 'rgba(250, 147, 28, 0.6)'
                     },
                     {
                         label: ['Carbs'],
                         data: [
-                            2,
-                            2,
-                            2,
-                            2,
-                            2,
-                            2,
-                            2
+                            totalCarbsKcalsMinusSix,
+                            totalCarbsKcalsMinusFive,
+                            totalCarbsKcalsMinusFour,
+                            totalCarbsKcalsMinusThree,
+                            totalCarbsKcalsMinusTwo,
+                            totalCarbsKcalsMinusOne,
+                            totalCarbsKcalsToday
                         ],
                         backgroundColor: 'rgba(236, 59, 66, 0.6)'
                     },
                     {
                         label: ['Protein'],
                         data: [
-                            1,
-                            1,
-                            1,
-                            1,
-                            1,
-                            1,
-                            1
+                            totalProteinKcalsMinusSix,
+                            totalProteinKcalsMinusFive,
+                            totalProteinKcalsMinusFour,
+                            totalProteinKcalsMinusThree,
+                            totalProteinKcalsMinusTwo,
+                            totalProteinKcalsMinusOne,
+                            totalProteinKcalsToday
                         ],
                         backgroundColor: 'rgba(161, 223, 245, 0.6)'
                     }
@@ -372,7 +395,7 @@ $(document).ready(function() {
                             beginAtZero: true,
                             display: true,
                             steps: 1,
-                            max: 14
+                            max: 3500
                         },
                         gridLines: {
                             display: false
