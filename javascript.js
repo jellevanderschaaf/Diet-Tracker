@@ -241,6 +241,7 @@ $(document).ready(function() {
                         ticks: {
                             beginAtZero: false,
                             display: false,
+                            max: 65,
                         },
                         gridLines: {
                             display: false

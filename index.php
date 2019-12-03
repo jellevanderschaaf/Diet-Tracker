@@ -331,7 +331,7 @@ if (isset($_POST['create_button'])) {
 Morning: <input type="text" class="form-control form-control-sm inputFieldWeight" style='width:50px'> kg
 &emsp;&emsp;Evening: <input type="text" class="form-control form-control-sm inputFieldWeight" style='width:50px'> kg
                 </div>
-<button class="btn btn-secondary buttonSubmit">Submit Weight</button> 
+<button id="buttonLock" class="btn btn-secondary buttonSubmit">Submit Weight</button> 
 <div class="btn btn-secondary buttonLockUnlock"><i class="fas fa-unlock"></i></div> 
                 </div>
         </div>
@@ -547,25 +547,36 @@ if (typeof rfs != "undefined" && rfs) {
 
 var lockStatus = 'unlocked';
 
+function unlock() {   
+    
+    if (lockStatus == 'unlocked') {
+       
+   lockStatus = 'locked';
+   
+       $(".buttonLockUnlock").css({
+           'background-color': '#F06268',
+       });
+
+       document.getElementById("buttonLock").disabled = true;
+   
+   } else {
+   
+       lockStatus = 'unlocked';
+   
+       $(".buttonLockUnlock").css({
+           'background-color': '#14DB4D',
+       });
+   
+       document.getElementById("buttonLock").disabled = false;
+
+   }
+   
+   };
+
+
 $(".buttonLockUnlock").on('click', function(){
-    
- if (lockStatus == 'unlocked') {
-    
-lockStatus = 'locked';
 
-    $(".buttonLockUnlock").css({
-        'background-color': '#F06268',
-    });
-
-} else {
-
-    lockStatus = 'unlocked';
-
-    $(".buttonLockUnlock").css({
-        'background-color': '#14DB4D',
-    });
-
-}
+unlock();
 
 $(this).find('i').toggleClass('fas fa-unlock').toggleClass('fas fa-lock');
 

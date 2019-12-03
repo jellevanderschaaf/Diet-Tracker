@@ -553,6 +553,7 @@ a:hover {
     border-color: #5C6165;
     margin: 0px;
     margin-left: auto;
+    cursor: pointer;
 }
 
 
