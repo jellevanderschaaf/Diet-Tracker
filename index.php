@@ -574,7 +574,8 @@ function unlock() {
    }
    
    $(".addCircle").toggle();
-   
+   $(".remove-this").toggle();
+  
 
    };
 
