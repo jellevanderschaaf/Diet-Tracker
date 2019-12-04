@@ -332,7 +332,7 @@ Morning: <input type="text" class="form-control form-control-sm inputFieldWeight
 &emsp;&emsp;Evening: <input type="text" class="form-control form-control-sm inputFieldWeight" style='width:50px'> kg
                 </div>
 <button id="buttonLock" class="btn btn-secondary buttonSubmit">Submit Weight</button> 
-<div class="btn btn-secondary buttonLockUnlock"><i class="fas fa-unlock"></i></div> 
+<div class="btn btn-secondary buttonLockUnlock"><i id="buttonLockUnlock"class="fas fa-unlock"></i></div> 
                 </div>
         </div>
         <div class="grid-item-right">
@@ -549,9 +549,9 @@ var lockStatus = 'unlocked';
 
 function unlock() {   
     
-    if (lockStatus == 'unlocked') {
+    if (lockStatus == 'locked') {
        
-   lockStatus = 'locked';
+   lockStatus = 'unlocked';
    
        $(".buttonLockUnlock").css({
            'background-color': '#F06268',
@@ -563,7 +563,7 @@ function unlock() {
    
    } else {
    
-       lockStatus = 'unlocked';
+       lockStatus = 'locked';
    
        $(".buttonLockUnlock").css({
            'background-color': '#14DB4D',
@@ -582,15 +582,41 @@ function unlock() {
 
 $(".buttonLockUnlock").on('click', function(){
 
-unlock();
+
 
 $(this).find('i').toggleClass('fas fa-unlock').toggleClass('fas fa-lock');
+unlock();
+
+});
+
+});
+
+var dateCounterJs = "<?php echo $_SESSION['date_counter2']; ?>";
+
+console.log(dateCounterJs);
+
+    $(document).ready(function() { 
+
+        if (dateCounterJs != 0) {
+
+    lockStatus = 'locked';
+   
+   $(".buttonLockUnlock").css({
+       'background-color': '#F06268',
+   });
+
+    document.getElementById("buttonLock").disabled = true;
+    $(".td-right").tooltip('disable');
+    $(".addCircle").hide();
+    $(".remove-this").hide();
+
+    $("#buttonLockUnlock").removeClass('fas fa-unlock').addClass('fas fa-lock');
+
+        } 
 
 });
 
 
-
-});
 </script>
 
 <script type="text/javascript" src="javascript.js"></script>
