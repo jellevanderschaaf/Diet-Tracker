@@ -332,7 +332,9 @@ Morning: <input type="text" class="form-control form-control-sm inputFieldWeight
 &emsp;&emsp;Evening: <input type="text" class="form-control form-control-sm inputFieldWeight" style='width:50px'> kg
                 </div>
 <button id="buttonLock" class="btn btn-secondary buttonSubmit">Submit Weight</button> 
+<div id="lockStatusHtml" ></div>
 <div class="btn btn-secondary buttonLockUnlock"><i id="buttonLockUnlock"class="fas fa-unlock"></i></div> 
+
                 </div>
         </div>
         <div class="grid-item-right">
@@ -375,6 +377,9 @@ Morning: <input type="text" class="form-control form-control-sm inputFieldWeight
     
  
     <script>
+
+
+
 $(document).ready(function(){
     
     updateChart();
@@ -545,77 +550,41 @@ if (typeof rfs != "undefined" && rfs) {
 
 
 
-var lockStatus = 'unlocked';
-
-function unlock() {   
-    
-    if (lockStatus == 'locked') {
-       
-   lockStatus = 'unlocked';
-   
-       $(".buttonLockUnlock").css({
-           'background-color': '#F06268',
-       });
-
-        document.getElementById("buttonLock").disabled = true;
-        $(".td-right").tooltip('disable');
-      
-   
-   } else {
-   
-       lockStatus = 'locked';
-   
-       $(".buttonLockUnlock").css({
-           'background-color': '#14DB4D',
-       });
-   
-       document.getElementById("buttonLock").disabled = false;
-       $(".td-right").tooltip('enable');
-   }
-   
-   $(".addCircle").toggle();
-   $(".remove-this").toggle();
-  
-
-   };
-
-
-$(".buttonLockUnlock").on('click', function(){
-
-
-
-$(this).find('i').toggleClass('fas fa-unlock').toggleClass('fas fa-lock');
-unlock();
-
-});
-
 });
 
 var dateCounterJs = "<?php echo $_SESSION['date_counter2']; ?>";
+var lockStatus;
 
-console.log(dateCounterJs);
 
     $(document).ready(function() { 
 
         if (dateCounterJs != 0) {
 
-    lockStatus = 'locked';
-   
-   $(".buttonLockUnlock").css({
-       'background-color': '#F06268',
-   });
-
+    $(".buttonLockUnlock").css({'background-color': '#F06268',});
     document.getElementById("buttonLock").disabled = true;
     $(".td-right").tooltip('disable');
     $(".addCircle").hide();
     $(".remove-this").hide();
-
     $("#buttonLockUnlock").removeClass('fas fa-unlock').addClass('fas fa-lock');
-
         } 
-
+         
 });
 
+
+
+$(".buttonLockUnlock").on('click', function(){
+  
+
+    $(".buttonLockUnlock").css({'background-color': '#14DB4D',});
+    document.getElementById("buttonLock").disabled = false;
+    $(".td-right").tooltip('enable');
+    
+    $(".addCircle").show();
+    $(".remove-this").show();
+
+    $(this).find('i').removeClass('fas fa-lock').addClass('fas fa-unlock');
+
+});
 
 </script>
 
