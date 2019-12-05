@@ -5,11 +5,6 @@ if(!isset($_SESSION['date_counter2'])) {
 }
 
 
-$date = (new DateTime('now-' . $_SESSION['date_counter2'] . 'day'))->format('d-m-Y');
-$dateCheck = strval($date);
-
-
-
 if(isset($_POST['datePrevious'])) { 
 
         $_SESSION['date_counter2'] += 1;   
@@ -25,6 +20,9 @@ if ($_SESSION['date_counter2'] > 0) {
 
     }
 }
+
+$date = (new DateTime('now-' . $_SESSION['date_counter2'] . 'day'))->format('d-m-Y');
+$dateCheck = strval($date);
 
 
 $fname = "";
@@ -553,8 +551,7 @@ if (typeof rfs != "undefined" && rfs) {
 });
 
 var dateCounterJs = "<?php echo $_SESSION['date_counter2']; ?>";
-var lockStatus;
-
+console.log(dateCounterJs);
 
     $(document).ready(function() { 
 
