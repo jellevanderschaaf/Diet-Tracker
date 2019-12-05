@@ -259,7 +259,7 @@ td {
     height: 100%;
     width: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color: rgba(0, 0, 0, 0.10);
 }
 
 .modal_box_one {
@@ -267,7 +267,7 @@ td {
     text-align: center;
     margin: auto auto;
     width: 300px;
-    padding: 20px;
+    padding: 20px 20px 10px 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px grey;
     -moz-box-shadow: 0 0 10px grey;
@@ -280,7 +280,7 @@ td {
     text-align: center;
     margin: auto auto;
     width: 300px;
-    padding: 20px;
+    padding: 20px 20px 10px 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px grey;
     -moz-box-shadow: 0 0 10px grey;
