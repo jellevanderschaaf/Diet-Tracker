@@ -150,12 +150,50 @@ var graphthis = 'graph';
 
 $(document).ready(function() {
 
-    var totalPriceToday = 'test';
+    var dateOne = document.getElementById('date').textContent;
+    var date = dateOne;
+    console.log(date);
 
-    console.log('ready');
-    $.post("loadgraphs.php", { graphthis: graphthis }, function(data) {
+    $.post("loadgraphs.php", { date: date, graphthis: graphthis }, function(data) {
 
         var returnData = JSON.parse(data);
+
+        var todayPhp = date;
+        var todayPhpMinusOne = date - 1;
+        var todayPhpMinusTwo = date - 2;
+        var todayPhpMinusThree = date - 3;
+        var todayPhpMinusFour = date - 4;
+        var todayPhpMinusFive = date - 5;
+        var todayPhpMinusSix = date - 6;
+
+
+
+        var weekArray;
+
+        /*
+
+                            returnData.forEach(createWeekArray);
+
+                            function createWeekArray(item) {
+
+                                item.[0].forEach(createWeekArrayTwo);
+
+                                function createWeekArrayTwo(item) {
+
+                                    if (item ==
+
+                                    }
+
+                                }
+
+
+        */
+
+
+
+
+
+
         console.log(returnData);
 
         totalPriceToday = returnData[0][1];

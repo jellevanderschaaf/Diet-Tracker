@@ -9,10 +9,6 @@ if(isset($_POST['addthis'])) {
     $query =  "INSERT INTO food_items_date (fname, fat, carbs, protein, kcals, price, list, quantity, thisdate, totalprice, fatkcals, carbskcals, proteinkcals, totalkcals, totalfatkcals, totalcarbskcals, totalproteinkcals) SELECT fname, fat, carbs, protein, kcals, price, list, quantity, $thisDate, price, fat * 9, carbs * 4, protein * 4, kcals, fat * 9, carbs * 4, protein * 4 FROM food_items WHERE id = $id";
     $result_set = mysqli_query($con, $query);
 
-    //$queryThree =  "UPDATE food_items_date SET totalprice = price * quantity";
-    //$result_setThree = mysqli_query($con, $queryThree);
-
-
 
     $queryTwo = "SELECT * FROM food_items_date ORDER BY ID DESC LIMIT 1";
     $result_setTwo = mysqli_query($con, $queryTwo);

@@ -23,6 +23,7 @@ if ($_SESSION['date_counter2'] > 0) {
 
 $date = (new DateTime('now-' . $_SESSION['date_counter2'] . 'day'))->format('d-m-Y');
 $dateCheck = strval($date);
+$dateCode = (new DateTime('now-' . $_SESSION['date_counter2'] . 'day'))->format('d-m-Y');
 
 
 $fname = "";
@@ -551,6 +552,7 @@ if (typeof rfs != "undefined" && rfs) {
 });
 
 var dateCounterJs = "<?php echo $_SESSION['date_counter2']; ?>";
+var dateCode = "<?php echo $dateCode ?>";
 console.log(dateCounterJs);
 
     $(document).ready(function() { 
