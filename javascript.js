@@ -69,7 +69,7 @@ let barChart = new Chart(chart, {
             data: [
                 totalFat,
                 totalCarbs,
-                totalProtein,
+                totalProtein
             ],
             backgroundColor: ['rgba(250, 147, 28, 0.8)', 'rgba(236, 59, 66, 0.8)', 'rgba(161, 223, 245, 0.8)']
         }],
@@ -127,7 +127,7 @@ function updateChart() {
 
 
 
-    barChart.data.datasets[0].data = [totalFat, totalCarbs, totalProtein];
+    barChart.data.datasets[0].data = [Math.round(totalFat), Math.round(totalCarbs), Math.round(totalProtein)];
     barChart.update();
 
     document.getElementById("totalKcals").innerHTML = 'Kcals:&emsp;' + totalKcals;
@@ -259,8 +259,6 @@ $(document).ready(function() {
         // Chart Three
 
 
-
-
         let chartThree = document.getElementById('chartThree').getContext('2d');
 
         let barChartTwo = new Chart(chartThree, {
@@ -277,13 +275,13 @@ $(document).ready(function() {
                 datasets: [{
                     label: ['€'],
                     data: [
-                        totalPriceMinusSix,
-                        totalPriceMinusFive,
-                        totalPriceMinusFour,
-                        totalPriceMinusThree,
-                        totalPriceMinusTwo,
-                        totalPriceMinusOne,
-                        totalPriceToday
+                        parseFloat(totalPriceMinusSix).toFixed(2),
+                        parseFloat(totalPriceMinusFive).toFixed(2),
+                        parseFloat(totalPriceMinusFour).toFixed(2),
+                        parseFloat(totalPriceMinusThree).toFixed(2),
+                        parseFloat(totalPriceMinusTwo).toFixed(2),
+                        parseFloat(totalPriceMinusOne).toFixed(2),
+                        parseFloat(totalPriceToday).toFixed(2)
                     ],
                 }],
             },
@@ -337,45 +335,42 @@ $(document).ready(function() {
                     today,
                 ],
                 datasets: [{
-                        label: ['Fat'],
-                        data: [
-                            totalFatKcalsMinusSix,
-                            totalFatKcalsMinusFive,
-                            totalFatKcalsMinusFour,
-                            totalFatKcalsMinusThree,
-                            totalFatKcalsMinusTwo,
-                            totalFatKcalsMinusOne,
-                            totalFatKcalsToday
-                        ],
-                        backgroundColor: 'rgba(250, 147, 28, 0.6)'
-                    },
-                    {
-                        label: ['Carbs'],
-                        data: [
-                            totalCarbsKcalsMinusSix,
-                            totalCarbsKcalsMinusFive,
-                            totalCarbsKcalsMinusFour,
-                            totalCarbsKcalsMinusThree,
-                            totalCarbsKcalsMinusTwo,
-                            totalCarbsKcalsMinusOne,
-                            totalCarbsKcalsToday
-                        ],
-                        backgroundColor: 'rgba(236, 59, 66, 0.6)'
-                    },
-                    {
-                        label: ['Protein'],
-                        data: [
-                            totalProteinKcalsMinusSix,
-                            totalProteinKcalsMinusFive,
-                            totalProteinKcalsMinusFour,
-                            totalProteinKcalsMinusThree,
-                            totalProteinKcalsMinusTwo,
-                            totalProteinKcalsMinusOne,
-                            totalProteinKcalsToday
-                        ],
-                        backgroundColor: 'rgba(161, 223, 245, 0.6)'
-                    }
-                ],
+                    label: ['Fat'],
+                    data: [
+                        Math.round(totalFatKcalsMinusSix),
+                        Math.round(totalFatKcalsMinusFive),
+                        Math.round(totalFatKcalsMinusFour),
+                        Math.round(totalFatKcalsMinusThree),
+                        Math.round(totalFatKcalsMinusTwo),
+                        Math.round(totalFatKcalsMinusOne),
+                        Math.round(totalFatKcalsToday)
+                    ],
+                    backgroundColor: 'rgba(250, 147, 28, 0.6)'
+                }, {
+                    label: ['Carbs'],
+                    data: [
+                        Math.round(totalCarbsKcalsMinusSix),
+                        Math.round(totalCarbsKcalsMinusFive),
+                        Math.round(totalCarbsKcalsMinusFour),
+                        Math.round(totalCarbsKcalsMinusThree),
+                        Math.round(totalCarbsKcalsMinusTwo),
+                        Math.round(totalCarbsKcalsMinusOne),
+                        Math.round(totalCarbsKcalsToday)
+                    ],
+                    backgroundColor: 'rgba(236, 59, 66, 0.6)'
+                }, {
+                    label: ['Protein'],
+                    data: [
+                        Math.round(totalProteinKcalsMinusSix),
+                        Math.round(totalProteinKcalsMinusFive),
+                        Math.round(totalProteinKcalsMinusFour),
+                        Math.round(totalProteinKcalsMinusThree),
+                        Math.round(totalProteinKcalsMinusTwo),
+                        Math.round(totalProteinKcalsMinusOne),
+                        Math.round(totalProteinKcalsToday)
+                    ],
+                    backgroundColor: 'rgba(161, 223, 245, 0.6)'
+                }],
             },
             options: {
                 responsive: true,
