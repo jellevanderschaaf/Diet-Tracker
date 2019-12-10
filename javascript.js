@@ -147,6 +147,7 @@ var todayMinusSix = moment().subtract(6, 'days').format("DD/MM");
 // Load Graph data from database
 
 var graphthis = 'graph';
+var datethis = 'date';
 
 $(document).ready(function() {
 
@@ -154,21 +155,28 @@ $(document).ready(function() {
     var date = dateOne;
     console.log(date);
 
-    $.post("loadgraphs.php", { date: date, graphthis: graphthis }, function(data) {
+    $.post("loaddate.php", { date: date, datethis: datethis }, function(data) {
+
+        var returnDate = JSON.parse(data);
+        console.log(returnDate);
+
+    });
+
+    $.post("loadgraphs.php", { graphthis: graphthis }, function(data) {
 
         var returnData = JSON.parse(data);
 
-        var todayPhp = date;
-        var todayPhpMinusOne = date - 1;
-        var todayPhpMinusTwo = date - 2;
-        var todayPhpMinusThree = date - 3;
-        var todayPhpMinusFour = date - 4;
-        var todayPhpMinusFive = date - 5;
-        var todayPhpMinusSix = date - 6;
+        // var todayPhp = date;
+        //var todayPhpMinusOne = date - 1;
+        //var todayPhpMinusTwo = date - 2;
+        // var todayPhpMinusThree = date - 3;
+        //var todayPhpMinusFour = date - 4;
+        //var todayPhpMinusFive = date - 5;
+        //var todayPhpMinusSix = date - 6;
 
 
 
-        var weekArray;
+        //var weekArray;
 
         /*
 

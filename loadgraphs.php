@@ -12,26 +12,7 @@ $result_set = mysqli_query($con, $query);
 $row = mysqli_fetch_all($result_set);
 
 
-
-
-// get date code
-
-
-$thisDate = $_POST['date'];
-
-$queryTwo = "INSERT INTO date_code (thisdate) SELECT $thisDate";
-
-$result_setTwo = mysqli_query($con, $queryTwo);
-
-
-//$queryThree = "SELECT * FROM date_code DESC LIMIT 1";
-
-//$result_setThree = mysqli_query($con, $queryThree);
-//$rowThree = mysqli_fetch_array($result_setThree);
-
-
-
-if(!$result_set || !$result_setTwo) {
+if(!$result_set) {
     
     die("QUERY FAILED" . mysqli_error($con));
 
