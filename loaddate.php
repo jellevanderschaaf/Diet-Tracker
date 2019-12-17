@@ -10,7 +10,7 @@ $query = "INSERT INTO date_code (thisdate) SELECT $thisDate";
 $result_set = mysqli_query($con, $query);
 
 
-$queryThree = "SELECT * FROM date_code GROUP BY thisdate DESC LIMIT 1";
+$queryThree = "SELECT * FROM date_code GROUP BY thisdate ASC LIMIT 1";
 
 $result_setThree = mysqli_query($con, $queryThree);
 $rowThree = mysqli_fetch_all($result_setThree);
