@@ -566,6 +566,7 @@ th {
 }
 
 #tableKcalsGraph {
+    border-bottom: 4px solid lightgrey;
     cursor: pointer;
     padding: 0;
     font-weight: 600;
@@ -573,7 +574,6 @@ th {
 }
 
 #tableWeightGraph {
-    border-bottom: 4px solid lightgrey;
     cursor: pointer;
     padding: 0;
     font-weight: 600;

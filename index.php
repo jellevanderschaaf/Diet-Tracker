@@ -366,9 +366,9 @@ Morning: <input type="text" class="form-control form-control-sm inputFieldWeight
   </tr>
 </table>  
 <div id="chartWrapperTwo" style="height: 195px">
-<canvas id="chartTwo"></canvas>
+<canvas id="chartTwo" class="hidden"></canvas>
 <canvas id="chartThree" class="hidden"></canvas>
-<canvas id="chartFour" class="hidden"></canvas>
+<canvas id="chartFour"></canvas>
                 </div>
                 </div>
                 </div>
