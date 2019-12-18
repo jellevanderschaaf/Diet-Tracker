@@ -461,37 +461,37 @@ $(document).ready(function() {
 
 
 
-            totalPriceToday = returnData[0][1];
-            totalPriceMinusOne = returnData[1][1];
-            totalPriceMinusTwo = returnData[2][1];
-            totalPriceMinusThree = returnData[3][1];
-            totalPriceMinusFour = returnData[4][1];
-            totalPriceMinusFive = returnData[5][1];
-            totalPriceMinusSix = returnData[6][1];
+            totalPriceToday = weekArray[0][1];
+            totalPriceMinusOne = weekArray[1][1];
+            totalPriceMinusTwo = weekArray[2][1];
+            totalPriceMinusThree = weekArray[3][1];
+            totalPriceMinusFour = weekArray[4][1];
+            totalPriceMinusFive = weekArray[5][1];
+            totalPriceMinusSix = weekArray[6][1];
 
-            totalFatKcalsToday = returnData[0][2];
-            totalFatKcalsMinusOne = returnData[1][2];
-            totalFatKcalsMinusTwo = returnData[2][2];
-            totalFatKcalsMinusThree = returnData[3][2];
-            totalFatKcalsMinusFour = returnData[4][2];
-            totalFatKcalsMinusFive = returnData[5][2];
-            totalFatKcalsMinusSix = returnData[6][2];
+            totalFatKcalsToday = weekArray[0][2];
+            totalFatKcalsMinusOne = weekArray[1][2];
+            totalFatKcalsMinusTwo = weekArray[2][2];
+            totalFatKcalsMinusThree = weekArray[3][2];
+            totalFatKcalsMinusFour = weekArray[4][2];
+            totalFatKcalsMinusFive = weekArray[5][2];
+            totalFatKcalsMinusSix = weekArray[6][2];
 
-            totalCarbsKcalsToday = returnData[0][3];
-            totalCarbsKcalsMinusOne = returnData[1][3];
-            totalCarbsKcalsMinusTwo = returnData[2][3];
-            totalCarbsKcalsMinusThree = returnData[3][3];
-            totalCarbsKcalsMinusFour = returnData[4][3];
-            totalCarbsKcalsMinusFive = returnData[5][3];
-            totalCarbsKcalsMinusSix = returnData[6][3];
+            totalCarbsKcalsToday = weekArray[0][3];
+            totalCarbsKcalsMinusOne = weekArray[1][3];
+            totalCarbsKcalsMinusTwo = weekArray[2][3];
+            totalCarbsKcalsMinusThree = weekArray[3][3];
+            totalCarbsKcalsMinusFour = weekArray[4][3];
+            totalCarbsKcalsMinusFive = weekArray[5][3];
+            totalCarbsKcalsMinusSix = weekArray[6][3];
 
-            totalProteinKcalsToday = returnData[0][4];
-            totalProteinKcalsMinusOne = returnData[1][4];
-            totalProteinKcalsMinusTwo = returnData[2][4];
-            totalProteinKcalsMinusThree = returnData[3][4];
-            totalProteinKcalsMinusFour = returnData[4][4];
-            totalProteinKcalsMinusFive = returnData[5][4];
-            totalProteinKcalsMinusSix = returnData[6][4];
+            totalProteinKcalsToday = weekArray[0][4];
+            totalProteinKcalsMinusOne = weekArray[1][4];
+            totalProteinKcalsMinusTwo = weekArray[2][4];
+            totalProteinKcalsMinusThree = weekArray[3][4];
+            totalProteinKcalsMinusFour = weekArray[4][4];
+            totalProteinKcalsMinusFive = weekArray[5][4];
+            totalProteinKcalsMinusSix = weekArray[6][4];
 
 
             // Chart two
