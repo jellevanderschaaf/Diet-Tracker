@@ -177,25 +177,264 @@ $(document).ready(function() {
             console.log(todayPhp);
             console.log(todayPhpMinusOne);
 
-
+            var noEntry = ['0', '0', '0', '0', '0'];
             var weekArray = [];
             var returnDataMorph = returnData;
             var weekArrayCheck = [todayPhp, todayPhpMinusOne, todayPhpMinusTwo, todayPhpMinusThree, todayPhpMinusFour, todayPhpMinusFive, todayPhpMinusSix];
             console.log(weekArrayCheck);
 
-            returnDataMorph.forEach(function(item) {
 
-                if (item[0] == todayPhp) {
+            //1
 
-                    weekArray.push(item);
+            function checkToday() {
 
-                } else {
+                if (todayPhp == returnData[0][0]) {
 
-                    var noEntry = ['0', '0', '0', '0', '0'];
+                    weekArray.push(returnData[0]);
+
+                }
+                if (todayPhp != returnData[0][0]) {
+
                     weekArray.push(noEntry);
 
                 }
-            });
+
+            };
+
+            // 2
+
+            function checkTodayMinusOne() {
+
+                if (todayPhpMinusOne == returnData[0][0]) {
+
+                    weekArray.push(returnData[0]);
+
+                }
+                if (todayPhpMinusOne == returnData[1][0]) {
+
+                    weekArray.push(returnData[1]);
+
+                }
+                if (todayPhpMinusOne != returnData[0][0] && todayPhpMinusOne != returnData[1][0]) {
+
+                    weekArray.push(noEntry);
+
+                }
+
+            };
+
+            // 3
+
+            function checkTodayMinusTwo() {
+
+                if (todayPhpMinusTwo == returnData[0][0]) {
+
+                    weekArray.push(returnData[0]);
+
+                }
+                if (todayPhpMinusTwo == returnData[1][0]) {
+
+                    weekArray.push(returnData[1]);
+
+                }
+                if (todayPhpMinusTwo == returnData[2][0]) {
+
+                    weekArray.push(returnData[2]);
+
+                }
+                if (todayPhpMinusTwo != returnData[0][0] && todayPhpMinusTwo != returnData[1][0] && todayPhpMinusTwo != returnData[2][0]) {
+
+                    weekArray.push(noEntry);
+
+                }
+
+            };
+
+
+            // 4
+
+            function checkTodayMinusThree() {
+
+                if (todayPhpMinusThree == returnData[0][0]) {
+
+                    weekArray.push(returnData[0]);
+
+                }
+                if (todayPhpMinusThree == returnData[1][0]) {
+
+                    weekArray.push(returnData[1]);
+
+                }
+                if (todayPhpMinusThree == returnData[2][0]) {
+
+                    weekArray.push(returnData[2]);
+
+                }
+                if (todayPhpMinusThree == returnData[3][0]) {
+
+                    weekArray.push(returnData[3]);
+
+                }
+
+                if (todayPhpMinusThree != returnData[0][0] && todayPhpMinusThree != returnData[1][0] && todayPhpMinusThree != returnData[2][0] && todayPhpMinusThree != returnData[3][0]) {
+
+                    weekArray.push(noEntry);
+
+                }
+
+            };
+
+            // 5
+
+            function checkTodayMinusFour() {
+
+                if (todayPhpMinusFour == returnData[0][0]) {
+
+                    weekArray.push(returnData[0]);
+
+                }
+                if (todayPhpMinusFour == returnData[1][0]) {
+
+                    weekArray.push(returnData[1]);
+
+                }
+                if (todayPhpMinusFour == returnData[2][0]) {
+
+                    weekArray.push(returnData[2]);
+
+                }
+                if (todayPhpMinusFour == returnData[3][0]) {
+
+                    weekArray.push(returnData[3]);
+
+                }
+                if (todayPhpMinusFour == returnData[4][0]) {
+
+                    weekArray.push(returnData[4]);
+
+                }
+
+                if (todayPhpMinusFour != returnData[0][0] && todayPhpMinusFour != returnData[1][0] && todayPhpMinusFour != returnData[2][0] && todayPhpMinusFour != returnData[3][0] && todayPhpMinusFour != returnData[4][0]) {
+
+                    weekArray.push(noEntry);
+
+                }
+
+            };
+
+            // 6
+
+            function checkTodayMinusFive() {
+
+                if (todayPhpMinusFive == returnData[0][0]) {
+
+                    weekArray.push(returnData[0]);
+
+                }
+                if (todayPhpMinusFive == returnData[1][0]) {
+
+                    weekArray.push(returnData[1]);
+
+                }
+                if (todayPhpMinusFive == returnData[2][0]) {
+
+                    weekArray.push(returnData[2]);
+
+                }
+                if (todayPhpMinusFive == returnData[3][0]) {
+
+                    weekArray.push(returnData[3]);
+
+                }
+                if (todayPhpMinusFive == returnData[4][0]) {
+
+                    weekArray.push(returnData[4]);
+
+                }
+
+                if (todayPhpMinusFive == returnData[5][0]) {
+
+                    weekArray.push(returnData[5]);
+
+                }
+
+                if (todayPhpMinusFive != returnData[0][0] && todayPhpMinusFive != returnData[1][0] && todayPhpMinusFive != returnData[2][0] && todayPhpMinusFive != returnData[3][0] && todayPhpMinusFive != returnData[4][0] && todayPhpMinusFive != returnData[5][0]) {
+
+                    weekArray.push(noEntry);
+
+                }
+
+            };
+
+            // 7
+
+            function checkTodayMinusSix() {
+
+                if (todayPhpMinusSix == returnData[0][0]) {
+
+                    weekArray.push(returnData[0]);
+
+                }
+                if (todayPhpMinusSix == returnData[1][0]) {
+
+                    weekArray.push(returnData[1]);
+
+                }
+                if (todayPhpMinusSix == returnData[2][0]) {
+
+                    weekArray.push(returnData[2]);
+
+                }
+                if (todayPhpMinusSix == returnData[3][0]) {
+
+                    weekArray.push(returnData[3]);
+
+                }
+                if (todayPhpMinusSix == returnData[4][0]) {
+
+                    weekArray.push(returnData[4]);
+
+                }
+
+                if (todayPhpMinusSix == returnData[5][0]) {
+
+                    weekArray.push(returnData[5]);
+
+                }
+
+                if (todayPhpMinusSix == returnData[6][0]) {
+
+                    weekArray.push(returnData[6]);
+
+                }
+
+                if (todayPhpMinusSix != returnData[0][0] && todayPhpMinusSix != returnData[1][0] && todayPhpMinusSix != returnData[2][0] && todayPhpMinusSix != returnData[3][0] && todayPhpMinusSix != returnData[4][0] && todayPhpMinusSix != returnData[5][0] && todayPhpMinusSix != returnData[6][0]) {
+
+                    weekArray.push(noEntry);
+
+                }
+
+            };
+
+            checkToday();
+            checkTodayMinusOne();
+            checkTodayMinusTwo();
+            checkTodayMinusThree();
+            checkTodayMinusFour();
+            checkTodayMinusFive();
+            checkTodayMinusSix();
+
+            // if (item[0] == todayPhp || item[0] == todayPhpMinusOne || item[0] == todayPhpMinusTwo || item[0] == todayPhpMinusThree || item[0] == todayPhpMinusFour || item[0] == todayPhpMinusFive || item[0] == todayPhpMinusSix) {
+
+            //     weekArray.push(item);
+
+            // } else {
+
+            //     var noEntry = ['0', '0', '0', '0', '0'];
+            //     weekArray.push(noEntry);
+
+            //};
+
 
 
             /*
