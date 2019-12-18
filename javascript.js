@@ -4,7 +4,13 @@ $(".navbarImage").on('click', function() {
 
 });
 
-
+var today = moment().format("DD/MM");
+var todayMinusOne = moment().subtract(1, 'days').format("DD/MM");
+var todayMinusTwo = moment().subtract(2, 'days').format("DD/MM");
+var todayMinusThree = moment().subtract(3, 'days').format("DD/MM");
+var todayMinusFour = moment().subtract(4, 'days').format("DD/MM");
+var todayMinusFive = moment().subtract(5, 'days').format("DD/MM");
+var todayMinusSix = moment().subtract(6, 'days').format("DD/MM");
 
 
 
@@ -107,6 +113,198 @@ let barChart = new Chart(chart, {
     }
 });
 
+
+
+// Chart two
+
+let chartTwo = document.getElementById('chartTwo').getContext('2d');
+
+let lineChart = new Chart(chartTwo, {
+    type: 'line',
+    data: {
+        labels: [todayMinusSix,
+            todayMinusFive,
+            todayMinusFour,
+            todayMinusThree,
+            todayMinusTwo,
+            todayMinusOne,
+            today,
+        ],
+        datasets: [{
+            label: ['Kg'],
+            data: [
+                63.7,
+                63.3,
+                63.1,
+                63.5,
+                63.2,
+                62.9,
+                63.2,
+            ],
+            backgroundColor: ['rgba(161, 223, 245, 0.3)'],
+            borderColor: ['rgba(92, 97, 101, 0.3)'],
+            pointBorderColor: 'rgba(92, 97, 101, 0.7)',
+            pointBackgroundColor: 'rgba(92, 97, 101, 0.7)',
+
+        }],
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        title: {
+            display: false,
+            text: 'Weight',
+            fontSize: 15,
+        },
+        legend: {
+            display: false
+        },
+        scales: {
+            yAxes: [{
+                display: false,
+                ticks: {
+                    beginAtZero: false,
+                    display: false,
+                    max: 65,
+                },
+                gridLines: {
+                    display: false
+                }
+            }],
+            xAxes: [{
+                gridLines: {
+                    display: false
+                }
+            }]
+        }
+    }
+});
+
+// Chart Three
+
+
+let chartThree = document.getElementById('chartThree').getContext('2d');
+
+let barChartTwo = new Chart(chartThree, {
+    type: 'bar',
+    data: {
+        labels: [todayMinusSix,
+            todayMinusFive,
+            todayMinusFour,
+            todayMinusThree,
+            todayMinusTwo,
+            todayMinusOne,
+            today
+        ],
+        datasets: [{
+            label: ['€'],
+            data: [0, 0, 0, 0, 0, 0, 0],
+        }],
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        title: {
+            display: false,
+            text: 'Costs',
+            fontSize: 15,
+        },
+        legend: {
+            display: false
+        },
+        scales: {
+            yAxes: [{
+                display: true,
+                ticks: {
+                    beginAtZero: true,
+                    display: true,
+                    steps: 1,
+                    max: 14
+                },
+                gridLines: {
+                    display: false
+                }
+            }],
+            xAxes: [{
+                gridLines: {
+                    display: false
+                }
+            }]
+        }
+    }
+});
+
+
+// Chart Four
+
+let chartFour = document.getElementById('chartFour').getContext('2d');
+
+let barChartFour = new Chart(chartFour, {
+    type: 'bar',
+    data: {
+        labels: [todayMinusSix,
+            todayMinusFive,
+            todayMinusFour,
+            todayMinusThree,
+            todayMinusTwo,
+            todayMinusOne,
+            today,
+        ],
+        datasets: [{
+            label: ['Fat'],
+            data: [0, 0, 0, 0, 0, 0, 0],
+            backgroundColor: 'rgba(250, 147, 28, 0.6)'
+        }, {
+            label: ['Carbs'],
+            data: [0, 0, 0, 0, 0, 0, 0],
+            backgroundColor: 'rgba(236, 59, 66, 0.6)'
+        }, {
+            label: ['Protein'],
+            data: [0, 0, 0, 0, 0, 0, 0],
+            backgroundColor: 'rgba(161, 223, 245, 0.6)'
+        }],
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        title: {
+            display: false,
+            text: 'Costs',
+            fontSize: 15,
+        },
+        legend: {
+            display: false
+        },
+        scales: {
+            yAxes: [{
+                display: true,
+                stacked: true,
+                ticks: {
+                    beginAtZero: true,
+                    display: true,
+                    steps: 1,
+                    max: 3500
+                },
+                gridLines: {
+                    display: false
+                }
+            }],
+            xAxes: [{
+                stacked: true,
+                gridLines: {
+                    display: false
+                }
+            }]
+        }
+    }
+});
+
+
+
+
+
+
+
 function updateChart() {
 
     var table = document.getElementById("mainTable2");
@@ -133,16 +331,12 @@ function updateChart() {
     document.getElementById("totalKcals").innerHTML = 'Kcals:&emsp;' + totalKcals;
     document.getElementById("totalCosts").innerHTML = 'Costs:&emsp; € ' + totalCosts.toFixed(2);
 
+    updateCharts();
+
 };
 
 
-var today = moment().format("DD/MM");
-var todayMinusOne = moment().subtract(1, 'days').format("DD/MM");
-var todayMinusTwo = moment().subtract(2, 'days').format("DD/MM");
-var todayMinusThree = moment().subtract(3, 'days').format("DD/MM");
-var todayMinusFour = moment().subtract(4, 'days').format("DD/MM");
-var todayMinusFive = moment().subtract(5, 'days').format("DD/MM");
-var todayMinusSix = moment().subtract(6, 'days').format("DD/MM");
+
 
 // Load Graph data from database
 
@@ -179,7 +373,6 @@ $(document).ready(function() {
 
             var noEntry = ['0', '0', '0', '0', '0'];
             var weekArray = [];
-            var returnDataMorph = returnData;
             var weekArrayCheck = [todayPhp, todayPhpMinusOne, todayPhpMinusTwo, todayPhpMinusThree, todayPhpMinusFour, todayPhpMinusFive, todayPhpMinusSix];
             console.log(weekArrayCheck);
 
@@ -424,40 +617,8 @@ $(document).ready(function() {
             checkTodayMinusFive();
             checkTodayMinusSix();
 
-            // if (item[0] == todayPhp || item[0] == todayPhpMinusOne || item[0] == todayPhpMinusTwo || item[0] == todayPhpMinusThree || item[0] == todayPhpMinusFour || item[0] == todayPhpMinusFive || item[0] == todayPhpMinusSix) {
 
-            //     weekArray.push(item);
-
-            // } else {
-
-            //     var noEntry = ['0', '0', '0', '0', '0'];
-            //     weekArray.push(noEntry);
-
-            //};
-
-
-
-            /*
-             returnDataMorph.forEach(createWeekArray);
-            
-            function createWeekArray(item) {
-
-                if (item = todayPhp | item == todayPhpMinusOne | item == todayPhpMinusTwo | item == todayPhpMinusThree | item == todayPhpMinusFour | item == todayPhpMinusFive | item == todayPhpMinusSix) {
-
-                    weekArray.push(item);
-
-                } else {
-
-                    var noEntry = ['0', '0', '0', '0', '0'];
-                    weekArray.push(noEntry);
-
-                }
-
-
-            };
-*/
             console.log(weekArray);
-            console.log(returnDataMorph);
 
 
 
@@ -492,229 +653,6 @@ $(document).ready(function() {
             totalProteinKcalsMinusFour = weekArray[4][4];
             totalProteinKcalsMinusFive = weekArray[5][4];
             totalProteinKcalsMinusSix = weekArray[6][4];
-
-
-            // Chart two
-
-            let chartTwo = document.getElementById('chartTwo').getContext('2d');
-
-            let lineChart = new Chart(chartTwo, {
-                type: 'line',
-                data: {
-                    labels: [todayMinusSix,
-                        todayMinusFive,
-                        todayMinusFour,
-                        todayMinusThree,
-                        todayMinusTwo,
-                        todayMinusOne,
-                        today,
-                    ],
-                    datasets: [{
-                        label: ['Kg'],
-                        data: [
-                            63.7,
-                            63.3,
-                            63.1,
-                            63.5,
-                            63.2,
-                            62.9,
-                            63.2,
-                        ],
-                        backgroundColor: ['rgba(161, 223, 245, 0.3)'],
-                        borderColor: ['rgba(92, 97, 101, 0.3)'],
-                        pointBorderColor: 'rgba(92, 97, 101, 0.7)',
-                        pointBackgroundColor: 'rgba(92, 97, 101, 0.7)',
-
-                    }],
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    title: {
-                        display: false,
-                        text: 'Weight',
-                        fontSize: 15,
-                    },
-                    legend: {
-                        display: false
-                    },
-                    scales: {
-                        yAxes: [{
-                            display: false,
-                            ticks: {
-                                beginAtZero: false,
-                                display: false,
-                                max: 65,
-                            },
-                            gridLines: {
-                                display: false
-                            }
-                        }],
-                        xAxes: [{
-                            gridLines: {
-                                display: false
-                            }
-                        }]
-                    }
-                }
-            });
-
-            // Chart Three
-
-
-            let chartThree = document.getElementById('chartThree').getContext('2d');
-
-            let barChartTwo = new Chart(chartThree, {
-                type: 'bar',
-                data: {
-                    labels: [todayMinusSix,
-                        todayMinusFive,
-                        todayMinusFour,
-                        todayMinusThree,
-                        todayMinusTwo,
-                        todayMinusOne,
-                        today
-                    ],
-                    datasets: [{
-                        label: ['€'],
-                        data: [
-                            parseFloat(totalPriceMinusSix).toFixed(2),
-                            parseFloat(totalPriceMinusFive).toFixed(2),
-                            parseFloat(totalPriceMinusFour).toFixed(2),
-                            parseFloat(totalPriceMinusThree).toFixed(2),
-                            parseFloat(totalPriceMinusTwo).toFixed(2),
-                            parseFloat(totalPriceMinusOne).toFixed(2),
-                            parseFloat(totalPriceToday).toFixed(2)
-                        ],
-                    }],
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    title: {
-                        display: false,
-                        text: 'Costs',
-                        fontSize: 15,
-                    },
-                    legend: {
-                        display: false
-                    },
-                    scales: {
-                        yAxes: [{
-                            display: true,
-                            ticks: {
-                                beginAtZero: true,
-                                display: true,
-                                steps: 1,
-                                max: 14
-                            },
-                            gridLines: {
-                                display: false
-                            }
-                        }],
-                        xAxes: [{
-                            gridLines: {
-                                display: false
-                            }
-                        }]
-                    }
-                }
-            });
-
-
-            // Chart Four
-
-            let chartFour = document.getElementById('chartFour').getContext('2d');
-
-            let barChartFour = new Chart(chartFour, {
-                type: 'bar',
-                data: {
-                    labels: [todayMinusSix,
-                        todayMinusFive,
-                        todayMinusFour,
-                        todayMinusThree,
-                        todayMinusTwo,
-                        todayMinusOne,
-                        today,
-                    ],
-                    datasets: [{
-                        label: ['Fat'],
-                        data: [
-                            Math.round(totalFatKcalsMinusSix),
-                            Math.round(totalFatKcalsMinusFive),
-                            Math.round(totalFatKcalsMinusFour),
-                            Math.round(totalFatKcalsMinusThree),
-                            Math.round(totalFatKcalsMinusTwo),
-                            Math.round(totalFatKcalsMinusOne),
-                            Math.round(totalFatKcalsToday)
-                        ],
-                        backgroundColor: 'rgba(250, 147, 28, 0.6)'
-                    }, {
-                        label: ['Carbs'],
-                        data: [
-                            Math.round(totalCarbsKcalsMinusSix),
-                            Math.round(totalCarbsKcalsMinusFive),
-                            Math.round(totalCarbsKcalsMinusFour),
-                            Math.round(totalCarbsKcalsMinusThree),
-                            Math.round(totalCarbsKcalsMinusTwo),
-                            Math.round(totalCarbsKcalsMinusOne),
-                            Math.round(totalCarbsKcalsToday)
-                        ],
-                        backgroundColor: 'rgba(236, 59, 66, 0.6)'
-                    }, {
-                        label: ['Protein'],
-                        data: [
-                            Math.round(totalProteinKcalsMinusSix),
-                            Math.round(totalProteinKcalsMinusFive),
-                            Math.round(totalProteinKcalsMinusFour),
-                            Math.round(totalProteinKcalsMinusThree),
-                            Math.round(totalProteinKcalsMinusTwo),
-                            Math.round(totalProteinKcalsMinusOne),
-                            Math.round(totalProteinKcalsToday)
-                        ],
-                        backgroundColor: 'rgba(161, 223, 245, 0.6)'
-                    }],
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    title: {
-                        display: false,
-                        text: 'Costs',
-                        fontSize: 15,
-                    },
-                    legend: {
-                        display: false
-                    },
-                    scales: {
-                        yAxes: [{
-                            display: true,
-                            stacked: true,
-                            ticks: {
-                                beginAtZero: true,
-                                display: true,
-                                steps: 1,
-                                max: 3500
-                            },
-                            gridLines: {
-                                display: false
-                            }
-                        }],
-                        xAxes: [{
-                            stacked: true,
-                            gridLines: {
-                                display: false
-                            }
-                        }]
-                    }
-                }
-            });
-
-
-
-
-
-
 
 
         });
@@ -783,3 +721,327 @@ $('#tableCostsGraph').click(function() {
 });
 
 //
+
+
+
+// Update charts //
+
+
+function updateCharts() {
+
+    var dateOne = document.getElementById('date').textContent;
+    var date = dateOne;
+    var returnDate;
+
+    $.post("loaddate.php", { date: date, datethis: datethis }, function(data) {
+
+        var returnData = JSON.parse(data);
+        returnDate = returnData[0];
+
+        $.post("loadgraphs.php", { graphthis: graphthis }, function(data) {
+
+            var returnData = JSON.parse(data);
+
+            var todayPhp = returnDate - 1 + 1;
+            var todayPhpMinusOne = todayPhp - 1;
+            var todayPhpMinusTwo = todayPhp - 2;
+            var todayPhpMinusThree = todayPhp - 3;
+            var todayPhpMinusFour = todayPhp - 4;
+            var todayPhpMinusFive = todayPhp - 5;
+            var todayPhpMinusSix = todayPhp - 6;
+
+
+            var noEntry = ['0', '0', '0', '0', '0'];
+            var weekArray = [];
+            var weekArrayCheck = [todayPhp, todayPhpMinusOne, todayPhpMinusTwo, todayPhpMinusThree, todayPhpMinusFour, todayPhpMinusFive, todayPhpMinusSix];
+
+
+            //1
+
+            function checkToday() {
+
+                if (todayPhp == returnData[0][0]) {
+
+                    weekArray.push(returnData[0]);
+
+                }
+                if (todayPhp != returnData[0][0]) {
+
+                    weekArray.push(noEntry);
+
+                }
+
+            };
+
+            // 2
+
+            function checkTodayMinusOne() {
+
+                if (todayPhpMinusOne == returnData[0][0]) {
+
+                    weekArray.push(returnData[0]);
+
+                }
+                if (todayPhpMinusOne == returnData[1][0]) {
+
+                    weekArray.push(returnData[1]);
+
+                }
+                if (todayPhpMinusOne != returnData[0][0] && todayPhpMinusOne != returnData[1][0]) {
+
+                    weekArray.push(noEntry);
+
+                }
+
+            };
+
+            // 3
+
+            function checkTodayMinusTwo() {
+
+                if (todayPhpMinusTwo == returnData[0][0]) {
+
+                    weekArray.push(returnData[0]);
+
+                }
+                if (todayPhpMinusTwo == returnData[1][0]) {
+
+                    weekArray.push(returnData[1]);
+
+                }
+                if (todayPhpMinusTwo == returnData[2][0]) {
+
+                    weekArray.push(returnData[2]);
+
+                }
+                if (todayPhpMinusTwo != returnData[0][0] && todayPhpMinusTwo != returnData[1][0] && todayPhpMinusTwo != returnData[2][0]) {
+
+                    weekArray.push(noEntry);
+
+                }
+
+            };
+
+
+            // 4
+
+            function checkTodayMinusThree() {
+
+                if (todayPhpMinusThree == returnData[0][0]) {
+
+                    weekArray.push(returnData[0]);
+
+                }
+                if (todayPhpMinusThree == returnData[1][0]) {
+
+                    weekArray.push(returnData[1]);
+
+                }
+                if (todayPhpMinusThree == returnData[2][0]) {
+
+                    weekArray.push(returnData[2]);
+
+                }
+                if (todayPhpMinusThree == returnData[3][0]) {
+
+                    weekArray.push(returnData[3]);
+
+                }
+
+                if (todayPhpMinusThree != returnData[0][0] && todayPhpMinusThree != returnData[1][0] && todayPhpMinusThree != returnData[2][0] && todayPhpMinusThree != returnData[3][0]) {
+
+                    weekArray.push(noEntry);
+
+                }
+
+            };
+
+            // 5
+
+            function checkTodayMinusFour() {
+
+                if (todayPhpMinusFour == returnData[0][0]) {
+
+                    weekArray.push(returnData[0]);
+
+                }
+                if (todayPhpMinusFour == returnData[1][0]) {
+
+                    weekArray.push(returnData[1]);
+
+                }
+                if (todayPhpMinusFour == returnData[2][0]) {
+
+                    weekArray.push(returnData[2]);
+
+                }
+                if (todayPhpMinusFour == returnData[3][0]) {
+
+                    weekArray.push(returnData[3]);
+
+                }
+                if (todayPhpMinusFour == returnData[4][0]) {
+
+                    weekArray.push(returnData[4]);
+
+                }
+
+                if (todayPhpMinusFour != returnData[0][0] && todayPhpMinusFour != returnData[1][0] && todayPhpMinusFour != returnData[2][0] && todayPhpMinusFour != returnData[3][0] && todayPhpMinusFour != returnData[4][0]) {
+
+                    weekArray.push(noEntry);
+
+                }
+
+            };
+
+            // 6
+
+            function checkTodayMinusFive() {
+
+                if (todayPhpMinusFive == returnData[0][0]) {
+
+                    weekArray.push(returnData[0]);
+
+                }
+                if (todayPhpMinusFive == returnData[1][0]) {
+
+                    weekArray.push(returnData[1]);
+
+                }
+                if (todayPhpMinusFive == returnData[2][0]) {
+
+                    weekArray.push(returnData[2]);
+
+                }
+                if (todayPhpMinusFive == returnData[3][0]) {
+
+                    weekArray.push(returnData[3]);
+
+                }
+                if (todayPhpMinusFive == returnData[4][0]) {
+
+                    weekArray.push(returnData[4]);
+
+                }
+
+                if (todayPhpMinusFive == returnData[5][0]) {
+
+                    weekArray.push(returnData[5]);
+
+                }
+
+                if (todayPhpMinusFive != returnData[0][0] && todayPhpMinusFive != returnData[1][0] && todayPhpMinusFive != returnData[2][0] && todayPhpMinusFive != returnData[3][0] && todayPhpMinusFive != returnData[4][0] && todayPhpMinusFive != returnData[5][0]) {
+
+                    weekArray.push(noEntry);
+
+                }
+
+            };
+
+            // 7
+
+            function checkTodayMinusSix() {
+
+                if (todayPhpMinusSix == returnData[0][0]) {
+
+                    weekArray.push(returnData[0]);
+
+                }
+                if (todayPhpMinusSix == returnData[1][0]) {
+
+                    weekArray.push(returnData[1]);
+
+                }
+                if (todayPhpMinusSix == returnData[2][0]) {
+
+                    weekArray.push(returnData[2]);
+
+                }
+                if (todayPhpMinusSix == returnData[3][0]) {
+
+                    weekArray.push(returnData[3]);
+
+                }
+                if (todayPhpMinusSix == returnData[4][0]) {
+
+                    weekArray.push(returnData[4]);
+
+                }
+
+                if (todayPhpMinusSix == returnData[5][0]) {
+
+                    weekArray.push(returnData[5]);
+
+                }
+
+                if (todayPhpMinusSix == returnData[6][0]) {
+
+                    weekArray.push(returnData[6]);
+
+                }
+
+                if (todayPhpMinusSix != returnData[0][0] && todayPhpMinusSix != returnData[1][0] && todayPhpMinusSix != returnData[2][0] && todayPhpMinusSix != returnData[3][0] && todayPhpMinusSix != returnData[4][0] && todayPhpMinusSix != returnData[5][0] && todayPhpMinusSix != returnData[6][0]) {
+
+                    weekArray.push(noEntry);
+
+                }
+
+            };
+
+            checkToday();
+            checkTodayMinusOne();
+            checkTodayMinusTwo();
+            checkTodayMinusThree();
+            checkTodayMinusFour();
+            checkTodayMinusFive();
+            checkTodayMinusSix();
+
+
+            console.log(weekArray);
+
+            totalPriceToday = weekArray[0][1];
+            totalPriceMinusOne = weekArray[1][1];
+            totalPriceMinusTwo = weekArray[2][1];
+            totalPriceMinusThree = weekArray[3][1];
+            totalPriceMinusFour = weekArray[4][1];
+            totalPriceMinusFive = weekArray[5][1];
+            totalPriceMinusSix = weekArray[6][1];
+
+            totalFatKcalsToday = weekArray[0][2];
+            totalFatKcalsMinusOne = weekArray[1][2];
+            totalFatKcalsMinusTwo = weekArray[2][2];
+            totalFatKcalsMinusThree = weekArray[3][2];
+            totalFatKcalsMinusFour = weekArray[4][2];
+            totalFatKcalsMinusFive = weekArray[5][2];
+            totalFatKcalsMinusSix = weekArray[6][2];
+
+            totalCarbsKcalsToday = weekArray[0][3];
+            totalCarbsKcalsMinusOne = weekArray[1][3];
+            totalCarbsKcalsMinusTwo = weekArray[2][3];
+            totalCarbsKcalsMinusThree = weekArray[3][3];
+            totalCarbsKcalsMinusFour = weekArray[4][3];
+            totalCarbsKcalsMinusFive = weekArray[5][3];
+            totalCarbsKcalsMinusSix = weekArray[6][3];
+
+            totalProteinKcalsToday = weekArray[0][4];
+            totalProteinKcalsMinusOne = weekArray[1][4];
+            totalProteinKcalsMinusTwo = weekArray[2][4];
+            totalProteinKcalsMinusThree = weekArray[3][4];
+            totalProteinKcalsMinusFour = weekArray[4][4];
+            totalProteinKcalsMinusFive = weekArray[5][4];
+            totalProteinKcalsMinusSix = weekArray[6][4];
+
+
+
+            barChartTwo.data.datasets[0].data = [parseFloat(totalPriceMinusSix).toFixed(2), parseFloat(totalPriceMinusFive).toFixed(2), parseFloat(totalPriceMinusFour).toFixed(2), parseFloat(totalPriceMinusThree).toFixed(2), parseFloat(totalPriceMinusTwo).toFixed(2), parseFloat(totalPriceMinusOne).toFixed(2), parseFloat(totalPriceToday).toFixed(2)];
+            barChartTwo.update();
+
+            barChartFour.data.datasets[0].data = [Math.round(totalFatKcalsMinusSix), Math.round(totalFatKcalsMinusFive), Math.round(totalFatKcalsMinusFour), Math.round(totalFatKcalsMinusThree), Math.round(totalFatKcalsMinusTwo), Math.round(totalFatKcalsMinusOne), Math.round(totalFatKcalsToday)];
+            barChartFour.data.datasets[1].data = [Math.round(totalCarbsKcalsMinusSix), Math.round(totalCarbsKcalsMinusFive), Math.round(totalCarbsKcalsMinusFour), Math.round(totalCarbsKcalsMinusThree), Math.round(totalCarbsKcalsMinusTwo), Math.round(totalCarbsKcalsMinusOne), Math.round(totalCarbsKcalsToday)];
+            barChartFour.data.datasets[2].data = [Math.round(totalProteinKcalsMinusSix), Math.round(totalProteinKcalsMinusFive), Math.round(totalProteinKcalsMinusFour), Math.round(totalProteinKcalsMinusThree), Math.round(totalProteinKcalsMinusTwo), Math.round(totalProteinKcalsMinusOne), Math.round(totalProteinKcalsToday)];
+            barChartFour.update();
+
+
+        });
+    });
+};
