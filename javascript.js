@@ -139,7 +139,7 @@ let lineChart = new Chart(chartTwo, {
                 63.5,
                 63.2,
                 62.9,
-                63.2,
+                null,
             ],
             backgroundColor: ['rgba(161, 223, 245, 0.3)'],
             borderColor: ['rgba(92, 97, 101, 0.3)'],

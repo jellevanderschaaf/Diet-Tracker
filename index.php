@@ -327,8 +327,8 @@ if (isset($_POST['create_button'])) {
 
 <div class="inputWeight" style='width:100%'>
 <div class="inputFields">
-Morning: <input type="text" class="form-control form-control-sm inputFieldWeight" style='width:50px'> kg
-&emsp;&emsp;Evening: <input type="text" class="form-control form-control-sm inputFieldWeight" style='width:50px'> kg
+Morning: <input type="text" id="morningWeight" class="form-control form-control-sm inputFieldWeight" style='width:50px'> kg
+&emsp;&emsp;Evening: <input type="text" id="eveningWeight" class="form-control form-control-sm inputFieldWeight" style='width:50px'> kg
                 </div>
 <button id="buttonLock" class="btn btn-secondary buttonSubmit">Submit Weight</button> 
 <div id="lockStatusHtml" ></div>
@@ -393,6 +393,8 @@ var updatethis = 'update';
 var addthis = 'add';
 var setthisquantity = 'setthisquantity';
 var removethis = 'removethis';
+var weightthis = 'weightthis';
+
 $(".delete-this").on('click', function(){
 document.getElementById("modalTwo").classList.remove('hidden');
 id = $(this).attr('rel');
@@ -584,6 +586,28 @@ $(".buttonLockUnlock").on('click', function(){
     $(this).find('i').removeClass('fas fa-lock').addClass('fas fa-unlock');
 
 });
+
+
+
+$("#buttonLock").on('click', function(){
+     
+    var dateOne = document.getElementById('date').textContent;
+    var date =  dateOne;
+
+    var morningWeight = document.getElementById('morningWeight').value;
+    var eveningWeight = document.getElementById('eveningWeight').value;
+
+    console.log(date);
+    console.log(morningWeight);
+    console.log(eveningWeight);
+   
+   
+   $.post("weight.php", {date: date, morningWeight: morningWeight, eveningWeight: eveningWeight, weightthis: weightthis}, function(){
+           
+});
+});
+
+
 
 </script>
 
