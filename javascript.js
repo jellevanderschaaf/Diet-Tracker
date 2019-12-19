@@ -132,15 +132,7 @@ let lineChart = new Chart(chartTwo, {
         ],
         datasets: [{
             label: ['Kg'],
-            data: [
-                63.7,
-                63.3,
-                63.1,
-                63.5,
-                63.2,
-                62.9,
-                null,
-            ],
+            data: [null, null, null, null, null, null, null],
             backgroundColor: ['rgba(161, 223, 245, 0.3)'],
             borderColor: ['rgba(92, 97, 101, 0.3)'],
             pointBorderColor: 'rgba(92, 97, 101, 0.7)',
@@ -342,6 +334,7 @@ function updateChart() {
 
 var graphthis = 'graph';
 var datethis = 'date';
+var loadweightthis = 'loadweightthis';
 
 $(document).ready(function() {
 
@@ -354,22 +347,24 @@ $(document).ready(function() {
         var returnData = JSON.parse(data);
         returnDate = returnData[0];
 
+        var todayPhp = returnDate - 1 + 1;
+        var todayPhpMinusOne = todayPhp - 1;
+        var todayPhpMinusTwo = todayPhp - 2;
+        var todayPhpMinusThree = todayPhp - 3;
+        var todayPhpMinusFour = todayPhp - 4;
+        var todayPhpMinusFive = todayPhp - 5;
+        var todayPhpMinusSix = todayPhp - 6;
+
+        console.log(todayPhp);
+        console.log(todayPhpMinusOne);
+
         $.post("loadgraphs.php", { graphthis: graphthis }, function(data) {
 
             console.log(returnDate);
             var returnData = JSON.parse(data);
             console.log(returnData);
 
-            var todayPhp = returnDate - 1 + 1;
-            var todayPhpMinusOne = todayPhp - 1;
-            var todayPhpMinusTwo = todayPhp - 2;
-            var todayPhpMinusThree = todayPhp - 3;
-            var todayPhpMinusFour = todayPhp - 4;
-            var todayPhpMinusFive = todayPhp - 5;
-            var todayPhpMinusSix = todayPhp - 6;
 
-            console.log(todayPhp);
-            console.log(todayPhpMinusOne);
 
             var noEntry = ['0', '0', '0', '0', '0'];
             var weekArray = [];
@@ -656,6 +651,282 @@ $(document).ready(function() {
 
 
         });
+
+
+        $.post("loadweight.php", { loadweightthis: loadweightthis }, function(data) {
+
+            var returnData = JSON.parse(data);
+            console.log(returnData);
+
+            var noEntry = [null, null, null];
+            var weekArrayWeight = [];
+            var weekArrayWeightCheck = [todayPhp, todayPhpMinusOne, todayPhpMinusTwo, todayPhpMinusThree, todayPhpMinusFour, todayPhpMinusFive, todayPhpMinusSix];
+
+            //1
+
+            function checkWeightToday() {
+
+                if (todayPhp == returnData[0][2]) {
+
+                    weekArrayWeight.push(returnData[0]);
+
+                }
+                if (todayPhp != returnData[0][2]) {
+
+                    weekArrayWeight.push(noEntry);
+
+                }
+
+            };
+
+            // 2
+
+            function checkWeightTodayMinusOne() {
+
+                if (todayPhpMinusOne == returnData[0][2]) {
+
+                    weekArrayWeight.push(returnData[0]);
+
+                }
+                if (todayPhpMinusOne == returnData[1][2]) {
+
+                    weekArrayWeight.push(returnData[1]);
+
+                }
+                if (todayPhpMinusOne != returnData[0][2] && todayPhpMinusOne != returnData[1][2]) {
+
+                    weekArrayWeight.push(noEntry);
+
+                }
+
+            };
+
+            // 3
+
+            function checkWeightTodayMinusTwo() {
+
+                if (todayPhpMinusTwo == returnData[0][2]) {
+
+                    weekArrayWeight.push(returnData[0]);
+
+                }
+                if (todayPhpMinusTwo == returnData[1][2]) {
+
+                    weekArrayWeight.push(returnData[1]);
+
+                }
+                if (todayPhpMinusTwo == returnData[2][2]) {
+
+                    weekArrayWeight.push(returnData[2]);
+
+                }
+                if (todayPhpMinusTwo != returnData[0][2] && todayPhpMinusTwo != returnData[1][2] && todayPhpMinusTwo != returnData[2][2]) {
+
+                    weekArrayWeight.push(noEntry);
+
+                }
+
+            };
+
+
+            // 4
+
+            function checkWeightTodayMinusThree() {
+
+                if (todayPhpMinusThree == returnData[0][2]) {
+
+                    weekArrayWeight.push(returnData[0]);
+
+                }
+                if (todayPhpMinusThree == returnData[1][2]) {
+
+                    weekArrayWeight.push(returnData[1]);
+
+                }
+                if (todayPhpMinusThree == returnData[2][2]) {
+
+                    weekArrayWeight.push(returnData[2]);
+
+                }
+                if (todayPhpMinusThree == returnData[3][2]) {
+
+                    weekArrayWeight.push(returnData[3]);
+
+                }
+
+                if (todayPhpMinusThree != returnData[0][2] && todayPhpMinusThree != returnData[1][2] && todayPhpMinusThree != returnData[2][2] && todayPhpMinusThree != returnData[3][2]) {
+
+                    weekArrayWeight.push(noEntry);
+
+                }
+
+            };
+
+            // 5
+
+            function checkWeightTodayMinusFour() {
+
+                if (todayPhpMinusFour == returnData[0][2]) {
+
+                    weekArrayWeight.push(returnData[0]);
+
+                }
+                if (todayPhpMinusFour == returnData[1][2]) {
+
+                    weekArrayWeight.push(returnData[1]);
+
+                }
+                if (todayPhpMinusFour == returnData[2][2]) {
+
+                    weekArrayWeight.push(returnData[2]);
+
+                }
+                if (todayPhpMinusFour == returnData[3][2]) {
+
+                    weekArrayWeight.push(returnData[3]);
+
+                }
+                if (todayPhpMinusFour == returnData[4][2]) {
+
+                    weekArrayWeight.push(returnData[4]);
+
+                }
+
+                if (todayPhpMinusFour != returnData[0][2] && todayPhpMinusFour != returnData[1][2] && todayPhpMinusFour != returnData[2][2] && todayPhpMinusFour != returnData[3][2] && todayPhpMinusFour != returnData[4][2]) {
+
+                    weekArrayWeight.push(noEntry);
+
+                }
+
+            };
+
+            // 6
+
+            function checkWeightTodayMinusFive() {
+
+                if (todayPhpMinusFive == returnData[0][2]) {
+
+                    weekArrayWeight.push(returnData[0]);
+
+                }
+                if (todayPhpMinusFive == returnData[1][2]) {
+
+                    weekArrayWeight.push(returnData[1]);
+
+                }
+                if (todayPhpMinusFive == returnData[2][2]) {
+
+                    weekArrayWeight.push(returnData[2]);
+
+                }
+                if (todayPhpMinusFive == returnData[3][2]) {
+
+                    weekArrayWeight.push(returnData[3]);
+
+                }
+                if (todayPhpMinusFive == returnData[4][2]) {
+
+                    weekArrayWeight.push(returnData[4]);
+
+                }
+
+                if (todayPhpMinusFive == returnData[5][2]) {
+
+                    weekArrayWeight.push(returnData[5]);
+
+                }
+
+                if (todayPhpMinusFive != returnData[0][2] && todayPhpMinusFive != returnData[1][2] && todayPhpMinusFive != returnData[2][2] && todayPhpMinusFive != returnData[3][2] && todayPhpMinusFive != returnData[4][2] && todayPhpMinusFive != returnData[5][2]) {
+
+                    weekArrayWeight.push(noEntry);
+
+                }
+
+            };
+
+            // 7
+
+            function checkWeightTodayMinusSix() {
+
+                if (todayPhpMinusSix == returnData[0][2]) {
+
+                    weekArrayWeight.push(returnData[0]);
+
+                }
+                if (todayPhpMinusSix == returnData[1][2]) {
+
+                    weekArrayWeight.push(returnData[1]);
+
+                }
+                if (todayPhpMinusSix == returnData[2][2]) {
+
+                    weekArrayWeight.push(returnData[2]);
+
+                }
+                if (todayPhpMinusSix == returnData[3][2]) {
+
+                    weekArrayWeight.push(returnData[3]);
+
+                }
+                if (todayPhpMinusSix == returnData[4][2]) {
+
+                    weekArrayWeight.push(returnData[4]);
+
+                }
+
+                if (todayPhpMinusSix == returnData[5][2]) {
+
+                    weekArrayWeight.push(returnData[5]);
+
+                }
+
+                if (todayPhpMinusSix == returnData[6][2]) {
+
+                    weekArrayWeight.push(returnData[6]);
+
+                }
+
+                if (todayPhpMinusSix != returnData[0][2] && todayPhpMinusSix != returnData[1][2] && todayPhpMinusSix != returnData[2][2] && todayPhpMinusSix != returnData[3][2] && todayPhpMinusSix != returnData[4][2] && todayPhpMinusSix != returnData[5][2] && todayPhpMinusSix != returnData[6][2]) {
+
+                    weekArrayWeight.push(noEntry);
+
+                }
+
+            };
+
+            checkWeightToday();
+            checkWeightTodayMinusOne();
+            checkWeightTodayMinusTwo();
+            checkWeightTodayMinusThree();
+            checkWeightTodayMinusFour();
+            checkWeightTodayMinusFive();
+            checkWeightTodayMinusSix();
+
+
+            console.log(weekArrayWeight);
+
+
+            morningWeightToday = weekArrayWeight[0][0];
+            morningWeightMinusOne = weekArrayWeight[1][0];
+            morningWeightMinusTwo = weekArrayWeight[2][0];
+            morningWeightMinusThree = weekArrayWeight[3][0];
+            morningWeightMinusFour = weekArrayWeight[4][0];
+            morningWeightMinusFive = weekArrayWeight[5][0];
+            morningWeightMinusSix = weekArrayWeight[6][0];
+
+            eveningWeightToday = weekArrayWeight[0][1];
+            eveningWeightMinusOne = weekArrayWeight[1][1];
+            eveningWeightMinusTwo = weekArrayWeight[2][1];
+            eveningWeightMinusThree = weekArrayWeight[3][1];
+            eveningWeightMinusFour = weekArrayWeight[4][1];
+            eveningWeightMinusFive = weekArrayWeight[5][1];
+            eveningWeightMinusSix = weekArrayWeight[6][1];
+
+
+        });
+
+
+
     });
 });
 
@@ -738,18 +1009,20 @@ function updateCharts() {
         var returnData = JSON.parse(data);
         returnDate = returnData[0];
 
+        var todayPhp = returnDate - 1 + 1;
+        var todayPhpMinusOne = todayPhp - 1;
+        var todayPhpMinusTwo = todayPhp - 2;
+        var todayPhpMinusThree = todayPhp - 3;
+        var todayPhpMinusFour = todayPhp - 4;
+        var todayPhpMinusFive = todayPhp - 5;
+        var todayPhpMinusSix = todayPhp - 6;
+
+        console.log(todayPhp);
+        console.log(todayPhpMinusOne);
+
         $.post("loadgraphs.php", { graphthis: graphthis }, function(data) {
 
             var returnData = JSON.parse(data);
-
-            var todayPhp = returnDate - 1 + 1;
-            var todayPhpMinusOne = todayPhp - 1;
-            var todayPhpMinusTwo = todayPhp - 2;
-            var todayPhpMinusThree = todayPhp - 3;
-            var todayPhpMinusFour = todayPhp - 4;
-            var todayPhpMinusFive = todayPhp - 5;
-            var todayPhpMinusSix = todayPhp - 6;
-
 
             var noEntry = ['0', '0', '0', '0', '0'];
             var weekArray = [];
@@ -1043,5 +1316,9 @@ function updateCharts() {
 
 
         });
+
+
+
+
     });
 };
