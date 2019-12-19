@@ -640,6 +640,9 @@ $("#buttonLock").on('click', function(){
    $.post("weight.php", {date: date, morningWeight: morningWeight, eveningWeight: eveningWeight, weightthis: weightthis}, function(){
            
 });
+
+updateCharts();
+
 });
 
 });
