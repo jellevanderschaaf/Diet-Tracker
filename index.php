@@ -318,24 +318,59 @@ if (isset($_POST['create_button'])) {
                         }
                     }
                     }
-                    $con->close();
+                   
                   
                     ?>
 </table>
 
 
 
-<div class="inputWeight" style='width:100%'>
-<div class="inputFields">
-Morning: <input type="text" id="morningWeight" class="form-control form-control-sm inputFieldWeight" style='width:50px'> kg
-&emsp;&emsp;Evening: <input type="text" id="eveningWeight" class="form-control form-control-sm inputFieldWeight" style='width:50px'> kg
-                </div>
-<button id="buttonLock" class="btn btn-secondary buttonSubmit">Submit Weight</button> 
-<div id="lockStatusHtml" ></div>
-<div class="btn btn-secondary buttonLockUnlock"><i id="buttonLockUnlock"class="fas fa-unlock"></i></div> 
 
-                </div>
+<div class='inputWeight' style='width:100%'>
+<div class='inputFields'>
+
+
+<?php
+                    $sql = "SELECT morningweight, eveningweight from weight WHERE thisdate = $dateCheck";
+                    $result = $con->query($sql);
+                    
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {                       
+                          
+echo "
+
+
+Morning: <input type='text' id='morningWeight' class='form-control form-control-sm inputFieldWeight' style='width:50px' value='".$row['morningweight']."'> kg
+&emsp;&emsp;Evening: <input type='text' id='eveningWeight' class='form-control form-control-sm inputFieldWeight' style='width:50px' value='".$row['eveningweight']."'> kg
+               
+
+";
+
+                    }
+                    } else {
+
+                        echo "
+
+
+                        Morning: <input type='text' id='morningWeight' class='form-control form-control-sm inputFieldWeight' style='width:50px'> kg
+                        &emsp;&emsp;Evening: <input type='text' id='eveningWeight' class='form-control form-control-sm inputFieldWeight' style='width:50px'> kg
+                
+                        
+                        ";
+
+                    }
+                    $con->close();
+                  
+                    ?>
+
+</div>
+<button id='buttonLock' class='btn btn-secondary buttonSubmit'>Submit Weight</button> 
+<div id='lockStatusHtml' ></div>
+<div class='btn btn-secondary buttonLockUnlock'><i id='buttonLockUnlock' class='fas fa-unlock'></i></div> 
+</div>
         </div>
+
+     
         <div class="grid-item-right">
         <div class="grid-item-right-sub-one">
             <h5 class="headerLeftRight">Totals</h5>
