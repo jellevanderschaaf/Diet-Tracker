@@ -551,7 +551,7 @@ if (typeof rfs != "undefined" && rfs) {
 
 
 
-});
+
 
 var dateCounterJs = "<?php echo $_SESSION['date_counter2']; ?>";
 var dateCode = "<?php echo $dateCode ?>";
@@ -607,7 +607,7 @@ $("#buttonLock").on('click', function(){
 });
 });
 
-
+});
 
 </script>
 
