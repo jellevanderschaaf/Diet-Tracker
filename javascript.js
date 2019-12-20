@@ -137,7 +137,10 @@ let lineChart = new Chart(chartTwo, {
                 borderColor: ['rgba(92, 97, 101, 0.3)'],
                 pointBorderColor: 'rgba(92, 97, 101, 0.7)',
                 pointBackgroundColor: 'rgba(92, 97, 101, 0.7)',
-
+                tension: 0.3,
+                borderWidth: 2,
+                pointBorderWidth: 1,
+                radius: 2.5
             },
             {
                 label: ['Kg'],
@@ -146,7 +149,10 @@ let lineChart = new Chart(chartTwo, {
                 borderColor: ['rgba(92, 97, 101, 0.3)'],
                 pointBorderColor: 'rgba(92, 97, 101, 0.7)',
                 pointBackgroundColor: 'rgba(92, 97, 101, 0.7)',
-
+                tension: 0.3,
+                borderWidth: 2,
+                pointBorderWidth: 1,
+                radius: 2.5
             }
         ],
     },
@@ -163,11 +169,12 @@ let lineChart = new Chart(chartTwo, {
         },
         scales: {
             yAxes: [{
-                display: false,
+                display: true,
                 ticks: {
                     beginAtZero: false,
-                    display: false,
-                    max: 65,
+                    display: true,
+                    min: 60,
+                    max: 67,
                 },
                 gridLines: {
                     display: false
