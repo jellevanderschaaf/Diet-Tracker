@@ -173,8 +173,8 @@ let lineChart = new Chart(chartTwo, {
                 ticks: {
                     beginAtZero: false,
                     display: true,
-                    min: 60,
-                    max: 67,
+                    min: 61,
+                    max: 68,
                 },
                 gridLines: {
                     display: false
