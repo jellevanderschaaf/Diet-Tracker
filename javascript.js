@@ -952,7 +952,7 @@ $(document).ready(function() {
 
 $('#tableKcalsGraph').click(function() {
     $('#tableKcalsGraph').css({
-        'border-bottom': '4px solid lightgrey',
+        'border-bottom': '4px solid #c0c4c8',
     });
 
     $('#tableWeightGraph').css({
@@ -975,7 +975,7 @@ $('#tableWeightGraph').click(function() {
     });
 
     $('#tableWeightGraph').css({
-        'border-bottom': '4px solid lightgrey',
+        'border-bottom': '4px solid #c0c4c8',
     });
 
     $('#tableCostsGraph').css({
@@ -999,7 +999,7 @@ $('#tableCostsGraph').click(function() {
     });
 
     $('#tableCostsGraph').css({
-        'border-bottom': '4px solid lightgrey',
+        'border-bottom': '4px solid #c0c4c8',
     });
 
     $('#chartFour').addClass("hidden");

@@ -88,5 +88,5 @@ Further plans:
 
 # Update 20-12-2019:
 
-![Current state](diet.png)
+![Current state](dietUpdate.png)
 

@@ -566,7 +566,7 @@ th {
 }
 
 #tableKcalsGraph {
-    border-bottom: 4px solid lightgrey;
+    border-bottom: 4px solid #c0c4c8;
     cursor: pointer;
     padding: 0;
     font-weight: 600;
@@ -592,7 +592,7 @@ th {
     padding: 0;
     font-weight: 600;
     font-size: 14px;
-    border-bottom: 4px solid lightgrey;
+    border-bottom: 4px solid #c0c4c8;
 }
 
 .fa-expand {
