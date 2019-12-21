@@ -4,6 +4,11 @@ $(".navbarImage").on('click', function() {
 
 });
 
+
+$('[data-toggle="tooltip"]').tooltip({
+    trigger: 'hover'
+})
+
 var today = moment().format("DD/MM");
 var todayMinusOne = moment().subtract(1, 'days').format("DD/MM");
 var todayMinusTwo = moment().subtract(2, 'days').format("DD/MM");
